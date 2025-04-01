@@ -1,5 +1,5 @@
-import { Collection } from "../entities/collection.entity";
-import { Task } from "../entities/task.entity";
+import type { Collection } from "../entities/collection.entity";
+import type { Task } from "../entities/task.entity";
 
 export interface ICollectionRepository {
   create(collection: Collection): Promise<Collection>;

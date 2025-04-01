@@ -1,20 +1,15 @@
 import { Task } from "../../domain/entities/task.entity";
-import {
-  ITaskRepository,
-  ICollectionRepository,
-} from "../../domain/interfaces/repository.interface";
-import { CreateTaskDto, UpdateTaskDto } from "../dtos/task.dto";
+import type { ICollectionRepository, ITaskRepository } from "../../domain/interfaces/repository.interface";
+import type { CreateTaskDto, UpdateTaskDto } from "../dtos/task.dto";
 
 export class TaskService {
   constructor(
     private taskRepository: ITaskRepository,
-    private collectionRepository: ICollectionRepository
+    private collectionRepository: ICollectionRepository,
   ) {}
 
   async createTask(dto: CreateTaskDto): Promise<Task> {
-    const collection = await this.collectionRepository.findById(
-      dto.collectionId
-    );
+    const collection = await this.collectionRepository.findById(dto.collectionId);
     if (!collection) throw new Error("Collection not found");
 
     const task = new Task(
@@ -27,7 +22,7 @@ export class TaskService {
       dto.recurrencePattern || null,
       new Date(),
       new Date(),
-      collection
+      collection,
     );
 
     if (dto.parentTaskId) {
@@ -52,9 +47,7 @@ export class TaskService {
   async updateTask(id: number, dto: UpdateTaskDto): Promise<Task> {
     const task = await this.getTaskById(id);
     if (dto.collectionId) {
-      const collection = await this.collectionRepository.findById(
-        dto.collectionId
-      );
+      const collection = await this.collectionRepository.findById(dto.collectionId);
       if (!collection) throw new Error("Collection not found");
       task.collection = collection;
     }

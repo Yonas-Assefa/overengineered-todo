@@ -1,4 +1,4 @@
-import { Collection } from "./collection.entity";
+import type { Collection } from "./collection.entity";
 
 export class Task {
   constructor(
@@ -13,6 +13,6 @@ export class Task {
     public updatedAt: Date,
     public collection: Collection,
     public parentTask?: Task,
-    public subtasks?: Task[]
+    public subtasks?: Task[],
   ) {}
 }

@@ -1,8 +1,8 @@
+import http from "http";
 import { app } from "./app";
 import config from "./infrastructure/config/config";
 import { AppDataSource } from "./infrastructure/database/data-source";
 import { Logger } from "./infrastructure/middleware/logger";
-import http from "http";
 
 const server = http.createServer(app);
 

@@ -1,10 +1,10 @@
-import { Repository } from "typeorm";
+import type { Repository } from "typeorm";
 import { Collection } from "../../domain/entities/collection.entity";
 import { Task } from "../../domain/entities/task.entity";
-import { ICollectionRepository } from "../../domain/interfaces/repository.interface";
-import { CollectionEntity } from "../database/entities/collection.entity";
-import { TaskEntity } from "../database/entities/task.entity";
+import type { ICollectionRepository } from "../../domain/interfaces/repository.interface";
 import { AppDataSource } from "../database/data-source";
+import { CollectionEntity } from "../database/entities/collection.entity";
+import type { TaskEntity } from "../database/entities/task.entity";
 
 export class CollectionRepository implements ICollectionRepository {
   private repo: Repository<CollectionEntity>;
@@ -38,10 +38,7 @@ export class CollectionRepository implements ICollectionRepository {
     return entity ? this.toDomain(entity) : null;
   }
 
-  async update(
-    id: number,
-    collection: Partial<Collection>
-  ): Promise<Collection> {
+  async update(id: number, collection: Partial<Collection>): Promise<Collection> {
     const updateData: Partial<CollectionEntity> = {
       name: collection.name,
       isFavorite: collection.isFavorite,
@@ -64,7 +61,7 @@ export class CollectionRepository implements ICollectionRepository {
       entity.isFavorite,
       entity.createdAt,
       entity.updatedAt,
-      entity.tasks?.map((taskEntity) => this.mapTaskEntityToTask(taskEntity))
+      entity.tasks?.map((taskEntity) => this.mapTaskEntityToTask(taskEntity)),
     );
   }
 
@@ -80,10 +77,8 @@ export class CollectionRepository implements ICollectionRepository {
       entity.createdAt,
       entity.updatedAt,
       this.toDomain(entity.collection),
-      entity.parentTask
-        ? this.mapTaskEntityToTask(entity.parentTask)
-        : undefined,
-      entity.subtasks?.map((subtask) => this.mapTaskEntityToTask(subtask))
+      entity.parentTask ? this.mapTaskEntityToTask(entity.parentTask) : undefined,
+      entity.subtasks?.map((subtask) => this.mapTaskEntityToTask(subtask)),
     );
   }
 }

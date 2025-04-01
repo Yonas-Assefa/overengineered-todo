@@ -1,4 +1,4 @@
-import { Task } from "./task.entity";
+import type { Task } from "./task.entity";
 export class Collection {
   constructor(
     public id: number,
@@ -6,6 +6,6 @@ export class Collection {
     public isFavorite: boolean,
     public createdAt: Date,
     public updatedAt: Date,
-    public tasks?: Task[]
+    public tasks?: Task[],
   ) {}
 }

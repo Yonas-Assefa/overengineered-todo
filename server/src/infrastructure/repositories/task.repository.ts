@@ -1,10 +1,10 @@
-import { Repository } from "typeorm";
-import { Task } from "../../domain/entities/task.entity";
+import type { Repository } from "typeorm";
 import { Collection } from "../../domain/entities/collection.entity";
-import { ITaskRepository } from "../../domain/interfaces/repository.interface";
-import { TaskEntity } from "../database/entities/task.entity";
-import { CollectionEntity } from "../database/entities/collection.entity";
+import { Task } from "../../domain/entities/task.entity";
+import type { ITaskRepository } from "../../domain/interfaces/repository.interface";
 import { AppDataSource } from "../database/data-source";
+import type { CollectionEntity } from "../database/entities/collection.entity";
+import { TaskEntity } from "../database/entities/task.entity";
 
 export class TaskRepository implements ITaskRepository {
   private repo: Repository<TaskEntity>;
@@ -25,9 +25,7 @@ export class TaskRepository implements ITaskRepository {
       createdAt: task.createdAt,
       updatedAt: task.updatedAt,
       collection: { id: task.collection.id } as CollectionEntity,
-      parentTask: task.parentTask
-        ? ({ id: task.parentTask.id } as TaskEntity)
-        : undefined,
+      parentTask: task.parentTask ? ({ id: task.parentTask.id } as TaskEntity) : undefined,
     };
     const createdEntity = this.repo.create(entity);
     const saved = await this.repo.save(createdEntity);
@@ -60,12 +58,8 @@ export class TaskRepository implements ITaskRepository {
       isRecurring: task.isRecurring,
       recurrencePattern: task.recurrencePattern || undefined,
       updatedAt: task.updatedAt || new Date(),
-      collection: task.collection
-        ? ({ id: task.collection.id } as CollectionEntity)
-        : undefined,
-      parentTask: task.parentTask
-        ? ({ id: task.parentTask.id } as TaskEntity)
-        : undefined,
+      collection: task.collection ? ({ id: task.collection.id } as CollectionEntity) : undefined,
+      parentTask: task.parentTask ? ({ id: task.parentTask.id } as TaskEntity) : undefined,
     };
     await this.repo.update(id, updateData);
     const updated = await this.findById(id);
@@ -90,20 +84,18 @@ export class TaskRepository implements ITaskRepository {
       entity.updatedAt,
       this.mapCollectionEntityToCollection(entity.collection),
       entity.parentTask ? this.toDomain(entity.parentTask) : undefined,
-      entity.subtasks?.map((subtask) => this.toDomain(subtask))
+      entity.subtasks?.map((subtask) => this.toDomain(subtask)),
     );
   }
 
-  private mapCollectionEntityToCollection(
-    entity: CollectionEntity
-  ): Collection {
+  private mapCollectionEntityToCollection(entity: CollectionEntity): Collection {
     return new Collection(
       entity.id,
       entity.name,
       entity.isFavorite,
       entity.createdAt,
       entity.updatedAt,
-      entity.tasks?.map((taskEntity) => this.toDomain(taskEntity))
+      entity.tasks?.map((taskEntity) => this.toDomain(taskEntity)),
     );
   }
 }

@@ -1,13 +1,10 @@
-import express, { NextFunction, Request, Response } from "express";
+import express, { type NextFunction, type Request, type Response } from "express";
 import httpStatus from "http-status";
-import { ApiError } from "./infrastructure/middleware/errors/api.error";
-import {
-  errorConverter,
-  errorHandler,
-} from "./infrastructure/middleware/errors";
-import { morganMiddleware } from "./infrastructure/middleware/logger";
 import { CollectionService } from "./application/services/collection.service";
 import { TaskService } from "./application/services/task.service";
+import { errorConverter, errorHandler } from "./infrastructure/middleware/errors";
+import { ApiError } from "./infrastructure/middleware/errors/api.error";
+import { morganMiddleware } from "./infrastructure/middleware/logger";
 import { CollectionRepository } from "./infrastructure/repositories/collection.repository";
 import { TaskRepository } from "./infrastructure/repositories/task.repository";
 import { CollectionController } from "./presentation/controllers/collection.controller";

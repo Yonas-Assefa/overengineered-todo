@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
 import Joi from "joi";
-import { ApiError } from "../middleware/errors/api.error";
 import { pick } from "../../common/utils/pick";
+import { ApiError } from "../middleware/errors/api.error";
 
 export const validate =
   (schema: Record<string, any>) =>
@@ -14,9 +14,7 @@ export const validate =
       .validate(object);
 
     if (error) {
-      const errorMessage = error.details
-        .map((details) => details.message)
-        .join(", ");
+      const errorMessage = error.details.map((details) => details.message).join(", ");
       return next(new ApiError(httpStatus.BAD_REQUEST, errorMessage));
     }
     Object.assign(req, value);

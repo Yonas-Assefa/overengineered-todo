@@ -1,10 +1,7 @@
 import { Router } from "express";
-import { TaskController } from "../controllers/task.controller";
 import { validate } from "../../infrastructure/middleware/validate.middleware";
-import {
-  createTaskSchema,
-  updateTaskSchema,
-} from "../validators/task.validator";
+import type { TaskController } from "../controllers/task.controller";
+import { createTaskSchema, updateTaskSchema } from "../validators/task.validator";
 
 export class TaskRouter {
   public router: Router;
@@ -14,9 +11,7 @@ export class TaskRouter {
   }
 
   private initializeRoutes() {
-    this.router
-      .route("/")
-      .post(validate({ body: createTaskSchema }), this.controller.create);
+    this.router.route("/").post(validate({ body: createTaskSchema }), this.controller.create);
 
     this.router
       .route("/:id")
@@ -24,8 +19,6 @@ export class TaskRouter {
       .patch(validate({ body: updateTaskSchema }), this.controller.update)
       .delete(this.controller.delete);
 
-    this.router
-      .route("/collection/:collectionId")
-      .get(this.controller.findByCollectionId);
+    this.router.route("/collection/:collectionId").get(this.controller.findByCollectionId);
   }
 }

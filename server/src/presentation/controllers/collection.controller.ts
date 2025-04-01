@@ -1,9 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { CollectionService } from "../../application/services/collection.service";
-import {
-  CreateCollectionDto,
-  UpdateCollectionDto,
-} from "../../application/dtos/collection.dto";
+import type { NextFunction, Request, Response } from "express";
+import type { CreateCollectionDto, UpdateCollectionDto } from "../../application/dtos/collection.dto";
+import type { CollectionService } from "../../application/services/collection.service";
 
 export class CollectionController {
   constructor(private service: CollectionService) {}
@@ -29,7 +26,7 @@ export class CollectionController {
 
   findById = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       const collection = await this.service.getCollectionById(id);
       res.json(collection);
     } catch (error) {
@@ -39,7 +36,7 @@ export class CollectionController {
 
   update = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       const dto: UpdateCollectionDto = req.body;
       const collection = await this.service.updateCollection(id, dto);
       res.json(collection);
@@ -50,7 +47,7 @@ export class CollectionController {
 
   delete = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       await this.service.deleteCollection(id);
       res.status(204).send();
     } catch (error) {

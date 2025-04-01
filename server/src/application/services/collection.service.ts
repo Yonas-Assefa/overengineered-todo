@@ -1,21 +1,12 @@
 import { Collection } from "../../domain/entities/collection.entity";
-import { ICollectionRepository } from "../../domain/interfaces/repository.interface";
-import {
-  CreateCollectionDto,
-  UpdateCollectionDto,
-} from "../dtos/collection.dto";
+import type { ICollectionRepository } from "../../domain/interfaces/repository.interface";
+import type { CreateCollectionDto, UpdateCollectionDto } from "../dtos/collection.dto";
 
 export class CollectionService {
   constructor(private repository: ICollectionRepository) {}
 
   async createCollection(dto: CreateCollectionDto): Promise<Collection> {
-    const collection = new Collection(
-      0,
-      dto.name,
-      dto.isFavorite ?? false,
-      new Date(),
-      new Date()
-    );
+    const collection = new Collection(0, dto.name, dto.isFavorite ?? false, new Date(), new Date());
     return this.repository.create(collection);
   }
 
@@ -29,10 +20,7 @@ export class CollectionService {
     return collection;
   }
 
-  async updateCollection(
-    id: number,
-    dto: UpdateCollectionDto
-  ): Promise<Collection> {
+  async updateCollection(id: number, dto: UpdateCollectionDto): Promise<Collection> {
     const collection = await this.getCollectionById(id);
     return this.repository.update(id, {
       ...collection,

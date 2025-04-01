@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { TaskService } from "../../application/services/task.service";
-import { CreateTaskDto, UpdateTaskDto } from "../../application/dtos/task.dto";
+import type { NextFunction, Request, Response } from "express";
+import type { CreateTaskDto, UpdateTaskDto } from "../../application/dtos/task.dto";
+import type { TaskService } from "../../application/services/task.service";
 
 export class TaskController {
   constructor(private service: TaskService) {}
@@ -17,7 +17,7 @@ export class TaskController {
 
   findById = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       const task = await this.service.getTaskById(id);
       res.json(task);
     } catch (error) {
@@ -25,13 +25,9 @@ export class TaskController {
     }
   };
 
-  findByCollectionId = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ) => {
+  findByCollectionId = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const collectionId = parseInt(req.params.collectionId);
+      const collectionId = Number.parseInt(req.params.collectionId);
       const tasks = await this.service.getTasksByCollectionId(collectionId);
       res.json(tasks);
     } catch (error) {
@@ -41,7 +37,7 @@ export class TaskController {
 
   update = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       const dto: UpdateTaskDto = req.body;
       const task = await this.service.updateTask(id, dto);
       res.json(task);
@@ -52,7 +48,7 @@ export class TaskController {
 
   delete = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = Number.parseInt(req.params.id);
       await this.service.deleteTask(id);
       res.status(204).send();
     } catch (error) {
