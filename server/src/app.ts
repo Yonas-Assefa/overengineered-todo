@@ -1,8 +1,15 @@
-import express, { type NextFunction, type Request, type Response } from "express";
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from "express";
 import httpStatus from "http-status";
 import { CollectionService } from "./application/services/collection.service";
 import { TaskService } from "./application/services/task.service";
-import { errorConverter, errorHandler } from "./infrastructure/middleware/errors";
+import {
+  errorConverter,
+  errorHandler,
+} from "./infrastructure/middleware/errors";
 import { ApiError } from "./infrastructure/middleware/errors/api.error";
 import { morganMiddleware } from "./infrastructure/middleware/logger";
 import { CollectionRepository } from "./infrastructure/repositories/collection.repository";
@@ -11,6 +18,8 @@ import { CollectionController } from "./presentation/controllers/collection.cont
 import { TaskController } from "./presentation/controllers/task.controller";
 import { CollectionRouter } from "./presentation/routes/collection.route";
 import { TaskRouter } from "./presentation/routes/task.route";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./swagger";
 
 const app = express();
 
@@ -31,6 +40,9 @@ const collectionRouter = new CollectionRouter(collectionController);
 const taskRouter = new TaskRouter(taskController);
 app.use("/collections", collectionRouter.router);
 app.use("/tasks", taskRouter.router);
+
+// Swagger UI
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 404 Middleware (after routes)
 app.use((req: Request, res: Response, next: NextFunction) => {

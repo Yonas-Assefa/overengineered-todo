@@ -26,6 +26,8 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.10.5",
     "@types/supertest": "^6.0.2",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "chai": "^4.3.10",
     "dotenv": "^16.4.7",
     "mocha": "^10.2.0",
@@ -46,6 +48,8 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.14.0",
     "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "typeorm-ts-node-commonjs": "^0.3.20",
     "winston": "^3.17.0"
   }
