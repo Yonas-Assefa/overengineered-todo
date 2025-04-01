@@ -8,9 +8,12 @@
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "build": "tsc",
     "lint:fix": "biome check src/ --fix",
-    "migration:generate": "npx typeorm migration:generate ",
-    "migration:run": "npx typeorm migration:run",
-    "migration:revert": "npx typeorm migration:revert"
+    "typeorm": "ts-node ./node_modules/typeorm/cli -d ./src/config/data-source.ts",
+    "migration:generate": "npm run typeorm migration:generate --",
+    "migration:create": "npm run typeorm migration:create --",
+    "migration:run": "npm run typeorm migration:run",
+    "migration:revert": "npm run typeorm migration:revert",
+    "migration:show": "npm run typeorm migration:show"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

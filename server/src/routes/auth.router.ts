@@ -11,9 +11,16 @@ export class AuthRouter {
     this.authController = new AuthController();
   }
   public routes() {
-    this.router.route("/register").post(validate(register), this.authController.register);
-    this.router.route("/login").post(validate(login), this.authController.login);
-    this.router.route("/logout").post(validate(logout), this.authController.logout);
+    this.router
+      .route("/register")
+      .post(validate(register), this.authController.register);
+    this.router
+      .route("/login")
+      .post(validate(login), this.authController.login);
+    this.router
+      .route("/logout")
+      .post(validate(logout), this.authController.logout);
+
     // this.router.route("/refresh-token").post(validate(authValidator.refreshTokens), this.authController.refreshToken);
     return this.router;
   }

@@ -49,7 +49,7 @@ export class AuthController {
   });
 
   public logout = catchAsync(async (req: Request, res: Response) => {
-    await this.authService.logout(req.body.refreshToken);
+    // await this.authService.logout(req.body.refreshToken);
     res.status(httpStatus.NO_CONTENT).send();
   });
 

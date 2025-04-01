@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import config from "./config";
-import { User } from "../entities/user.entity";
+import { Collection } from "../entities/collection.entity";
+import { Task } from "../entities/task.entity";
 export const AppDataSource = new DataSource({
   type: "mysql",
   host: config.db.host,
@@ -8,8 +9,10 @@ export const AppDataSource = new DataSource({
   username: config.db.username,
   password: config.db.password,
   database: config.db.database,
-  entities: [User],
+  entities: [Collection, Task],
+  migrations: ["src/migrations/*.ts"],
   migrationsRun: config.db.migrationsRun,
+  migrationsTableName: "migrations",
   synchronize: config.env !== "production",
   logging: config.env === "development",
 });

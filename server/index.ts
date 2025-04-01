@@ -69,7 +69,7 @@ const errorHandler = (
   err: Error,
   req: Request,
   res: Response,
-  next: Function,
+  next: Function
 ) => {
   console.error(err.stack);
   res.status(500).json({ error: "Internal Server Error" });
@@ -127,7 +127,7 @@ app.post(
     } catch (err) {
       next(err);
     }
-  },
+  }
 );
 
 app.post("/login", async (req: Request, res: Response, next: NextFunction) => {

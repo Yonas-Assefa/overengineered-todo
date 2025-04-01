@@ -4,3 +4,62 @@
 {"level":"info","message":"\u001b[32mServer is shutting down with code: SIGINT\u001b[39m","timestamp":"2025-04-01 09:45:48"}
 {"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 10:31:53"}
 {"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 10:33:22"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 10:50:59"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 11:09:29"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 11:09:29"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 11:09:29"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 11:09:29"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 11:09:55"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 11:09:55"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 11:09:55"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 11:09:55"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 11:10:19"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 11:10:19"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 11:10:19"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 11:10:19"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 12:41:55"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 12:41:55"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 12:41:55"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 12:41:55"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 12:44:25"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 12:44:25"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 12:44:25"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 12:44:25"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 12:55:38"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 12:55:38"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 12:55:38"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 12:55:38"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 12:57:17"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 12:57:17"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 12:57:17"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 12:57:17"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 12:59:41"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 12:59:41"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 12:59:41"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 12:59:41"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:00:18"}
+{"level":"http","message":"\u001b[35mGET / 404 4022 - 67.161 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:00:18"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:00:19"}
+{"level":"http","message":"\u001b[35mGET /favicon.ico 404 4022 - 7.328 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:00:19"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:00:53"}
+{"level":"http","message":"\u001b[35mGET /auth/login 404 5033 - 13.964 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:00:53"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:00:59"}
+{"level":"http","message":"\u001b[35mGET /auth/login/ 404 5033 - 13.492 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:00:59"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:03:35"}
+{"level":"http","message":"\u001b[35mGET /auth/login/ 404 5033 - 10.981 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:03:35"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:04:01"}
+{"level":"http","message":"\u001b[35mGET /auth 404 5033 - 13.284 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:04:01"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-01 13:04:05"}
+{"level":"http","message":"\u001b[35mGET /auth/ 404 5033 - 9.475 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:04:05"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-01 13:04:42"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 13:08:40"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 13:08:40"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 13:08:40"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 13:08:40"}
+{"level":"http","message":"\u001b[35mGET / 200 38 - 9.736 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-01 13:09:05"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-01 13:09:35"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-01 16:19:12"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 16:19:12"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 16:19:12"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 16:19:12"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-01 16:19:29"}
