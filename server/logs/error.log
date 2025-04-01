@@ -1,12 +1,7 @@
-[2025-04-01 10:31:54] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m
-[2025-04-01 10:33:22] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m
-[2025-04-01 10:50:59] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m
-[2025-04-01 12:55:38] - [error] - [31mDatabase connection error: Listen method has been called more than once without closing.[39m
-[2025-04-01 12:57:17] - [error] - [31mDatabase connection error: Listen method has been called more than once without closing.[39m
-[2025-04-01 13:00:18] - [error] - [31munknown route[39m
-[2025-04-01 13:00:19] - [error] - [31munknown route[39m
-[2025-04-01 13:00:53] - [error] - [31munknown route[39m
-[2025-04-01 13:00:59] - [error] - [31munknown route[39m
-[2025-04-01 13:03:35] - [error] - [31munknown route[39m
-[2025-04-01 13:04:01] - [error] - [31munknown route[39m
-[2025-04-01 13:04:05] - [error] - [31munknown route[39m
+[2025-04-01 18:43:51] - [error] - [31mUnknown route[39m
+[2025-04-01 18:55:57] - [error] - [31mUnknown route[39m
+[2025-04-01 19:05:51] - [error] - [31mUnknown route[39m
+[2025-04-01 19:07:56] - [error] - [31mUnknown route[39m
+[2025-04-01 19:09:27] - [error] - [31mUnknown route[39m
+[2025-04-01 19:10:03] - [error] - [31mUnknown route[39m
+[2025-04-01 19:14:12] - [error] - [31mUnknown route[39m

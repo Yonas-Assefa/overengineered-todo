@@ -1,24 +1,46 @@
-import express, {
-  type NextFunction,
-  type Request,
-  type Response,
-} from "express";
+import express, { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
-import { ApiError } from "./middleware/errors";
-import { errorConverter, errorHandler } from "./middleware/errors";
-import { morganMiddleware } from "./middleware/logger";
-import { authRouter } from "./routes";
+import { ApiError } from "./infrastructure/middleware/errors/api.error";
+import {
+  errorConverter,
+  errorHandler,
+} from "./infrastructure/middleware/errors";
+import { morganMiddleware } from "./infrastructure/middleware/logger";
+import { CollectionService } from "./application/services/collection.service";
+import { TaskService } from "./application/services/task.service";
+import { CollectionRepository } from "./infrastructure/repositories/collection.repository";
+import { TaskRepository } from "./infrastructure/repositories/task.repository";
+import { CollectionController } from "./presentation/controllers/collection.controller";
+import { TaskController } from "./presentation/controllers/task.controller";
+import { CollectionRouter } from "./presentation/routes/collection.route";
+import { TaskRouter } from "./presentation/routes/task.route";
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 app.use(morganMiddleware);
 
-app.use("/auth", authRouter);
+// Dependency Injection
+const collectionRepo = new CollectionRepository();
+const taskRepo = new TaskRepository();
+const collectionService = new CollectionService(collectionRepo);
+const taskService = new TaskService(taskRepo, collectionRepo);
+const collectionController = new CollectionController(collectionService);
+const taskController = new TaskController(taskService);
 
+// Register Routes
+const collectionRouter = new CollectionRouter(collectionController);
+const taskRouter = new TaskRouter(taskController);
+app.use("/collections", collectionRouter.router);
+app.use("/tasks", taskRouter.router);
+
+// 404 Middleware (after routes)
 app.use((req: Request, res: Response, next: NextFunction) => {
-  next(new ApiError(httpStatus.NOT_FOUND, "unknown route"));
+  next(new ApiError(httpStatus.NOT_FOUND, "Unknown route"));
 });
+
+// Error Handling (after 404)
 app.use(errorConverter);
 app.use(errorHandler);
 

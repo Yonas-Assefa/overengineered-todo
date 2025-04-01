@@ -8,7 +8,7 @@
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "build": "tsc",
     "lint:fix": "biome check src/ --fix",
-    "typeorm": "ts-node ./node_modules/typeorm/cli -d ./src/config/data-source.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli -d ./src/infrastructure/database/data-source.ts",
     "migration:generate": "npm run typeorm migration:generate --",
     "migration:create": "npm run typeorm migration:create --",
     "migration:run": "npm run typeorm migration:run",

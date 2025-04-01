@@ -1,7 +1,7 @@
 import { app } from "./app";
-import config from "./config/config";
-import { AppDataSource } from "./config/data-source";
-import { Logger } from "./middleware/logger";
+import config from "./infrastructure/config/config";
+import { AppDataSource } from "./infrastructure/database/data-source";
+import { Logger } from "./infrastructure/middleware/logger";
 import http from "http";
 
 const server = http.createServer(app);
@@ -13,8 +13,8 @@ async function startServer() {
 
     server.listen(config.port, () => {
       Logger.info(`Server is running on port ${config.port}`);
-      Logger.info("/auth/register - POST - Register a new user");
-      Logger.info("/auth/login - POST - Login");
+      Logger.info("/collections - GET/POST - Manage collections");
+      Logger.info("/tasks - GET/POST - Manage tasks");
     });
   } catch (error) {
     Logger.error("Database connection error:", error);
