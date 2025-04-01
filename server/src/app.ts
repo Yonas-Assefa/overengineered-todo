@@ -1,12 +1,18 @@
-import express, { type NextFunction, type Request, type Response } from "express";
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from "express";
 import httpStatus from "http-status";
 import { ApiError } from "./middleware/errors";
 import { errorConverter, errorHandler } from "./middleware/errors";
 import { morganMiddleware } from "./middleware/logger";
 import { authRouter } from "./routes";
-
+import { Logger } from "./middleware/logger";
+import { AppDataSource } from "./config/data-source";
+import config from "./config/config";
 const app = express();
-// Middleware to parse JSON bodies
+
 app.use(express.json());
 app.use(morganMiddleware);
 
@@ -17,5 +23,19 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 app.use(errorConverter);
 app.use(errorHandler);
+
+AppDataSource.initialize()
+  .then(() => {
+    Logger.info("Connected to the MySQL database");
+    app.listen(config.port, () => {
+      Logger.info(`Server is running on port ${config.port}`);
+      Logger.info("/auth/register - POST - Register a new user");
+      Logger.info("/auth/login - POST - Login");
+    });
+  })
+  .catch((error: any) => {
+    Logger.error("Database connection error:", error);
+    process.exit(1);
+  });
 
 export { app };
