@@ -16,14 +16,6 @@ const app = express();
 app.use(express.json());
 app.use(morganMiddleware);
 
-app.use("/auth", authRouter);
-
-app.use((req: Request, res: Response, next: NextFunction) => {
-  next(new ApiError(httpStatus.NOT_FOUND, "unknown route"));
-});
-app.use(errorConverter);
-app.use(errorHandler);
-
 AppDataSource.initialize()
   .then(() => {
     Logger.info("Connected to the MySQL database");
@@ -37,5 +29,13 @@ AppDataSource.initialize()
     Logger.error("Database connection error:", error);
     process.exit(1);
   });
+
+app.use("/auth", authRouter);
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  next(new ApiError(httpStatus.NOT_FOUND, "unknown route"));
+});
+app.use(errorConverter);
+app.use(errorHandler);
 
 export { app };

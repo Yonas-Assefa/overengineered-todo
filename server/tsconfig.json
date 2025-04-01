@@ -8,6 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./",
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
     "types": ["node", "mocha", "chai"],
     "typeRoots": ["./node_modules/@types"]
   },

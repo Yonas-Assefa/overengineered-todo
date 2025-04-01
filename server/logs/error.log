@@ -1,0 +1,2 @@
+[2025-04-01 10:31:54] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m
+[2025-04-01 10:33:22] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m

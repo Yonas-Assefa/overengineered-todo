@@ -5,7 +5,7 @@ import { Logger } from "./middleware/logger/";
 
 import events from "events";
 import http from "http";
-import { createConnection } from "typeorm";
+
 const server = http.createServer(app);
 
 const workflow = new events.EventEmitter();
