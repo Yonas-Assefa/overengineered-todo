@@ -5,3 +5,4 @@
 [2025-04-01 19:09:27] - [error] - [31mUnknown route[39m
 [2025-04-01 19:10:03] - [error] - [31mUnknown route[39m
 [2025-04-01 19:14:12] - [error] - [31mUnknown route[39m
+[2025-04-01 20:01:21] - [error] - [31mDatabase connection error: Duplicate entry '2' for key 'collections.PRIMARY'[39m

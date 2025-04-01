@@ -10,7 +10,7 @@
     "lint:fix": "biome check src/ --fix",
     "typeorm": "ts-node ./node_modules/typeorm/cli -d ./src/infrastructure/database/data-source.ts",
     "migration:generate": "npm run typeorm migration:generate --",
-    "migration:create": "npm run typeorm migration:create --",
+    "migration:create": "npx typeorm migration:create",
     "migration:run": "npm run typeorm migration:run",
     "migration:revert": "npm run typeorm migration:revert",
     "migration:show": "npm run typeorm migration:show"
@@ -46,6 +46,7 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.14.0",
     "reflect-metadata": "^0.2.2",
+    "typeorm-ts-node-commonjs": "^0.3.20",
     "winston": "^3.17.0"
   }
 }
