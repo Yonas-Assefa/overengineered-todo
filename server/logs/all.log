@@ -1,0 +1,4 @@
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-01 09:22:26"}
+{"level":"info","message":"\u001b[32m/auth/register - POST - Register a new user\u001b[39m","timestamp":"2025-04-01 09:22:26"}
+{"level":"info","message":"\u001b[32m/auth/login - POST - Login\u001b[39m","timestamp":"2025-04-01 09:22:26"}
+{"level":"info","message":"\u001b[32mServer is shutting down with code: SIGINT\u001b[39m","timestamp":"2025-04-01 09:45:48"}
