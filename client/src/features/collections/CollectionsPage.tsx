@@ -29,28 +29,31 @@ export const CollectionsPage = () => {
   };
 
   return (
-    <div className="w-full min-h-screen p-8 text-white">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-semibold">Collections</h1>
+    <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-2xl font-semibold">Collections</h1>
+          <div className="flex items-center gap-4">
+            {/* Add your notification and profile icons here */}
+          </div>
         </div>
 
-        <div className="flex gap-3 mt-18 mb-10">
+        <div className="flex gap-2 mb-8">
           <button
-            className={`px-4 py-2 rounded-lg text-sm transition-all ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeFilter === "favorites"
-                ? "bg-gray-500"
-                : "bg-gray-800 hover:bg-gray-700"
+                ? "bg-[#25262C] text-white"
+                : "text-gray-400 hover:text-white"
             }`}
             onClick={() => setActiveFilter("favorites")}
           >
-            Favorites
+            Favourites
           </button>
           <button
-            className={`px-4 py-2 rounded-lg text-sm transition-all ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeFilter === "all"
-                ? "bg-gray-500"
-                : "bg-gray-800 hover:bg-gray-700"
+                ? "bg-[#25262C] text-white"
+                : "text-gray-400 hover:text-white"
             }`}
             onClick={() => setActiveFilter("all")}
           >
@@ -58,22 +61,21 @@ export const CollectionsPage = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCollections?.map((collection) => (
             <CollectionCard key={collection.id} collection={collection} />
           ))}
 
-          {activeFilter === "favorites" &&
-            filteredCollections?.length === 0 && (
-              <div className="col-span-full text-center py-12 text-gray-400">
-                You don't have any favorite collections yet.
-              </div>
-            )}
+          {activeFilter === "favorites" && filteredCollections?.length === 0 && (
+            <div className="col-span-full text-center py-12 text-gray-400">
+              You don't have any favorite collections yet.
+            </div>
+          )}
 
           {activeFilter === "all" && (
             <button
               onClick={openModal}
-              className="w-full aspect-square flex items-center justify-center rounded-xl bg-gray-900 cursor-pointer hover:bg-gray-800 transition-all"
+              className="w-full aspect-square flex items-center justify-center rounded-2xl bg-[#1E1F25] cursor-pointer hover:bg-[#25262C] transition-all border-2 border-dashed border-gray-700"
             >
               <span className="text-gray-400 text-3xl">+</span>
             </button>

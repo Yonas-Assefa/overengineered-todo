@@ -4,6 +4,10 @@ export interface Collection {
   createdAt: string;
   updatedAt: string;
   isFavorite: boolean;
+  completedTasks: number;
+  totalTasks: number;
+  iconBg?: string;
+  progressColor?: string;
 }
 
 export interface CollectionFormData {

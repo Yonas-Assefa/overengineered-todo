@@ -14,12 +14,12 @@ export const Navbar = () => {
   const isCollectionDetail = useMatch("/collections/:id");
 
   return (
-    <div className="flex justify-between items-center px-6 py-3 bg-gray-900 border-b border-gray-700">
+    <div className="flex justify-between items-center px-6 py-4 bg-[#17181C] border-b border-gray-800">
       <div className="flex items-center gap-4 text-gray-400">
         {isCollectionDetail && (
           <Link
             to="/collections"
-            className="flex items-center gap-2 pr-4 text-sm font-medium hover:text-white"
+            className="flex items-center gap-2 pr-4 text-sm font-medium hover:text-white transition-colors"
           >
             <FaBars size={18} />
           </Link>
@@ -27,33 +27,24 @@ export const Navbar = () => {
 
         <Link
           to="/collections"
-          className={`flex items-center gap-2 text-sm font-medium hover:text-white ${
+          className={`flex items-center gap-2 text-sm font-medium hover:text-white transition-colors ${
             location.pathname === "/collections" ? "text-white" : ""
           }`}
         >
-          <FaThLarge size={18} /> Dashboard
-        </Link>
-        <Link
-          to="/"
-          className={`flex items-center gap-2 text-sm font-medium hover:text-white ${
-            location.pathname === "/" ? "text-white" : ""
-          }`}
-        >
-          {" "}
-          <FaRegFileAlt size={18} /> Collections
+          <FaThLarge size={18} /> Collections
         </Link>
       </div>
 
-      <div className="flex items-center gap-4">
-        <button className="p-2 bg-pink-500 rounded-full hover:bg-pink-600 transition-colors">
-          <FaPlus size={16} className="text-white" />
+      <div className="flex items-center gap-6">
+        <button className="p-2.5 bg-pink-500 rounded-full hover:bg-pink-600 transition-colors">
+          <FaPlus size={14} className="text-white" />
         </button>
 
-        <button className="p-2 text-gray-400 hover:text-white">
+        <button className="p-2 text-gray-400 hover:text-white transition-colors">
           <FaSearch size={18} />
         </button>
 
-        <button className="p-2 text-gray-400 hover:text-white">
+        <button className="p-2 text-gray-400 hover:text-white transition-colors">
           <FaBell size={18} />
         </button>
 
