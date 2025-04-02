@@ -4,7 +4,7 @@ import {
   createTask,
   updateTask,
   deleteTask,
-} from "../api";
+} from "../api/tasks.api";
 
 export const useTasks = (collectionId: number) => {
   const queryClient = useQueryClient();

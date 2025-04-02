@@ -1,24 +1,19 @@
-import { CollectionSchema, TaskSchema } from "../lib/schemas";
-import { Collection, Task } from "../types";
-
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
-export const fetchCollections = async (): Promise<Collection[]> => {
-  const response = await fetch(`${BASE_URL}/collections`);
-  const data = await response.json();
-  return CollectionSchema.array().parse(data);
-};
+import { TaskSchema } from "../lib/schemas";
+import { Task } from "../types";
+import { BASE_API_URL } from "../config/url.config";
 
 export const fetchTasksByCollection = async (
   collectionId: number
 ): Promise<Task[]> => {
-  const response = await fetch(`${BASE_URL}/collections/${collectionId}/tasks`);
+  const response = await fetch(
+    `${BASE_API_URL}/collections/${collectionId}/tasks`
+  );
   const data = await response.json();
   return TaskSchema.array().parse(data);
 };
 
 export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
-  const response = await fetch(`${BASE_URL}/tasks`, {
+  const response = await fetch(`${BASE_API_URL}/tasks`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(task),
@@ -28,7 +23,7 @@ export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
 };
 
 export const updateTask = async (task: Task): Promise<Task> => {
-  const response = await fetch(`${BASE_URL}/tasks/${task.id}`, {
+  const response = await fetch(`${BASE_API_URL}/tasks/${task.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(task),
@@ -38,7 +33,7 @@ export const updateTask = async (task: Task): Promise<Task> => {
 };
 
 export const deleteTask = async (taskId: number): Promise<void> => {
-  await fetch(`${BASE_URL}/tasks/${taskId}`, {
+  await fetch(`${BASE_API_URL}/tasks/${taskId}`, {
     method: "DELETE",
   });
 };

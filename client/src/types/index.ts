@@ -1,6 +1,14 @@
 export interface Collection {
   id: number;
   name: string;
+  createdAt: string;
+  updatedAt: string;
+  isFavorite: boolean;
+}
+
+export interface CollectionFormData {
+  name: string;
+  isFavorite: boolean;
 }
 
 export interface Task {

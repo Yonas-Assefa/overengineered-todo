@@ -552,3 +552,87 @@
 {"level":"http","message":"\u001b[35mGET /collections 304 - - 11.598 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:04:56"}
 {"level":"http","message":"\u001b[35mGET /collections 304 - - 15.694 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:04:59"}
 {"level":"http","message":"\u001b[35mGET /collections 304 - - 2.077 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:06:23"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.605 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:08:39"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.185 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:08:43"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 5.963 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:08:48"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 7.271 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:14:41"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 3.977 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:14:41"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 48.535 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:14:41"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.584 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:23:38"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:23:51"}
+{"level":"http","message":"\u001b[35mGET /collections/4/tasks 404 6208 - 12.047 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:23:51"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:23:52"}
+{"level":"http","message":"\u001b[35mGET /collections/4/tasks 404 6208 - 6.711 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:23:52"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:23:54"}
+{"level":"http","message":"\u001b[35mGET /collections/4/tasks 404 6208 - 2.079 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:23:54"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:23:58"}
+{"level":"http","message":"\u001b[35mGET /collections/4/tasks 404 6208 - 1.649 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:23:58"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:24:00"}
+{"level":"http","message":"\u001b[35mGET /collections/4/tasks 404 6208 - 3.572 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:24:00"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 5.383 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:25:33"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 2.587 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:26:46"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 1.852 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:42:32"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:43:22"}
+{"level":"http","message":"\u001b[35mGET /collections/3/tasks 404 6208 - 5.000 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:43:22"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 15:43:23"}
+{"level":"http","message":"\u001b[35mGET /collections/3/tasks 404 6208 - 2.785 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:43:23"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 3.106 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:43:24"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 2.522 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:45:14"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 9.038 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:54:13"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 16:54:23"}
+{"level":"http","message":"\u001b[35mGET /collections/2/tasks 404 6208 - 5.983 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:54:23"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 16:54:24"}
+{"level":"http","message":"\u001b[35mGET /collections/2/tasks 404 6208 - 8.463 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:54:24"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 16:54:26"}
+{"level":"http","message":"\u001b[35mGET /collections/2/tasks 404 6208 - 7.315 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:54:26"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 16:54:30"}
+{"level":"http","message":"\u001b[35mGET /collections/2/tasks 404 6208 - 4.305 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:54:30"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 5.254 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:55:22"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 10.373 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:55:22"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 17.772 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:55:22"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 12.791 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:56:09"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.371 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:57:21"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.094 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 16:58:58"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 5.636 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:00:39"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.084 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:00:39"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.278 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:01:04"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.068 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:02:41"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 9.869 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:04:10"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 24.621 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:06:56"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.069 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:07:43"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 15.073 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:12:49"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 8.476 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:13:18"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 21.666 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:13:40"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.071 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:22:37"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 21.020 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:43:53"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.403 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:44:21"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.558 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:44:25"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.395 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:44:47"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 21.373 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:45:03"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 8.688 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:45:11"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 8.862 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:45:29"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.304 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:45:55"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 12.714 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:51:22"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.103 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 17:59:18"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 9.693 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:01:44"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 128 - 93.580 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:01:56"}
+{"level":"http","message":"\u001b[35mGET /collections 200 623 - 5.854 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:01:56"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 130 - 22.801 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:05"}
+{"level":"http","message":"\u001b[35mGET /collections 200 754 - 7.683 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:05"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 129 - 22.258 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:18"}
+{"level":"http","message":"\u001b[35mGET /collections 200 884 - 7.894 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:18"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 133 - 22.904 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:31"}
+{"level":"http","message":"\u001b[35mGET /collections 200 1018 - 10.920 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:31"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 18:02:31"}
+{"level":"http","message":"\u001b[35mGET /collections/11/tasks 404 6208 - 8.090 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:31"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 18:02:32"}
+{"level":"http","message":"\u001b[35mGET /collections/11/tasks 404 6208 - 9.077 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:32"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 18:02:34"}
+{"level":"http","message":"\u001b[35mGET /collections/11/tasks 404 6208 - 10.390 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:34"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 123 - 26.991 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:43"}
+{"level":"http","message":"\u001b[35mGET /collections 200 1142 - 14.732 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:43"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 122 - 14.620 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:48"}
+{"level":"http","message":"\u001b[35mGET /collections 200 1265 - 5.238 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:02:48"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.055 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:03:31"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 132 - 20.333 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:04:57"}
+{"level":"http","message":"\u001b[35mGET /collections 200 1398 - 11.874 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 18:04:57"}

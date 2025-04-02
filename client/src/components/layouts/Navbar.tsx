@@ -15,19 +15,20 @@ export const Navbar = () => {
     <div className="flex justify-between items-center px-6 py-3 bg-gray-900 border-b border-gray-700">
       <div className="flex items-center gap-4 text-gray-400">
         <Link
-          to="/"
-          className={`flex items-center gap-2 text-sm font-medium hover:text-white ${
-            location.pathname === "/" ? "text-white" : ""
-          }`}
-        >
-          <FaThLarge size={18} /> Dashboard
-        </Link>
-        <Link
           to="/collections"
           className={`flex items-center gap-2 text-sm font-medium hover:text-white ${
             location.pathname === "/collections" ? "text-white" : ""
           }`}
         >
+          <FaThLarge size={18} /> Dashboard
+        </Link>
+        <Link
+          to="/"
+          className={`flex items-center gap-2 text-sm font-medium hover:text-white ${
+            location.pathname === "/" ? "text-white" : ""
+          }`}
+        >
+          {" "}
           <FaRegFileAlt size={18} /> Collections
         </Link>
       </div>

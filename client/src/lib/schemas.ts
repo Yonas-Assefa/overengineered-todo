@@ -3,6 +3,13 @@ import { z } from "zod";
 export const CollectionSchema = z.object({
   id: z.number(),
   name: z.string().min(1, "Collection name is required"),
+  createdAt: z.string().datetime(),
+  updatedAt: z.string().datetime(),
+  isFavorite: z.boolean(),
+});
+export const collectionFormSchema = z.object({
+  name: z.string().min(1, "Collection name is required"),
+  isFavorite: z.boolean(),
 });
 
 export const TaskSchema = z.object({
