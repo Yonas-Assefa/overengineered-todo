@@ -22,3 +22,11 @@ export const createCollection = async (values: {
   const data = await response.json();
   return CollectionSchema.parse(data);
 };
+
+export const fetchCollection = async (
+  collectionId: number
+): Promise<{ id: number; name: string }> => {
+  const response = await fetch(`${BASE_API_URL}/collections/${collectionId}`);
+  const data = await response.json();
+  return data;
+};

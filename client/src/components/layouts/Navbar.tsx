@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useMatch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import {
   FaPlus,
@@ -6,14 +6,25 @@ import {
   FaBell,
   FaThLarge,
   FaRegFileAlt,
+  FaBars,
 } from "react-icons/fa";
 
 export const Navbar = () => {
   const location = useLocation();
+  const isCollectionDetail = useMatch("/collections/:id");
 
   return (
     <div className="flex justify-between items-center px-6 py-3 bg-gray-900 border-b border-gray-700">
       <div className="flex items-center gap-4 text-gray-400">
+        {isCollectionDetail && (
+          <Link
+            to="/collections"
+            className="flex items-center gap-2 pr-4 text-sm font-medium hover:text-white"
+          >
+            <FaBars size={18} />
+          </Link>
+        )}
+
         <Link
           to="/collections"
           className={`flex items-center gap-2 text-sm font-medium hover:text-white ${

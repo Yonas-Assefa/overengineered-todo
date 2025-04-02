@@ -6,10 +6,10 @@ export const fetchTasksByCollection = async (
   collectionId: number
 ): Promise<Task[]> => {
   const response = await fetch(
-    `${BASE_API_URL}/collections/${collectionId}/tasks`
+    `${BASE_API_URL}/tasks/collection/${collectionId}`
   );
   const data = await response.json();
-  return TaskSchema.array().parse(data);
+  return data;
 };
 
 export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
