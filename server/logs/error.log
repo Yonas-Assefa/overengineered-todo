@@ -7,3 +7,53 @@
 [2025-04-01 19:14:12] - [error] - [31mUnknown route[39m
 [2025-04-01 20:01:21] - [error] - [31mDatabase connection error: Duplicate entry '2' for key 'collections.PRIMARY'[39m
 [2025-04-01 20:23:03] - [error] - [31mUnknown route[39m
+[2025-04-01 21:18:48] - [error] - [31mUnknown route[39m
+[2025-04-01 22:26:41] - [error] - [31mUnexpected non-whitespace character after JSON at position 167 (line 8 column 3)[39m
+[2025-04-01 22:27:01] - [error] - [31m"id" is not allowed[39m
+[2025-04-01 22:27:20] - [error] - [31m"createdAt" is not allowed[39m
+[2025-04-01 22:27:33] - [error] - [31m"tasks" is not allowed[39m
+[2025-04-01 22:28:14] - [error] - [31mCollection not found[39m
+[2025-04-02 01:30:34] - [error] - [31mCollection not found[39m
+[2025-04-02 01:32:01] - [error] - [31m"parentTaskId" must be a number[39m
+[2025-04-02 01:34:33] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:34:38] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:35:54] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:36:06] - [error] - [31mExpected double-quoted property name in JSON at position 82 (line 5 column 1)[39m
+[2025-04-02 01:36:42] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:36:55] - [error] - [31m"parentTaskId" must be a number[39m
+[2025-04-02 01:37:05] - [error] - [31mExpected double-quoted property name in JSON at position 82 (line 5 column 1)[39m
+[2025-04-02 01:37:15] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:38:24] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:41:31] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:41:57] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:46:35] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 01:54:00] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 02:02:33] - [error] - [31m"parentTaskId" must be a number[39m
+[2025-04-02 02:02:43] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 02:11:18] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 02:16:09] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 02:25:18] - [error] - [31mUnexpected number in JSON at position 80 (line 4 column 20)[39m
+[2025-04-02 02:25:25] - [error] - [31mCollection not found[39m
+[2025-04-02 02:28:31] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_44a1f7af32d396c871bb73fb1a8` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`id`))[39m
+[2025-04-02 02:36:30] - [error] - [31mDatabase connection error: Duplicate foreign key constraint name 'FK_44a1f7af32d396c871bb73fb1a8'[39m
+[2025-04-02 03:01:58] - [error] - [31mCannot read properties of undefined (reading 'mapCollectionEntityToCollection')[39m
+[2025-04-02 03:14:12] - [error] - [31mCannot read properties of undefined (reading 'mapCollectionEntityToCollection')[39m
+[2025-04-02 03:39:17] - [error] - [31mParent task not found[39m
+[2025-04-02 03:39:45] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:41:02] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:42:28] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:49:47] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:49:57] - [error] - [31mTask not found[39m
+[2025-04-02 03:50:09] - [error] - [31mTask not found[39m
+[2025-04-02 03:50:13] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:51:00] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 03:56:26] - [error] - [31mTask entity missing collection, which is not allowed[39m
+[2025-04-02 03:59:27] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:08:55] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:09:03] - [error] - [31mExpected double-quoted property name in JSON at position 82 (line 5 column 1)[39m
+[2025-04-02 04:09:09] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:09:30] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:10:23] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:11:47] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:34:46] - [error] - [31mCannot read properties of undefined (reading 'id')[39m
+[2025-04-02 04:39:22] - [error] - [31mCannot read properties of undefined (reading 'mapTaskEntityToTask')[39m

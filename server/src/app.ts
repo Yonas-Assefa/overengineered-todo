@@ -19,7 +19,7 @@ import { TaskController } from "./presentation/controllers/task.controller";
 import { CollectionRouter } from "./presentation/routes/collection.route";
 import { TaskRouter } from "./presentation/routes/task.route";
 import swaggerUi from "swagger-ui-express";
-import { swaggerSpec } from "./swagger";
+import { setupSwagger } from "./swagger/ui";
 
 const app = express();
 
@@ -42,7 +42,7 @@ app.use("/collections", collectionRouter.router);
 app.use("/tasks", taskRouter.router);
 
 // Swagger UI
-app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+setupSwagger(app);
 
 // 404 Middleware (after routes)
 app.use((req: Request, res: Response, next: NextFunction) => {

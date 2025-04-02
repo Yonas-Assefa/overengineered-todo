@@ -39,24 +39,16 @@ export class TaskEntity {
   @UpdateDateColumn()
   updatedAt!: Date;
 
-  @ManyToOne(
-    () => CollectionEntity,
-    (collection) => collection.tasks,
-  )
+  @ManyToOne(() => CollectionEntity, (collection) => collection.tasks, {
+    onDelete: "CASCADE",
+  })
   @JoinColumn({ name: "collection_id" })
   collection!: CollectionEntity;
 
-  @ManyToOne(
-    () => TaskEntity,
-    (task) => task.subtasks,
-    { nullable: true },
-  )
+  @ManyToOne(() => TaskEntity, (task) => task.subtasks, { nullable: true })
   @JoinColumn({ name: "parent_task_id" })
   parentTask?: TaskEntity;
 
-  @OneToMany(
-    () => TaskEntity,
-    (task) => task.parentTask,
-  )
+  @OneToMany(() => TaskEntity, (task) => task.parentTask)
   subtasks!: TaskEntity[];
 }

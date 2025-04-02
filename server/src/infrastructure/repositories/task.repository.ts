@@ -25,7 +25,9 @@ export class TaskRepository implements ITaskRepository {
       createdAt: task.createdAt,
       updatedAt: task.updatedAt,
       collection: { id: task.collection.id } as CollectionEntity,
-      parentTask: task.parentTask ? ({ id: task.parentTask.id } as TaskEntity) : undefined,
+      parentTask: task.parentTask
+        ? ({ id: task.parentTask.id } as TaskEntity)
+        : undefined,
     };
     const createdEntity = this.repo.create(entity);
     const saved = await this.repo.save(createdEntity);
@@ -45,7 +47,7 @@ export class TaskRepository implements ITaskRepository {
       where: { collection: { id: collectionId } },
       relations: ["collection", "parentTask", "subtasks"],
     });
-    return entities.map(this.toDomain);
+    return entities.map(this.toDomain.bind(this));
   }
 
   async update(id: number, task: Partial<Task>): Promise<Task> {
@@ -58,8 +60,12 @@ export class TaskRepository implements ITaskRepository {
       isRecurring: task.isRecurring,
       recurrencePattern: task.recurrencePattern || undefined,
       updatedAt: task.updatedAt || new Date(),
-      collection: task.collection ? ({ id: task.collection.id } as CollectionEntity) : undefined,
-      parentTask: task.parentTask ? ({ id: task.parentTask.id } as TaskEntity) : undefined,
+      collection: task.collection
+        ? ({ id: task.collection.id } as CollectionEntity)
+        : undefined,
+      parentTask: task.parentTask
+        ? ({ id: task.parentTask.id } as TaskEntity)
+        : undefined,
     };
     await this.repo.update(id, updateData);
     const updated = await this.findById(id);
@@ -82,20 +88,43 @@ export class TaskRepository implements ITaskRepository {
       entity.recurrencePattern || null,
       entity.createdAt,
       entity.updatedAt,
-      this.mapCollectionEntityToCollection(entity.collection),
-      entity.parentTask ? this.toDomain(entity.parentTask) : undefined,
-      entity.subtasks?.map((subtask) => this.toDomain(subtask)),
+      new Collection(
+        entity.collection.id,
+        entity.collection.name,
+        entity.collection.isFavorite,
+        entity.collection.createdAt,
+        entity.collection.updatedAt
+      ),
+      entity.parentTask ? ({ id: entity.parentTask.id } as Task) : undefined,
+      entity.subtasks?.map(
+        (st) =>
+          ({
+            id: st.id,
+            title: st.title,
+            description: st.description,
+            date: st.date,
+            completed: st.completed,
+            isRecurring: st.isRecurring,
+            recurrencePattern: st.recurrencePattern,
+            createdAt: st.createdAt,
+            updatedAt: st.updatedAt,
+          } as Task)
+      ) || []
     );
   }
 
-  private mapCollectionEntityToCollection(entity: CollectionEntity): Collection {
+  private mapCollectionEntityToCollection(
+    entity: CollectionEntity
+  ): Collection {
+    if (entity) {
+    }
     return new Collection(
       entity.id,
       entity.name,
       entity.isFavorite,
       entity.createdAt,
       entity.updatedAt,
-      entity.tasks?.map((taskEntity) => this.toDomain(taskEntity)),
+      entity.tasks?.map((taskEntity) => this.toDomain(taskEntity))
     );
   }
 }

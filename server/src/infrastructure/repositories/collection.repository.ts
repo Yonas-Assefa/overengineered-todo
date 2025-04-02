@@ -33,12 +33,21 @@ export class CollectionRepository implements ICollectionRepository {
   async findById(id: number): Promise<Collection | null> {
     const entity = await this.repo.findOne({
       where: { id },
-      relations: ["tasks"],
+      relations: [
+        "tasks",
+        "tasks.collection",
+        "tasks.parentTask",
+        "tasks.subtasks",
+      ],
     });
+
     return entity ? this.toDomain(entity) : null;
   }
 
-  async update(id: number, collection: Partial<Collection>): Promise<Collection> {
+  async update(
+    id: number,
+    collection: Partial<Collection>
+  ): Promise<Collection> {
     const updateData: Partial<CollectionEntity> = {
       name: collection.name,
       isFavorite: collection.isFavorite,
@@ -55,13 +64,13 @@ export class CollectionRepository implements ICollectionRepository {
   }
 
   private toDomain(entity: CollectionEntity): Collection {
+    if (!entity) throw new Error("Collection entity is undefined");
     return new Collection(
       entity.id,
       entity.name,
       entity.isFavorite,
       entity.createdAt,
-      entity.updatedAt,
-      entity.tasks?.map((taskEntity) => this.mapTaskEntityToTask(taskEntity)),
+      entity.updatedAt
     );
   }
 
@@ -77,8 +86,10 @@ export class CollectionRepository implements ICollectionRepository {
       entity.createdAt,
       entity.updatedAt,
       this.toDomain(entity.collection),
-      entity.parentTask ? this.mapTaskEntityToTask(entity.parentTask) : undefined,
-      entity.subtasks?.map((subtask) => this.mapTaskEntityToTask(subtask)),
+      entity.parentTask
+        ? this.mapTaskEntityToTask(entity.parentTask)
+        : undefined,
+      entity.subtasks?.map((subtask) => this.mapTaskEntityToTask(subtask))
     );
   }
 }

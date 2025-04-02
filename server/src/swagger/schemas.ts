@@ -70,7 +70,7 @@
  *       required:
  *         - title
  *         - date
- *         - collection_id
+ *         - collectionId
  *       properties:
  *         title:
  *           type: string
@@ -85,9 +85,9 @@
  *           type: boolean
  *         recurrencePattern:
  *           type: string
- *         collection_id:
+ *         collectionId:
  *           type: integer
- *         parent_task_id:
+ *         parentTaskId:
  *           type: integer
  *     UpdateTask:
  *       type: object
@@ -104,5 +104,12 @@
  *         isRecurring:
  *           type: boolean
  *         recurrencePattern:
+ *           type: string
+ *     Error:
+ *       type: object
+ *       properties:
+ *         status:
+ *           type: integer
+ *         message:
  *           type: string
  */
