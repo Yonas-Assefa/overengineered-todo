@@ -473,3 +473,82 @@
 {"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-02 04:49:58"}
 {"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 5501 - 65.199 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 04:50:09"}
 {"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-02 04:50:34"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-02 10:19:51"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-02 10:19:51"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-02 10:19:51"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-02 10:19:51"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 34.194 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:20:01"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 17.288 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:20:02"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 7.816 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:20:04"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 2.580 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:20:08"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 18.553 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:28:51"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 11.674 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:17"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.398 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:18"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 8.183 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:20"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.789 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:24"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.470 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:39"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.588 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:40"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.538 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:42"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.579 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:30:46"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 4.106 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:31:09"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 15.820 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:31:10"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 1.895 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:31:12"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 8.249 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:31:16"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 12.496 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:32:27"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.460 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:32:28"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.314 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:32:30"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 1.955 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:32:34"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-02 10:34:08"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-02 10:34:57"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-02 10:34:57"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-02 10:34:57"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-02 10:34:57"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 40.236 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:35:01"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 10.144 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:35:06"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.004 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:35:28"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.837 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:37:20"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 10:37:28"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 24.227 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:37:28"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 10:37:30"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 10.937 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:37:30"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 10:37:32"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 9.567 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:37:32"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 10:37:36"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 1.933 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 10:37:36"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-02 13:06:48"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-02 13:06:49"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-02 13:06:49"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-02 13:06:49"}
+{"level":"http","message":"\u001b[35mGET /collections 200 494 - 76.164 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:06:59"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 37.061 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:08:05"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 15.515 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:12:31"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 12.808 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:13:12"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 10.949 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:13:52"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.183 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:14:14"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 32.409 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:21:12"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 9.304 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:25:58"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.686 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:28:18"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 7.840 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:29:23"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 3.639 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:32:08"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 5.481 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:32:27"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 13:34:17"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 49.084 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:34:17"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 13:34:18"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 17.438 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:34:18"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 13:34:20"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 7.166 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:34:20"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 13:34:24"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 9.825 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:34:24"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 22.377 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 13:41:11"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 6.944 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 14:46:28"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 14:46:52"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 5.866 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 14:46:52"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 14:46:53"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 1.783 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 14:46:53"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 14:46:55"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 2.567 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 14:46:55"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-02 14:46:59"}
+{"level":"http","message":"\u001b[35mGET /collections/1/tasks 404 6208 - 2.286 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 14:46:59"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 11.598 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:04:56"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 15.694 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:04:59"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.077 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-02 15:06:23"}

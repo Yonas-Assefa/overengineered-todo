@@ -20,10 +20,11 @@ import { CollectionRouter } from "./presentation/routes/collection.route";
 import { TaskRouter } from "./presentation/routes/task.route";
 import swaggerUi from "swagger-ui-express";
 import { setupSwagger } from "./swagger/ui";
-
+import cors from "cors";
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 app.use(morganMiddleware);
 
