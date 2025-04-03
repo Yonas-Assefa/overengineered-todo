@@ -24,6 +24,7 @@ export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
 };
 
 export const updateTask = async (task: Task): Promise<Task> => {
+  console.log("task", task);
   const payload = excludeFields(task as TaskForExcludeFields, ['id', 'subtasks', 'collection', 'createdAt', 'updatedAt', 'recurrencePattern']);
   const response = await fetch(`${BASE_API_URL}/tasks/${task.id}`, {
     method: "PATCH",

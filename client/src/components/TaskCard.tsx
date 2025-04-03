@@ -17,33 +17,103 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [longPressTimer, setLongPressTimer] = useState<number | null>(null);
-  const touchStartTime = useRef<number>(0);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [localTask, setLocalTask] = useState<Task>(task);
   const menuRef = useRef<HTMLDivElement>(null);
+  const updateTimeoutRef = useRef<number | null>(null);
 
-  const handleToggleComplete = () => {
-    onUpdate({ ...task, completed: !task.completed });
-  };
+  // Update local task when prop changes
+  useEffect(() => {
+    setLocalTask(task);
+  }, [task]);
 
-  const handleTouchStart = () => {
-    touchStartTime.current = Date.now();
-    const timer = window.setTimeout(() => {
-      onDelete(task.id);
-    }, 500);
-    setLongPressTimer(timer);
-  };
-
-  const handleTouchEnd = () => {
-    const touchDuration = Date.now() - touchStartTime.current;
-    if (longPressTimer) {
-      window.clearTimeout(longPressTimer);
-      setLongPressTimer(null);
+  const handleToggleComplete = async () => {
+    if (isUpdating) return;
+    
+    setIsUpdating(true);
+    
+    // Optimistically update local state
+    const updatedTask = {
+      ...localTask,
+      completed: !localTask.completed,
+      subtasks: localTask.subtasks?.map(subtask => ({
+        ...subtask,
+        completed: !localTask.completed
+      }))
+    };
+    setLocalTask(updatedTask);
+    
+    try {
+      // Clear any pending update timeout
+      if (updateTimeoutRef.current) {
+        clearTimeout(updateTimeoutRef.current);
+      }
+      
+      // Debounce the actual API call to prevent rapid toggling
+      updateTimeoutRef.current = window.setTimeout(async () => {
+        await onUpdate(updatedTask);
+      }, 300);
+    } finally {
+      // Keep isUpdating true until the timeout completes
+      if (updateTimeoutRef.current) {
+        updateTimeoutRef.current = window.setTimeout(() => {
+          setIsUpdating(false);
+        }, 300);
+      } else {
+        setIsUpdating(false);
+      }
     }
-    // If touch duration is short, treat it as a normal click
-    if (touchDuration < 500) {
-      setIsExpanded(!isExpanded);
+  };
+
+  const handleSubtaskToggle = async (subtaskId: number) => {
+    if (!localTask.subtasks || isUpdating) return;
+    
+    setIsUpdating(true);
+    
+    // Optimistically update local state
+    const updatedSubtasks = localTask.subtasks.map(st =>
+      st.id === subtaskId ? { ...st, completed: !st.completed } : st
+    );
+    
+    const allSubtasksCompleted = updatedSubtasks.every(st => st.completed);
+    
+    const updatedTask = {
+      ...localTask,
+      completed: allSubtasksCompleted,
+      subtasks: updatedSubtasks
+    };
+    setLocalTask(updatedTask);
+    
+    try {
+      // Clear any pending update timeout
+      if (updateTimeoutRef.current) {
+        clearTimeout(updateTimeoutRef.current);
+      }
+      
+      // Debounce the actual API call to prevent rapid toggling
+      updateTimeoutRef.current = window.setTimeout(async () => {
+        await onUpdate(updatedTask);
+      }, 300);
+    } finally {
+      // Keep isUpdating true until the timeout completes
+      if (updateTimeoutRef.current) {
+        updateTimeoutRef.current = window.setTimeout(() => {
+          setIsUpdating(false);
+        }, 300);
+      } else {
+        setIsUpdating(false);
+      }
     }
   };
+
+  // Clean up timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (updateTimeoutRef.current) {
+        clearTimeout(updateTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Handle click outside menu
   useEffect(() => {
@@ -60,92 +130,144 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   return (
     <div 
       className={`group transition-all duration-200 ${
-        task.completed ? 'opacity-50' : ''
-      }`}
+        localTask.completed ? 'opacity-50' : ''
+      } ${isUpdating ? 'pointer-events-none' : ''}`}
     >
       <div
-        className="p-4 bg-[#1E1F25] rounded-xl flex items-start gap-3 cursor-pointer hover:bg-[#25262C]"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onDoubleClick={() => onEdit(task)}
+        className={`p-4 bg-[#1E1F25] rounded-xl flex items-start gap-3 cursor-pointer hover:bg-[#25262C] transition-colors duration-200 ${
+          isUpdating ? 'opacity-75' : ''
+        }`}
+        onDoubleClick={() => onEdit(localTask)}
       >
-        <div className="pt-1">
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={handleToggleComplete}
-            className="w-5 h-5 rounded-full border-2 border-pink-500 checked:bg-pink-500 checked:border-pink-500 focus:ring-pink-500 focus:ring-offset-0"
-          />
-        </div>
+        <button
+          onClick={handleToggleComplete}
+          disabled={isUpdating}
+          className={`relative w-5 h-5 rounded-full flex items-center justify-center transition-colors ${
+            localTask.completed ? 'text-pink-500' : 'text-gray-400 hover:text-pink-400'
+          } ${isUpdating ? 'opacity-75' : ''}`}
+        >
+          {localTask.completed ? (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
+              <path d="M16.5 8.5L10.5 14.5L7.5 11.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          ) : (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+            </svg>
+          )}
+        </button>
 
         <div className="flex-1 min-w-0">
           <div className="space-y-1">
-            <div className={`text-base ${task.completed ? "text-gray-500 line-through" : "text-white"}`}>
-              {task.title}
+            <div className={`text-base transition-all duration-200 ${
+              localTask.completed ? "text-gray-500 line-through" : "text-white"
+            }`}>
+              {localTask.title}
             </div>
             <div className="text-sm text-gray-500">
-              {task.date === 'Today' ? (
+              {localTask.date === 'Today' ? (
                 <span className="text-pink-500">Today</span>
               ) : (
-                task.date
+                localTask.date
               )}
             </div>
           </div>
         </div>
 
-        <div className="relative">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setShowMenu(!showMenu);
-            }}
-            className="p-2 text-gray-400 hover:text-white transition-colors"
-          >
-            <FaEllipsisV size={14} />
-          </button>
-
-          {/* Dropdown Menu */}
-          {showMenu && (
-            <div
-              ref={menuRef}
-              className="absolute right-0 top-full mt-1 w-48 py-2 bg-[#25262C] rounded-lg shadow-lg z-10"
+        <div className="flex items-center gap-2">
+          <div className="relative">
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              disabled={isUpdating}
+              className={`p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31] ${
+                isUpdating ? 'opacity-75' : ''
+              }`}
             >
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onEdit(task);
-                  setShowMenu(false);
-                }}
-                className="w-full px-4 py-2 text-left text-gray-300 hover:bg-[#1E1F25] hover:text-white transition-colors"
+              <FaEllipsisV size={14} />
+            </button>
+
+            {/* Dropdown Menu */}
+            {showMenu && (
+              <div
+                ref={menuRef}
+                className="absolute right-0 top-full mt-1 w-48 py-2 bg-[#25262C] rounded-lg shadow-lg z-10"
               >
-                Edit Task
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDelete(task.id);
-                  setShowMenu(false);
-                }}
-                className="w-full px-4 py-2 text-left text-red-500 hover:bg-[#1E1F25] hover:text-red-400 transition-colors"
-              >
-                Delete Task
-              </button>
-            </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onEdit(localTask);
+                    setShowMenu(false);
+                  }}
+                  className="w-full px-4 py-2 text-left text-gray-300 hover:bg-[#1E1F25] hover:text-white transition-colors"
+                >
+                  Edit Task
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onDelete(localTask.id);
+                    setShowMenu(false);
+                  }}
+                  className="w-full px-4 py-2 text-left text-red-500 hover:bg-[#1E1F25] hover:text-red-400 transition-colors"
+                >
+                  Delete Task
+                </button>
+              </div>
+            )}
+          </div>
+
+          {localTask.subtasks && localTask.subtasks.length > 0 && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              disabled={isUpdating}
+              className={`p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31] ${
+                isUpdating ? 'opacity-75' : ''
+              }`}
+            >
+              {isExpanded ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
+            </button>
           )}
         </div>
-
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsExpanded(!isExpanded);
-          }}
-          className="p-2 text-gray-400 hover:text-white transition-colors"
-        >
-          {isExpanded ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
-        </button>
       </div>
 
-      {/* Subtasks will be added here later */}
+      {/* Subtasks */}
+      {isExpanded && localTask.subtasks && localTask.subtasks.length > 0 && (
+        <div className="mt-2 pl-8 space-y-2">
+          {localTask.subtasks.map((subtask) => (
+            <div
+              key={subtask.id}
+              className={`p-3 bg-[#1E1F25] rounded-lg flex items-center gap-3 transition-all duration-200 ${
+                isUpdating ? 'opacity-75' : ''
+              }`}
+            >
+              <button
+                onClick={() => handleSubtaskToggle(subtask.id)}
+                disabled={isUpdating}
+                className={`relative w-5 h-5 rounded-full flex items-center justify-center transition-colors ${
+                  subtask.completed ? 'text-pink-500' : 'text-gray-400 hover:text-pink-400'
+                } ${isUpdating ? 'opacity-75' : ''}`}
+              >
+                {subtask.completed ? (
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
+                    <path d="M16.5 8.5L10.5 14.5L7.5 11.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                )}
+              </button>
+              <span className={`text-sm transition-all duration-200 ${
+                subtask.completed ? "text-gray-500 line-through" : "text-white"
+              }`}>
+                {subtask.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useTasks } from "../../hooks/useTasks";
 import { TaskCard } from "../../components/TaskCard";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { FaPlus } from "react-icons/fa";
 import { MdArrowBackIos, MdMoreVert } from "react-icons/md";
 import { Sidebar } from "../../components/layouts/Sidebar";
@@ -58,6 +58,15 @@ export const TasksPage: React.FC = () => {
       console.error("Failed to delete task:", error);
     }
   };
+
+  // Memoize the update handler to prevent unnecessary re-renders
+  const handleUpdateTask = useCallback(async (updatedTask: Task) => {
+    try {
+      await updateTask(updatedTask);
+    } catch (error) {
+      console.error("Failed to update task:", error);
+    }
+  }, [updateTask]);
 
   const activeTasks = tasks?.filter((task) => !task.completed) || [];
   const completedTasks = tasks?.filter((task) => task.completed) || [];
@@ -122,7 +131,7 @@ export const TasksPage: React.FC = () => {
                   <TaskCard
                     key={task.id}
                     task={task}
-                    onUpdate={updateTask}
+                    onUpdate={handleUpdateTask}
                     onDelete={(taskId) => {
                       const taskToDelete = tasks?.find(t => t.id === taskId);
                       if (taskToDelete) {
@@ -145,7 +154,7 @@ export const TasksPage: React.FC = () => {
                     <TaskCard
                       key={task.id}
                       task={task}
-                      onUpdate={updateTask}
+                      onUpdate={handleUpdateTask}
                       onDelete={(taskId) => {
                         const taskToDelete = tasks?.find(t => t.id === taskId);
                         if (taskToDelete) {
@@ -176,10 +185,7 @@ export const TasksPage: React.FC = () => {
         <TaskEditModal
           task={taskToEdit}
           onClose={() => setTaskToEdit(null)}
-          onSave={(updatedTask) => {
-            updateTask(updatedTask);
-            setTaskToEdit(null);
-          }}
+          onSave={handleUpdateTask}
         />
       )}
     </div>
