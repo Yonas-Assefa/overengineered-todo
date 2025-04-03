@@ -1,14 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import type { Collection } from "../types";
+import { FaEllipsisV, FaStar } from "react-icons/fa";
 
 interface CollectionCardProps {
   collection: Collection;
+  onEdit: (collection: Collection) => void;
+  onDelete: (collection: Collection) => void;
 }
 
 export const CollectionCard: React.FC<CollectionCardProps> = ({
   collection,
+  onEdit,
+  onDelete,
 }) => {
   const navigate = useNavigate();
+  const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Calculate completion percentage
   const completionPercentage = Math.round((collection.completedTasks / collection.totalTasks) * 100) || 0;
@@ -29,10 +37,27 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
     }
   };
 
+  // Handle click outside menu
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (showMenu && menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showMenu]);
+
   return (
     <div
-      className="relative p-6 bg-[#1E1F25] rounded-2xl cursor-pointer hover:bg-[#25262C] transition-all duration-200"
-      onClick={() => navigate(`/collections/${collection.id}`)}
+      className="group relative p-6 bg-[#1E1F25] rounded-2xl cursor-pointer hover:bg-[#25262C] transition-all duration-200"
+      onClick={(e) => {
+        // Only navigate if not clicking the menu
+        if (!(e.target as HTMLElement).closest('.menu-container')) {
+          navigate(`/collections/${collection.id}`);
+        }
+      }}
     >
       <div className="flex flex-col gap-4">
         {/* Icon and Title */}
@@ -61,10 +86,52 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
         </div>
       </div>
 
+      {/* Menu Button - Only visible on hover */}
+      <div className="menu-container absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowMenu(!showMenu);
+          }}
+          className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31]"
+        >
+          <FaEllipsisV size={14} />
+        </button>
+
+        {/* Dropdown Menu */}
+        {showMenu && (
+          <div
+            ref={menuRef}
+            className="absolute right-0 top-full mt-1 w-48 py-2 bg-[#25262C] rounded-lg shadow-lg z-10"
+          >
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onEdit(collection);
+                setShowMenu(false);
+              }}
+              className="w-full px-4 py-2 text-left text-gray-300 hover:bg-[#1E1F25] hover:text-white transition-colors"
+            >
+              Edit Collection
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(collection);
+                setShowMenu(false);
+              }}
+              className="w-full px-4 py-2 text-left text-red-500 hover:bg-[#1E1F25] hover:text-red-400 transition-colors"
+            >
+              Delete Collection
+            </button>
+          </div>
+        )}
+      </div>
+
       {/* Favorite Star - Only show if favorited */}
       {collection.isFavorite && (
-        <div className="absolute top-4 right-4 text-yellow-400">
-          ⭐
+        <div className="absolute top-4 right-14 text-yellow-400">
+          <FaStar size={16} />
         </div>
       )}
     </div>

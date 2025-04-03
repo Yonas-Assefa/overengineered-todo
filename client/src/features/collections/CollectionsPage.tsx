@@ -2,9 +2,13 @@ import { useCollections } from "../../hooks/useCollections";
 import { CollectionCard } from "../../components/CollectionCard";
 import { useState } from "react";
 import { AddCollectionModal } from "../../components/modals/AddCollectionModal";
+import { EditCollectionModal } from "../../components/modals/EditCollectionModal";
+import { DeleteCollectionModal } from "../../components/modals/DeleteCollectionModal";
 import { useAddCollectionModal } from "../../hooks/useAddCollectionModal";
 import { useCreateCollection } from "../../hooks/useCreateCollection";
-import { CollectionFormData } from "../../types";
+import { useUpdateCollection } from "../../hooks/useUpdateCollection";
+import { useDeleteCollection } from "../../hooks/useDeleteCollection";
+import { Collection, CollectionFormData } from "../../types";
 import { SubmitHandler } from "react-hook-form";
 
 export const CollectionsPage = () => {
@@ -12,6 +16,10 @@ export const CollectionsPage = () => {
   const [activeFilter, setActiveFilter] = useState<"all" | "favorites">("all");
   const { isOpen, openModal, closeModal } = useAddCollectionModal();
   const { mutate: createCollection } = useCreateCollection();
+  const { mutate: updateCollection } = useUpdateCollection();
+  const { mutate: deleteCollection } = useDeleteCollection();
+  const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(null);
+  const [collectionToDelete, setCollectionToDelete] = useState<Collection | null>(null);
 
   if (isLoading) return <div className="text-white">Loading...</div>;
   if (error)
@@ -26,6 +34,17 @@ export const CollectionsPage = () => {
 
   const handleCreateCollection: SubmitHandler<CollectionFormData> = (data) => {
     createCollection(data);
+  };
+
+  const handleEditCollection = (updatedCollection: Collection) => {
+    updateCollection(updatedCollection);
+    setCollectionToEdit(null);
+  };
+
+  const handleDeleteCollection = () => {
+    if (!collectionToDelete) return;
+    deleteCollection(collectionToDelete.id);
+    setCollectionToDelete(null);
   };
 
   return (
@@ -63,7 +82,12 @@ export const CollectionsPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCollections?.map((collection) => (
-            <CollectionCard key={collection.id} collection={collection} />
+            <CollectionCard
+              key={collection.id}
+              collection={collection}
+              onEdit={(collection) => setCollectionToEdit(collection)}
+              onDelete={(collection) => setCollectionToDelete(collection)}
+            />
           ))}
 
           {activeFilter === "favorites" && filteredCollections?.length === 0 && (
@@ -88,6 +112,22 @@ export const CollectionsPage = () => {
         onClose={closeModal}
         onSubmit={handleCreateCollection}
       />
+
+      {collectionToEdit && (
+        <EditCollectionModal
+          collection={collectionToEdit}
+          onClose={() => setCollectionToEdit(null)}
+          onSave={handleEditCollection}
+        />
+      )}
+
+      {collectionToDelete && (
+        <DeleteCollectionModal
+          collection={collectionToDelete}
+          onConfirm={handleDeleteCollection}
+          onCancel={() => setCollectionToDelete(null)}
+        />
+      )}
     </div>
   );
 };

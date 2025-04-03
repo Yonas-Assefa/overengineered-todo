@@ -75,7 +75,7 @@ export const TasksPage: React.FC = () => {
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
               <button
-                onClick={() => navigate("/collections")}
+                onClick={() => navigate("/")}
                 className="text-white hover:text-pink-500 transition-colors"
               >
                 <MdArrowBackIos size={20} />

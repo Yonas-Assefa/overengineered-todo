@@ -154,3 +154,28 @@
 [2025-04-03 10:21:12] - [error] - [31mUnknown route[39m
 [2025-04-03 16:28:37] - [error] - [31mUnknown route[39m
 [2025-04-03 16:28:50] - [error] - [31m"date" must be a valid date[39m
+[2025-04-03 16:44:28] - [error] - [31mUnknown route[39m
+[2025-04-03 17:03:00] - [error] - [31mUnknown route[39m
+[2025-04-03 17:03:11] - [error] - [31mUnknown route[39m
+[2025-04-03 17:03:27] - [error] - [31mUnknown route[39m
+[2025-04-03 17:04:36] - [error] - [31mUnknown route[39m
+[2025-04-03 17:04:45] - [error] - [31mUnknown route[39m
+[2025-04-03 17:05:38] - [error] - [31mDatabase connection error: Table 'tasks' already exists[39m
+[2025-04-03 17:07:00] - [error] - [31mUnknown route[39m
+[2025-04-03 17:08:49] - [error] - [31m"id" is not allowed[39m
+[2025-04-03 17:09:50] - [error] - [31m"id" is not allowed[39m
+[2025-04-03 17:10:43] - [error] - [31m"id" is not allowed[39m
+[2025-04-03 17:12:09] - [error] - [31m"id" is not allowed[39m
+[2025-04-03 17:17:25] - [error] - [31m"date" must be a valid date[39m
+[2025-04-03 17:18:03] - [error] - [31m"date" must be a valid date[39m
+[2025-04-03 17:22:11] - [error] - [31mUnknown route[39m
+[2025-04-03 17:22:13] - [error] - [31mUnknown route[39m
+[2025-04-03 17:24:07] - [error] - [31mUnknown route[39m
+[2025-04-03 17:25:23] - [error] - [31m"recurrencePattern" must be a string[39m
+[2025-04-03 17:28:53] - [error] - [31m"recurrencePattern" must be a string[39m
+[2025-04-03 17:34:24] - [error] - [31m"recurrencePattern" must be a string[39m
+[2025-04-03 17:34:56] - [error] - [31m"collection" is not allowed[39m
+[2025-04-03 17:36:05] - [error] - [31m"recurrencePattern" must be a string[39m
+[2025-04-03 17:37:01] - [error] - [31m"collection" is not allowed[39m
+[2025-04-03 17:39:06] - [error] - [31m"collection" is not allowed[39m
+[2025-04-03 17:40:04] - [error] - [31m"subtasks" is not allowed[39m
