@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import type { Task } from "../types";
 import { FaChevronDown, FaChevronUp, FaEllipsisV } from "react-icons/fa";
+import { format, parseISO } from "date-fns";
 
 interface TaskCardProps {
   task: Task;
@@ -127,6 +128,27 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showMenu]);
 
+  // Format the date for display
+  const formatDate = (dateString: string) => {
+    try {
+      const date = parseISO(dateString);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      const taskDate = new Date(date);
+      taskDate.setHours(0, 0, 0, 0);
+      
+      if (taskDate.getTime() === today.getTime()) {
+        return <span className="text-pink-500">Today</span>;
+      }
+      
+      return format(date, 'MMM d, yyyy');
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return dateString;
+    }
+  };
+
   return (
     <div 
       className={`group transition-all duration-200 ${
@@ -166,11 +188,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({
               {localTask.title}
             </div>
             <div className="text-sm text-gray-500">
-              {localTask.date === 'Today' ? (
-                <span className="text-pink-500">Today</span>
-              ) : (
-                localTask.date
-              )}
+              {formatDate(localTask.date)}
             </div>
           </div>
         </div>

@@ -188,3 +188,11 @@
 [2025-04-03 19:47:08] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_54fc42a253a8338488ec1f960ad` FOREIGN KEY (`parent_task_id`) REFERENCES `tasks` (`id`))[39m
 [2025-04-03 19:48:31] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_54fc42a253a8338488ec1f960ad` FOREIGN KEY (`parent_task_id`) REFERENCES `tasks` (`id`))[39m
 [2025-04-03 19:54:11] - [error] - [31mParent task not found[39m
+[2025-04-03 20:06:07] - [error] - [31m"date" must be a valid date[39m
+[2025-04-03 20:14:56] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:15:01] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:15:02] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:15:03] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:15:07] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:19:44] - [error] - [31m"description" must be a string[39m
+[2025-04-03 20:19:47] - [error] - [31m"description" must be a string[39m

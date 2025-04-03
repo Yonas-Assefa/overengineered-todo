@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Task, Subtask } from '../../types';
 import { FaPlus, FaTrash, FaPen } from 'react-icons/fa';
+import { format, parseISO } from 'date-fns';
 
 interface TaskEditModalProps {
   task: Task;
@@ -19,6 +20,14 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
   const [editingSubtask, setEditingSubtask] = useState<{ id: number; title: string } | null>(null);
   const [isSaving, setIsSaving] = useState(false);
+  const [dueDate, setDueDate] = useState(() => {
+    try {
+      return format(parseISO(task.date), 'yyyy-MM-dd');
+    } catch (error) {
+      console.error('Error parsing date:', error);
+      return format(new Date(), 'yyyy-MM-dd');
+    }
+  });
   const saveTimeoutRef = useRef<number | null>(null);
   const isMountedRef = useRef(true);
 
@@ -27,6 +36,11 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
     setTitle(task.title);
     setCompleted(task.completed);
     setSubtasks(task.subtasks || []);
+    try {
+      setDueDate(format(parseISO(task.date), 'yyyy-MM-dd'));
+    } catch (error) {
+      console.error('Error parsing date:', error);
+    }
   }, [task]);
 
   // Clean up on unmount
@@ -45,9 +59,13 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
 
     setIsSaving(true);
     try {
+      // Format the date to ISO string for the API
+      const formattedDate = new Date(dueDate).toISOString();
+      
       const updatedTask = {
         ...task,
         title: title.trim(),
+        date: formattedDate,
         completed,
         subtasks: subtasks.map(subtask => ({
           ...subtask,
@@ -137,6 +155,19 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
               disabled={isSaving}
               className="w-full p-3 bg-[#17181C] text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 disabled:opacity-75"
               placeholder="Task title"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-400 mb-2">
+              Due Date
+            </label>
+            <input
+              type="date"
+              value={dueDate}
+              onChange={(e) => setDueDate(e.target.value)}
+              disabled={isSaving}
+              className="w-full p-3 bg-[#17181C] text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 disabled:opacity-75"
             />
           </div>
 
@@ -235,7 +266,7 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
                           Save
                         </button>
                       </div>
-                    ) : (
+                    ) :
                       <>
                         <span className={`flex-1 text-sm ${subtask.completed ? 'text-gray-500 line-through' : 'text-white'}`}>
                           {subtask.title}
@@ -259,14 +290,14 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
                           </button>
                         </div>
                       </>
-                    )}
+                    }
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="flex justify-end gap-3 mt-8">
+          <div className="flex justify-end gap-3 pt-4">
             <button
               type="button"
               onClick={onClose}
@@ -277,10 +308,10 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
             </button>
             <button
               type="submit"
-              disabled={isSaving}
+              disabled={isSaving || !title.trim()}
               className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors disabled:opacity-75"
             >
-              {isSaving ? 'Saving...' : 'Save Changes'}
+              Save Changes
             </button>
           </div>
         </form>

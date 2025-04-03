@@ -2,12 +2,13 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useTasks } from "../../hooks/useTasks";
 import { TaskCard } from "../../components/TaskCard";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
 import { MdArrowBackIos, MdMoreVert } from "react-icons/md";
 import { Sidebar } from "../../components/layouts/Sidebar";
 import { DeleteConfirmationModal } from "../../components/modals/DeleteConfirmationModal";
 import { TaskEditModal } from "../../components/modals/TaskEditModal";
+import { CreateTaskModal } from "../../components/modals/CreateTaskModal";
 import { Task } from "../../types";
 
 export const TasksPage: React.FC = () => {
@@ -16,8 +17,7 @@ export const TasksPage: React.FC = () => {
   const { tasksQuery, collectionQuery, createTask, updateTask, deleteTask } =
     useTasks(Number(collectionId));
 
-  const [showAddTask, setShowAddTask] = useState(false);
-  const [newTaskTitle, setNewTaskTitle] = useState("");
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
   const [taskToEdit, setTaskToEdit] = useState<Task | null>(null);
   
@@ -25,6 +25,7 @@ export const TasksPage: React.FC = () => {
     data: tasks,
     isLoading: tasksLoading,
     error: tasksError,
+    refetch: refetchTasks
   } = tasksQuery;
   const {
     data: collection,
@@ -32,19 +33,23 @@ export const TasksPage: React.FC = () => {
     error: collectionError,
   } = collectionQuery;
 
-  const handleCreateTask = async (e?: React.KeyboardEvent) => {
-    if (e && e.key !== "Enter") return;
-    if (!newTaskTitle.trim()) return;
+  // Refetch tasks when the modal is closed after creating a task
+  useEffect(() => {
+    if (!showCreateTaskModal && tasks) {
+      refetchTasks();
+    }
+  }, [showCreateTaskModal, refetchTasks, tasks]);
 
+  const handleCreateTask = async (taskData: { title: string; date: string }) => {
     try {
       await createTask({
-        title: newTaskTitle,
-        date: "Today",
+        title: taskData.title,
+        date: taskData.date,
         completed: false,
         collectionId: Number(collectionId),
       });
-      setNewTaskTitle("");
-      setShowAddTask(false);
+      // Close the modal after successful creation
+      setShowCreateTaskModal(false);
     } catch (error) {
       console.error("Failed to create task:", error);
     }
@@ -97,29 +102,12 @@ export const TasksPage: React.FC = () => {
           </div>
 
           <button
-            onClick={() => setShowAddTask(true)}
-            className={`flex items-center gap-2 text-sm font-medium mb-8 ${
-              showAddTask ? "text-pink-500" : "text-gray-400 hover:text-white"
-            } transition-colors`}
+            onClick={() => setShowCreateTaskModal(true)}
+            className="flex items-center gap-2 text-sm font-medium mb-8 text-gray-400 hover:text-white transition-colors"
           >
             <FaPlus size={12} className="text-pink-500" />
             Add a task
           </button>
-
-          {showAddTask && (
-            <div className="mb-8">
-              <input
-                type="text"
-                value={newTaskTitle}
-                onChange={(e) => setNewTaskTitle(e.target.value)}
-                onKeyDown={handleCreateTask}
-                onBlur={() => newTaskTitle.trim() && handleCreateTask()}
-                placeholder="Task name"
-                className="w-full p-4 bg-[#1E1F25] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 placeholder-gray-500"
-                autoFocus
-              />
-            </div>
-          )}
 
           <div className="space-y-8">
             <div>
@@ -188,6 +176,13 @@ export const TasksPage: React.FC = () => {
           onSave={handleUpdateTask}
         />
       )}
+
+      {/* Create Task Modal */}
+      <CreateTaskModal
+        isOpen={showCreateTaskModal}
+        onClose={() => setShowCreateTaskModal(false)}
+        onSubmit={handleCreateTask}
+      />
     </div>
   );
 };
