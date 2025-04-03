@@ -2,6 +2,7 @@ import { TaskSchema } from "../lib/schemas";
 import { Task, TaskForExcludeFields } from "../types";
 import { BASE_API_URL } from "../config/url.config";
 import { excludeFields } from "../utils/excludeFields";
+import { deepRemoveEmpty } from "../utils/deepRemoveEmpty";
 
 export const fetchTasksByCollection = async (
   collectionId: number
@@ -26,10 +27,11 @@ export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
 export const updateTask = async (task: Task): Promise<Task> => {
   console.log("task", task);
   const payload = excludeFields(task as TaskForExcludeFields, ['id', 'subtasks', 'collection', 'createdAt', 'updatedAt', 'recurrencePattern']);
+  const cleanedPayload = deepRemoveEmpty(payload);
   const response = await fetch(`${BASE_API_URL}/tasks/${task.id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(cleanedPayload),
   });
   const data = await response.json();
   return TaskSchema.parse(data);
