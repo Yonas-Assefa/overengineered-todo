@@ -18,7 +18,7 @@ export const Navbar = () => {
       <div className="flex items-center gap-4 text-gray-400">
         {isCollectionDetail && (
           <Link
-            to="/collections"
+            to="/"
             className="flex items-center gap-2 pr-4 text-sm font-medium hover:text-white transition-colors"
           >
             <FaBars size={18} />
@@ -26,7 +26,7 @@ export const Navbar = () => {
         )}
 
         <Link
-          to="/collections"
+          to="/"
           className={`flex items-center gap-2 text-sm font-medium hover:text-white transition-colors ${
             location.pathname === "/collections" ? "text-white" : ""
           }`}

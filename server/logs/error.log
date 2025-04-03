@@ -179,3 +179,12 @@
 [2025-04-03 17:37:01] - [error] - [31m"collection" is not allowed[39m
 [2025-04-03 17:39:06] - [error] - [31m"collection" is not allowed[39m
 [2025-04-03 17:40:04] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-03 19:35:56] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 19:36:13] - [error] - [31m"date" is required[39m
+[2025-04-03 19:37:05] - [error] - [31m"parentTaskId" must be a number[39m
+[2025-04-03 19:37:17] - [error] - [31mExpected double-quoted property name in JSON at position 84 (line 6 column 1)[39m
+[2025-04-03 19:38:06] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 19:45:38] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_54fc42a253a8338488ec1f960ad` FOREIGN KEY (`parent_task_id`) REFERENCES `tasks` (`id`))[39m
+[2025-04-03 19:47:08] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_54fc42a253a8338488ec1f960ad` FOREIGN KEY (`parent_task_id`) REFERENCES `tasks` (`id`))[39m
+[2025-04-03 19:48:31] - [error] - [31mCannot delete or update a parent row: a foreign key constraint fails (`task-database-test`.`tasks`, CONSTRAINT `FK_54fc42a253a8338488ec1f960ad` FOREIGN KEY (`parent_task_id`) REFERENCES `tasks` (`id`))[39m
+[2025-04-03 19:54:11] - [error] - [31mParent task not found[39m

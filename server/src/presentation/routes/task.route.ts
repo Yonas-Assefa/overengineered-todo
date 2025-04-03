@@ -108,7 +108,7 @@ export class TaskRouter {
      * /tasks/{id}:
      *   patch:
      *     summary: Update a task
-     *     description: Updates an existing task’s details, including toggling completion.
+     *     description: Updates an existing task's details, including toggling completion.
      *     tags: [Tasks]
      *     parameters:
      *       - in: path
@@ -252,8 +252,9 @@ export class TaskRouter {
      */
     this.router
       .route("/:id/subtasks")
-      .post(validate({ body: createSubTaskSchema }), (req, res, next) =>
-        this.controller.createSubtask(req, res, next)
+      .post(
+        validate({ body: createSubTaskSchema }),
+        (req, res, next) => this.controller.createSubtask(req, res, next)
       );
 
     /**
@@ -304,5 +305,44 @@ export class TaskRouter {
         validate({ body: updateTaskSchema }),
         this.controller.updateSubtask
       );
+
+    /**
+     * @swagger
+     * /tasks/{id}/subtasks/{subtaskId}:
+     *   delete:
+     *     summary: Delete a subtask
+     *     description: Deletes a subtask from its parent task.
+     *     tags: [Tasks]
+     *     parameters:
+     *       - in: path
+     *         name: id
+     *         required: true
+     *         schema:
+     *           type: integer
+     *         description: The parent task ID
+     *       - in: path
+     *         name: subtaskId
+     *         required: true
+     *         schema:
+     *           type: integer
+     *         description: The subtask ID to delete
+     *     responses:
+     *       204:
+     *         description: Subtask deleted successfully
+     *       404:
+     *         description: Subtask not found or not a child of the parent task
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/Error'
+     *             example:
+     *               status: 404
+     *               message: "Subtask not found or not a child of this parent"
+     */
+    this.router
+      .route("/:id/subtasks/:subtaskId")
+      .delete(this.controller.deleteSubtask);
+
+    return this.router;
   }
 }

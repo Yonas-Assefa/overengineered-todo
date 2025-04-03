@@ -45,7 +45,10 @@ export class TaskEntity {
   @JoinColumn({ name: "collection_id" })
   collection!: CollectionEntity;
 
-  @ManyToOne(() => TaskEntity, (task) => task.subtasks, { nullable: true })
+  @ManyToOne(() => TaskEntity, (task) => task.subtasks, { 
+    nullable: true,
+    onDelete: "CASCADE"
+  })
   @JoinColumn({ name: "parent_task_id" })
   parentTask?: TaskEntity;
 

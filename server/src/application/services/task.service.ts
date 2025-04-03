@@ -78,7 +78,16 @@ export class TaskService {
   }
 
   async deleteTask(id: number): Promise<void> {
-    await this.getTaskById(id);
+    const task = await this.getTaskById(id);
+    
+    // First delete all subtasks
+    if (task.subtasks && task.subtasks.length > 0) {
+      for (const subtask of task.subtasks) {
+        await this.taskRepository.delete(subtask.id);
+      }
+    }
+    
+    // Then delete the parent task
     return this.taskRepository.delete(id);
   }
 
@@ -150,5 +159,16 @@ export class TaskService {
     return completed !== undefined
       ? tasks.filter((t) => t.completed === completed)
       : tasks;
+  }
+
+  async deleteSubtask(parentId: number, subtaskId: number): Promise<void> {
+    const subtask = await this.taskRepository.findById(subtaskId);
+    if (!subtask || subtask.parentTask?.id !== parentId) {
+      throw new ApiError(
+        httpStatus.NOT_FOUND,
+        "Subtask not found or not a child of this parent"
+      );
+    }
+    return this.taskRepository.delete(subtaskId);
   }
 }

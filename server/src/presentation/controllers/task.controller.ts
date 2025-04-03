@@ -72,12 +72,13 @@ export class TaskController {
       const subtaskData: CreateTaskDto = {
         ...req.body,
         parentTaskId: parentId,
+        date: req.body.date || new Date(),
       };
 
-      const subtask = await this.service.create(subtaskData);
+      const subtask = await this.service.createTask(subtaskData);
       res.status(httpStatus.CREATED).json(subtask);
     } catch (error) {
-      next(error); // Critical: Pass errors to Express error handler
+      next(error);
     }
   }
 
@@ -110,6 +111,17 @@ export class TaskController {
       res.status(httpStatus.OK).json(tasks);
     } catch (error) {
       next(error); // Critical: Pass errors to Express error handler
+    }
+  }
+
+  async deleteSubtask(req: Request, res: Response, next: NextFunction) {
+    try {
+      const parentId = parseInt(req.params.id);
+      const subtaskId = parseInt(req.params.subtaskId);
+      await this.service.deleteSubtask(parentId, subtaskId);
+      res.status(httpStatus.NO_CONTENT).send();
+    } catch (error) {
+      next(error);
     }
   }
 }

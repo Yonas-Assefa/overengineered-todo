@@ -25,7 +25,7 @@ export const updateTaskSchema = Joi.object({
 export const createSubTaskSchema = Joi.object({
   title: Joi.string().max(255).required(),
   description: Joi.string().optional(),
-  date: Joi.date().required(),
+  date: Joi.date().optional(),
   completed: Joi.boolean().optional(),
   isRecurring: Joi.boolean().optional(),
   recurrencePattern: Joi.string().optional(),

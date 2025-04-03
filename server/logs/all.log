@@ -1716,3 +1716,184 @@
 {"level":"http","message":"\u001b[35mGET /collections 304 - - 4.144 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 17:41:13"}
 {"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 17.557 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 17:42:04"}
 {"level":"http","message":"\u001b[35mGET /collections/1 304 - - 24.365 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 17:42:04"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-03 19:34:43"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-03 19:34:43"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-03 19:34:43"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-03 19:34:43"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 4.969 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 2.763 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 3.758 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 5.378 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 200 20511 - 1.309 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/favicon-32x32.png 304 - - 0.869 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:34:47"}
+{"isOperational":false,"level":"error","statusCode":500,"timestamp":"2025-04-03 19:35:56"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 500 3870 - 14.761 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:35:56"}
+{"isOperational":true,"level":"error","statusCode":400,"timestamp":"2025-04-03 19:36:13"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 400 3434 - 4.895 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:36:13"}
+{"isOperational":true,"level":"error","statusCode":400,"timestamp":"2025-04-03 19:37:05"}
+{"level":"http","message":"\u001b[35mPOST /tasks 400 3245 - 2.901 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:37:05"}
+{"isOperational":false,"level":"error","statusCode":400,"timestamp":"2025-04-03 19:37:17"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 259 - 82.821 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:37:23"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 743 - 7.365 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:37:52"}
+{"isOperational":false,"level":"error","statusCode":500,"timestamp":"2025-04-03 19:38:06"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 500 3870 - 2.541 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:38:06"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-03 19:40:31"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-03 19:40:37"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-03 19:40:37"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-03 19:40:37"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-03 19:40:37"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 201 279 - 92.954 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:42:44"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 201 279 - 67.793 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:42:56"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 22.601 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:01"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 10.247 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:01"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 6.319 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:03"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 17.802 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:03"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 3.475 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:04"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 38.481 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:13"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 17.254 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:13"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 63.705 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:13"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 21.459 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:15"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 22.162 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:15"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 27.340 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:15"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 23.117 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:16"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 17.128 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:16"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 24.213 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:16"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 37.950 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:18"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 10.375 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:18"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 13.585 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:18"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 33.573 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:19"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 16.322 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:19"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 28.371 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:19"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 23.065 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:20"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 18.228 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:20"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 26.825 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:20"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 25.839 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:21"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 9.697 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:21"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 15.433 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:21"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 22.628 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:22"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 17.843 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:22"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 26.671 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:22"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 22.347 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:23"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 24.589 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:23"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 32.517 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:23"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 54.871 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:24"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 30.511 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:24"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 41.367 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:24"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 38.624 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:26"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 35.413 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:26"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 61.188 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:43:26"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 17.944 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:12"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 17.331 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:12"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 26.136 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:12"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 55.348 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:14"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 19.059 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:14"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 25.081 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:14"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 18.077 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:15"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 12.914 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:15"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 17.294 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:15"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 23.418 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:16"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 13.358 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:16"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 22.276 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:44:16"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 3.968 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:26"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 14.996 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:33"}
+{"isOperational":false,"level":"error","statusCode":500,"timestamp":"2025-04-03 19:45:38"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/1 500 1576 - 54.033 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:38"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 16.981 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:38"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 3.240 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:42"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 16.776 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:49"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 9.164 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:51"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 14.961 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:51"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.414 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:51"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 810 - 51.203 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:58"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1971 - 20.755 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:58"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 23.860 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:45:58"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 12.112 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:46:11"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 811 - 19.800 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:46:50"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1972 - 15.410 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:46:50"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 19.249 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:46:50"}
+{"isOperational":false,"level":"error","statusCode":500,"timestamp":"2025-04-03 19:47:08"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/1 500 1576 - 14.995 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:47:08"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 23.166 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:47:08"}
+{"isOperational":false,"level":"error","statusCode":500,"timestamp":"2025-04-03 19:48:31"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/1 500 1576 - 22.705 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:48:31"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-03 19:52:47"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-03 19:52:55"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-03 19:52:55"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-03 19:52:55"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-03 19:52:55"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 5.096 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:01"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 3.321 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:01"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 1.684 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:01"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 304 - - 1.280 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:01"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 1.503 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:01"}
+{"level":"http","message":"\u001b[35mGET /swagger/favicon-32x32.png 304 - - 0.856 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:02"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/1 204 - - 62.756 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:11"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 44.829 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:16"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 44.418 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:16"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 374 - 17.561 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:19"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 24.452 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:19"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 9.491 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:19"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 4.189 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:53:49"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-03 19:54:11"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 404 438 - 49.261 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:11"}
+{"level":"http","message":"\u001b[35mPOST /tasks/2/subtasks 201 279 - 55.296 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:23"}
+{"level":"http","message":"\u001b[35mPOST /tasks/2/subtasks 201 279 - 48.405 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:26"}
+{"level":"http","message":"\u001b[35mPOST /tasks/2/subtasks 201 279 - 51.595 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:27"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 17.337 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:29"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 2218 - 5.197 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:31"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 16.381 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:31"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.672 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:54:31"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 2.969 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:55:06"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 13.227 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 19:55:34"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-03 19:59:51"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-03 19:59:56"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-03 19:59:56"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-03 19:59:56"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-03 19:59:56"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1039 - 28.642 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:01"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 150.822 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:14"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 131.689 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:14"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 17.309 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:16"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 41.422 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:16"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 13.330 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:16"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 41.090 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:00:57"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 15.683 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:09"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 38.666 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:09"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 3.287 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:09"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 11.544 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:24"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 20.409 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:24"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.894 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:24"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.854 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:01:39"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.393 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:05"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 11.327 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:15"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 19.167 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:15"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 11.268 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:17"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 2.498 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:37"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/2 304 - - 8.163 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:44"}
+{"level":"http","message":"\u001b[35mGET /collections/2 200 123 - 16.283 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:44"}
+{"level":"http","message":"\u001b[35mPATCH /collections/1 200 120 - 37.359 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:54"}
+{"level":"http","message":"\u001b[35mGET /collections 200 611 - 10.736 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:02:54"}
+{"level":"http","message":"\u001b[35mPATCH /collections/1 200 121 - 58.623 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:00"}
+{"level":"http","message":"\u001b[35mGET /collections 200 612 - 5.054 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:00"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 132 - 50.618 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:13"}
+{"level":"http","message":"\u001b[35mGET /collections 200 745 - 14.100 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:13"}
+{"level":"http","message":"\u001b[35mPATCH /collections/7 200 133 - 18.640 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:21"}
+{"level":"http","message":"\u001b[35mGET /collections 200 746 - 5.639 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:21"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1039 - 9.495 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:27"}
+{"level":"http","message":"\u001b[35mGET /collections/1 200 121 - 30.983 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:27"}
+{"level":"http","message":"\u001b[35mGET /collections/2 304 - - 10.874 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:30"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/3 304 - - 17.294 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:30"}
+{"level":"http","message":"\u001b[35mGET /collections/3 200 121 - 36.085 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:30"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/4 304 - - 7.987 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:31"}
+{"level":"http","message":"\u001b[35mGET /collections/4 200 124 - 10.340 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:31"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2 - 8.700 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:32"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 117 - 15.909 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:32"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/7 200 2 - 10.330 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:38"}
+{"level":"http","message":"\u001b[35mGET /collections/7 200 133 - 14.403 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:38"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 11.125 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:41"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 9.043 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:43"}
+{"level":"http","message":"\u001b[35mGET /collections/2 304 - - 7.749 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:44"}
+{"level":"http","message":"\u001b[35mGET /collections/3 304 - - 7.630 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:45"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 11.103 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:03:47"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/2 204 - - 45.129 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:04:27"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 12.930 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-03 20:04:27"}

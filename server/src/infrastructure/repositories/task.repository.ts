@@ -1,4 +1,4 @@
-import type { Repository } from "typeorm";
+import { Repository, IsNull } from "typeorm";
 import { Collection } from "../../domain/entities/collection.entity";
 import { Task } from "../../domain/entities/task.entity";
 import type { ITaskRepository } from "../../domain/interfaces/repository.interface";
@@ -44,8 +44,11 @@ export class TaskRepository implements ITaskRepository {
 
   async findByCollectionId(collectionId: number): Promise<Task[]> {
     const entities = await this.repo.find({
-      where: { collection: { id: collectionId } },
-      relations: ["collection", "parentTask", "subtasks"],
+      where: { 
+        collection: { id: collectionId },
+        parentTask: IsNull()
+      },
+      relations: ["collection", "subtasks"], // We don't need parentTask relation here
     });
     return entities.map(this.toDomain.bind(this));
   }
