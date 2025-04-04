@@ -23,7 +23,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   const menuRef = useRef<HTMLDivElement>(null);
   const updateTimeoutRef = useRef<number | null>(null);
 
-  // Update local task when prop changes
   useEffect(() => {
     setLocalTask(task);
   }, [task]);
@@ -33,7 +32,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     
     setIsUpdating(true);
     
-    // Optimistically update local state
     const updatedTask = {
       ...localTask,
       completed: !localTask.completed,
@@ -48,7 +46,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     try {
       await onUpdate(updatedTask);
     } catch (error) {
-      // Revert local state on error
       setLocalTask(task);
       console.error("Failed to update task:", error);
     } finally {
@@ -61,7 +58,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     
     setIsUpdating(true);
     
-    // Optimistically update local state
     const updatedSubtasks = localTask.subtasks.map(st =>
       st.id === subtaskId ? { ...st, completed: !st.completed } : st
     );
@@ -76,17 +72,14 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     setLocalTask(updatedTask);
     
     try {
-      // Clear any pending update timeout
       if (updateTimeoutRef.current) {
         clearTimeout(updateTimeoutRef.current);
       }
       
-      // Debounce the actual API call to prevent rapid toggling
       updateTimeoutRef.current = window.setTimeout(async () => {
         await onUpdate(updatedTask);
       }, 300);
     } finally {
-      // Keep isUpdating true until the timeout completes
       if (updateTimeoutRef.current) {
         updateTimeoutRef.current = window.setTimeout(() => {
           setIsUpdating(false);
@@ -97,7 +90,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     }
   };
 
-  // Clean up timeouts on unmount
   useEffect(() => {
     return () => {
       if (updateTimeoutRef.current) {
@@ -106,7 +98,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     };
   }, []);
 
-  // Handle click outside menu
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (showMenu && menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -118,7 +109,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showMenu]);
 
-  // Format the date for display
   const formatDate = (dateString: string) => {
     try {
       const date = parseISO(dateString);
@@ -195,7 +185,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
               <FaEllipsisV size={14} />
             </button>
 
-            {/* Dropdown Menu */}
             {showMenu && (
               <div
                 ref={menuRef}
@@ -239,7 +228,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
         </div>
       </div>
 
-      {/* Subtasks */}
       {isExpanded && localTask.subtasks && localTask.subtasks.length > 0 && (
         <div className="mt-2 space-y-2 pl-8">
           {localTask.subtasks.map((subtask) => (
