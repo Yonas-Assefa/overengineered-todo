@@ -195,7 +195,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({
                 </svg>
               </div>
               <div className={`text-sm transition-all duration-200 ${
-                subtask.completed ? "text-gray-500 line-through" : "text-gray-300"
+                localTask.completed ? "text-gray-500 line-through opacity-50" : "text-gray-300"
               }`}>
                 {subtask.title}
               </div>
