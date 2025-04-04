@@ -8,6 +8,7 @@ export interface Collection {
   totalTasks: number;
   iconBg?: string;
   progressColor?: string;
+  sharedWith?: { id: number; name: string }[];
 }
 
 export interface CollectionFormData {
