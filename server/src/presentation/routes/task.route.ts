@@ -343,6 +343,40 @@ export class TaskRouter {
       .route("/:id/subtasks/:subtaskId")
       .delete(this.controller.deleteSubtask);
 
+    /**
+     * @swagger
+     * /tasks/{id}/subtasks:
+     *   get:
+     *     summary: Get all subtasks of a task
+     *     description: Retrieves all subtasks associated with a parent task.
+     *     tags: [Tasks]
+     *     parameters:
+     *       - in: path
+     *         name: id
+     *         required: true
+     *         schema:
+     *           type: integer
+     *         description: The parent task ID
+     *     responses:
+     *       200:
+     *         description: List of subtasks
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: array
+     *               items:
+     *                 $ref: '#/components/schemas/Task'
+     *       404:
+     *         description: Parent task not found
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/Error'
+     */
+    this.router
+      .route("/:id/subtasks")
+      .get(this.controller.getSubtasksByTaskId);
+
     return this.router;
   }
 }

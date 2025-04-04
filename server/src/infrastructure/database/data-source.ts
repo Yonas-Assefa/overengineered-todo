@@ -14,5 +14,5 @@ export const AppDataSource = new DataSource({
   migrationsRun: config.db.migrationsRun,
   migrationsTableName: "migrations",
   synchronize: config.env !== "production",
-  logging: config.env === "development",
+  logging: config.env === false,
 });

@@ -171,4 +171,12 @@ export class TaskService {
     }
     return this.taskRepository.delete(subtaskId);
   }
+
+  async getSubtasksByTaskId(taskId: number): Promise<Task[]> {
+    const task = await this.taskRepository.findById(taskId);
+    if (!task) {
+      throw new ApiError(httpStatus.NOT_FOUND, "Task not found");
+    }
+    return task.subtasks || [];
+  }
 }

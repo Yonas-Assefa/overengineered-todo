@@ -82,16 +82,20 @@ export class TaskController {
     }
   }
 
-  async updateSubtask(req: Request, res: Response) {
-    const parentId = parseInt(req.params.id);
-    const subtaskId = parseInt(req.params.subtaskId);
-    const subtaskData: Partial<Task> = req.body;
-    const subtask = await this.service.updateSubtask(
-      parentId,
-      subtaskId,
-      subtaskData
-    );
-    res.status(httpStatus.OK).json(subtask);
+  updateSubtask = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const parentId = parseInt(req.params.id);
+      const subtaskId = parseInt(req.params.subtaskId);
+      const subtaskData: Partial<Task> = req.body;
+      const subtask = await this.service.updateSubtask(
+        parentId,
+        subtaskId,
+        subtaskData
+      );
+      res.status(httpStatus.OK).json(subtask);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async findByCollection(req: Request, res: Response, next: NextFunction) {
@@ -114,12 +118,22 @@ export class TaskController {
     }
   }
 
-  async deleteSubtask(req: Request, res: Response, next: NextFunction) {
+  deleteSubtask = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const parentId = parseInt(req.params.id);
       const subtaskId = parseInt(req.params.subtaskId);
       await this.service.deleteSubtask(parentId, subtaskId);
       res.status(httpStatus.NO_CONTENT).send();
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  getSubtasksByTaskId = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const taskId = parseInt(req.params.id);
+      const subtasks = await this.service.getSubtasksByTaskId(taskId);
+      res.status(httpStatus.OK).json(subtasks);
     } catch (error) {
       next(error);
     }

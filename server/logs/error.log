@@ -198,3 +198,63 @@
 [2025-04-03 20:19:47] - [error] - [31m"description" must be a string[39m
 [2025-04-03 20:20:59] - [error] - [31m"description" must be a string[39m
 [2025-04-03 20:21:16] - [error] - [31m"description" must be a string[39m
+[2025-04-03 23:42:17] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 23:42:18] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 23:42:19] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 23:43:55] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-03 23:48:27] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 00:11:43] - [error] - [31mUnknown route[39m
+[2025-04-04 00:11:45] - [error] - [31mUnknown route[39m
+[2025-04-04 00:11:46] - [error] - [31mUnknown route[39m
+[2025-04-04 00:11:51] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 00:11:51] - [error] - [31mUnknown route[39m
+[2025-04-04 00:11:53] - [error] - [31mUnknown route[39m
+[2025-04-04 00:13:56] - [error] - [31mUnknown route[39m
+[2025-04-04 00:13:58] - [error] - [31mUnknown route[39m
+[2025-04-04 00:15:19] - [error] - [31mUnknown route[39m
+[2025-04-04 00:15:23] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 00:15:23] - [error] - [31mUnknown route[39m
+[2025-04-04 00:15:26] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 00:15:26] - [error] - [31mUnknown route[39m
+[2025-04-04 00:15:28] - [error] - [31mUnknown route[39m
+[2025-04-04 00:30:57] - [error] - [31mUnknown route[39m
+[2025-04-04 00:30:58] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:00] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:07] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:31] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:33] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:57] - [error] - [31mUnknown route[39m
+[2025-04-04 00:31:58] - [error] - [31mUnknown route[39m
+[2025-04-04 00:32:14] - [error] - [31mUnknown route[39m
+[2025-04-04 01:22:43] - [error] - [31mUnknown route[39m
+[2025-04-04 01:22:44] - [error] - [31mUnknown route[39m
+[2025-04-04 01:22:46] - [error] - [31mUnknown route[39m
+[2025-04-04 01:23:30] - [error] - [31mUnknown route[39m
+[2025-04-04 02:13:15] - [error] - [31mUnknown route[39m
+[2025-04-04 02:13:16] - [error] - [31mUnknown route[39m
+[2025-04-04 02:13:20] - [error] - [31mUnknown route[39m
+[2025-04-04 02:13:28] - [error] - [31mUnknown route[39m
+[2025-04-04 02:13:47] - [error] - [31mUnknown route[39m
+[2025-04-04 07:45:28] - [error] - [31mUnknown route[39m
+[2025-04-04 07:45:57] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-04 07:45:59] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-04 07:46:05] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-04 07:46:41] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-04 07:46:59] - [error] - [31m"subtasks" is not allowed[39m
+[2025-04-04 07:48:40] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:48:42] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:48:43] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:49:21] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:51:57] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:53:22] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:54:18] - [error] - [31mCannot read properties of undefined (reading 'service')[39m
+[2025-04-04 07:54:38] - [error] - [31mSubtask not found or not a child of this parent[39m
+[2025-04-04 08:50:39] - [error] - [31mSubtask not found or not a child of this parent[39m
+[2025-04-04 08:54:56] - [error] - [31m"taskId" is not allowed[39m
+[2025-04-04 08:55:15] - [error] - [31m"taskId" is not allowed[39m
+[2025-04-04 08:59:45] - [error] - [31m"taskId" is not allowed[39m
+[2025-04-04 09:34:08] - [error] - [31mUnknown route[39m
+[2025-04-04 09:35:56] - [error] - [31m"title" is not allowed to be empty[39m
+[2025-04-04 09:35:57] - [error] - [31m"title" is not allowed to be empty[39m
+[2025-04-04 09:35:58] - [error] - [31m"title" is not allowed to be empty[39m
+[2025-04-04 09:35:59] - [error] - [31m"title" is not allowed to be empty[39m
