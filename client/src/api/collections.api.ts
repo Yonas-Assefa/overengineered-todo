@@ -4,11 +4,7 @@ import { excludeFields } from "../utils/excludeFields";
 
 export const fetchCollections = async (): Promise<Collection[]> => {
   const { data } = await axiosInstance.get("/collections");
-  return data.map((collection: Collection) => ({
-    ...collection,
-    completedTasks: collection.completedTasks ?? 0,
-    totalTasks: collection.totalTasks ?? 0,
-  }));
+  return data;
 };
 
 export const createCollection = async (values: {
@@ -16,18 +12,14 @@ export const createCollection = async (values: {
   isFavorite: boolean;
 }): Promise<Collection> => {
   const { data } = await axiosInstance.post("/collections", values);
-  return {
-    ...data,
-    completedTasks: data.completedTasks ?? 0,
-    totalTasks: data.totalTasks ?? 0,
-  };
+  return data;
 };
 
 export const fetchCollection = async (
   collectionId: number
-): Promise<{ id: number; name: string }> => {
+): Promise<Collection> => {
   const { data } = await axiosInstance.get(`/collections/${collectionId}`);
-  return { id: data.id, name: data.name };
+  return data;
 };
 
 export const updateCollection = async (
@@ -44,11 +36,7 @@ export const updateCollection = async (
     `/collections/${collection.id}`,
     payload
   );
-  return {
-    ...data,
-    completedTasks: data.completedTasks ?? 0,
-    totalTasks: data.totalTasks ?? 0,
-  };
+  return data;
 };
 
 export const deleteCollection = async (collectionId: number): Promise<void> => {
