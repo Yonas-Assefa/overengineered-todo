@@ -1,54 +1,130 @@
-# React + TypeScript + Vite
+# Overengineered Todo Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, feature-rich todo application with collections management, task organization, and a beautiful dark-themed UI. Built with React and TypeScript.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📁 Collections management (create, edit, delete)
+- ✅ Task management within collections
+- ⭐ Favorites system
+- 🎨 Modern dark theme UI
+- 📱 Responsive design
+- 📅 Date-based task organization
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework:** React 19 with TypeScript
+- **Build Tool:** Vite
+- **Styling:** TailwindCSS
+- **State Management:** 
+  - React Query for server state
+  - Zustand for client state
+- **Form Handling:** React Hook Form with Zod validation
+- **Routing:** React Router DOM
+- **HTTP Client:** Axios
+- **UI Components:** Custom components with React Icons
+- **Date Handling:** date-fns
+- **Notifications:** react-hot-toast
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Project Structure
+
+```
+client/
+├── src/
+│   ├── api/              # API integration and services
+│   ├── assets/           # Static assets (images, fonts, etc.)
+│   ├── components/       # Reusable UI components
+│   ├── config/          # Application configuration
+│   ├── contexts/        # React context providers
+│   ├── features/        # Feature-specific components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Third-party library configurations
+│   ├── providers/       # Application providers
+│   ├── routes/          # Route definitions and components
+│   ├── schemas/         # Validation schemas
+│   ├── stores/          # State management stores
+│   ├── types/           # TypeScript type definitions
+│   ├── utils/           # Utility functions
+│   ├── App.css          # Root application styles
+│   ├── index.css        # Global styles
+│   ├── main.tsx         # Application entry point
+│   └── vite-env.d.ts    # Vite environment types
+├── .env                 # Environment variables
+├── .env.example         # Example environment variables
+├── .gitignore          # Git ignore rules
+├── eslint.config.js     # ESLint configuration
+├── index.html          # HTML entry point
+├── package.json        # Project dependencies and scripts
+├── tsconfig.json       # TypeScript configuration
+├── tsconfig.node.json  # TypeScript Node configuration
+└── vite.config.ts      # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Navigate to the client directory:
+   ```bash
+   cd client
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` with your configuration:
+   ```
+   VITE_API_URL=http://localhost:3000
+   ```
+
+### Development
+
+Start the development server:
+```bash
+npm run dev
 ```
+
+The application will be available at `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## 🧪 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🔧 Configuration
+
+- `vite.config.ts` - Vite configuration
+- `tsconfig.json` - TypeScript configuration
+- `eslint.config.js` - ESLint configuration
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
