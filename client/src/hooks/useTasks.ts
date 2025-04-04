@@ -15,7 +15,7 @@ export const useTasks = (collectionId: number) => {
   const tasksQuery = useQuery({
     queryKey: ["tasksofacollection", collectionId],
     queryFn: () => fetchTasksByCollection(collectionId),
-    staleTime: 0 // Allow refetching when needed
+    staleTime: 0, // Allow refetching when needed
   });
 
   const collectionQuery = useQuery({
@@ -27,125 +27,142 @@ export const useTasks = (collectionId: number) => {
     mutationFn: createTask,
     onMutate: async (newTask) => {
       // Cancel any outgoing refetches
-      await queryClient.cancelQueries({ queryKey: ["tasksofacollection", collectionId] });
-      
+      await queryClient.cancelQueries({
+        queryKey: ["tasksofacollection", collectionId],
+      });
+
       // Get the current state
-      const previousTasks = queryClient.getQueryData<Task[]>(["tasksofacollection", collectionId]) || [];
-      
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
+
       // Create an optimistic task with a temporary ID
       const optimisticTask = { ...newTask, id: Date.now() };
-      
+
       // Update the cache with the optimistic task
-      queryClient.setQueryData(["tasksofacollection", collectionId], [...previousTasks, optimisticTask]);
-      
+      queryClient.setQueryData(
+        ["tasksofacollection", collectionId],
+        [...previousTasks, optimisticTask]
+      );
+
       return { previousTasks };
     },
     onError: (err, newTask, context) => {
       // Revert to previous state on error
       if (context?.previousTasks) {
-        queryClient.setQueryData(["tasksofacollection", collectionId], context.previousTasks);
+        queryClient.setQueryData(
+          ["tasksofacollection", collectionId],
+          context.previousTasks
+        );
       }
     },
     onSuccess: (newTask) => {
       // Get the current tasks from the cache
-      const tasks = queryClient.getQueryData<Task[]>(["tasksofacollection", collectionId]) || [];
-      
+      const tasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
+
       // Remove any optimistic tasks (those with temporary IDs)
-      const filteredTasks = tasks.filter(t => !t.id.toString().includes('.'));
-      
+      const filteredTasks = tasks.filter((t) => !t.id.toString().includes("."));
+
       // Add the new task from the server
-      queryClient.setQueryData(["tasksofacollection", collectionId], [...filteredTasks, newTask]);
-      
+      queryClient.setQueryData(
+        ["tasksofacollection", collectionId],
+        [...filteredTasks, newTask]
+      );
+
       // Invalidate the collection query to update any counts
       queryClient.invalidateQueries({ queryKey: ["collection", collectionId] });
     },
     onSettled: () => {
       // After the mutation is settled (success or error), refetch the tasks
-      queryClient.invalidateQueries({ queryKey: ["tasksofacollection", collectionId] });
-    }
+      queryClient.invalidateQueries({
+        queryKey: ["tasksofacollection", collectionId],
+      });
+    },
   });
 
+  // hooks/useTasks.ts
   const updateTaskMutation = useMutation({
     mutationFn: updateTask,
     onMutate: async (updatedTask) => {
-      // Cancel any outgoing refetches
-      await queryClient.cancelQueries({ 
+      await queryClient.cancelQueries({
         queryKey: ["tasksofacollection", collectionId],
-        exact: true 
       });
-      
-      // Get the current state
-      const previousTasks = queryClient.getQueryData<Task[]>(["tasksofacollection", collectionId]) || [];
-      
-      // Create a deep copy of the task to update to preserve all fields
-      const taskToUpdate = previousTasks.find(t => t.id === updatedTask.id);
-      if (!taskToUpdate) return { previousTasks };
 
-      // Create optimistic update with a timestamp to track when it was created
-      const optimisticTasks = previousTasks.map(task => 
-        task.id === updatedTask.id 
-          ? { 
-              ...taskToUpdate,
-              ...updatedTask,
-              subtasks: updatedTask.subtasks || taskToUpdate.subtasks,
-              collectionId: taskToUpdate.collectionId,
-              date: updatedTask.date || taskToUpdate.date,
-              _optimisticUpdate: Date.now() // Add a timestamp to track when this update was made
-            }
-          : task
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
+
+      const optimisticTasks = previousTasks.map((task) =>
+        task.id === updatedTask.id ? { ...task, ...updatedTask } : task
       );
-      
-      // Apply optimistic update
-      queryClient.setQueryData(["tasksofacollection", collectionId], optimisticTasks);
-      
-      return { previousTasks, optimisticTasks };
+
+      queryClient.setQueryData(
+        ["tasksofacollection", collectionId],
+        optimisticTasks
+      );
+
+      return { previousTasks };
     },
     onError: (err, updatedTask, context) => {
-      // Revert to previous state on error
       if (context?.previousTasks) {
-        queryClient.setQueryData(["tasksofacollection", collectionId], context.previousTasks);
+        queryClient.setQueryData(
+          ["tasksofacollection", collectionId],
+          context.previousTasks
+        );
       }
     },
-    onSettled: () => {
-      // After the mutation is settled (success or error), invalidate the query
-      // This will trigger a refetch from the server
-      queryClient.invalidateQueries({ 
-        queryKey: ["tasksofacollection", collectionId],
-        exact: true
-      });
-      
-      // Also invalidate the collection query
-      queryClient.invalidateQueries({ 
-        queryKey: ["collection", collectionId],
-        exact: true
-      });
-    }
+    onSuccess: (data) => {
+      // Only update the specific task that was changed
+      queryClient.setQueryData(
+        ["tasksofacollection", collectionId],
+        (old: Task[] | undefined) => {
+          if (!old) return [data];
+          return old.map((task) => (task.id === data.id ? data : task));
+        }
+      );
+    },
+    // Remove onSettled to prevent immediate refetch
   });
-
   const deleteTaskMutation = useMutation({
     mutationFn: deleteTask,
     onMutate: async (taskId) => {
-      await queryClient.cancelQueries({ 
+      await queryClient.cancelQueries({
         queryKey: ["tasksofacollection", collectionId],
-        exact: true 
+        exact: true,
       });
-      const previousTasks = queryClient.getQueryData<Task[]>(["tasksofacollection", collectionId]) || [];
-      
-      queryClient.setQueryData(["tasksofacollection", collectionId], 
-        previousTasks.filter(task => task.id !== taskId)
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
+
+      queryClient.setQueryData(
+        ["tasksofacollection", collectionId],
+        previousTasks.filter((task) => task.id !== taskId)
       );
-      
+
       return { previousTasks };
     },
     onError: (err, taskId, context) => {
       if (context?.previousTasks) {
-        queryClient.setQueryData(["tasksofacollection", collectionId], context.previousTasks);
+        queryClient.setQueryData(
+          ["tasksofacollection", collectionId],
+          context.previousTasks
+        );
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ 
+      queryClient.invalidateQueries({
         queryKey: ["collection", collectionId],
-        exact: true
+        exact: true,
       });
     },
   });
@@ -159,9 +176,9 @@ export const useTasks = (collectionId: number) => {
     isLoading:
       tasksQuery.isLoading ||
       collectionQuery.isLoading ||
-      createTaskMutation.status === 'pending' ||
-      updateTaskMutation.status === 'pending' ||
-      deleteTaskMutation.status === 'pending',
+      createTaskMutation.status === "pending" ||
+      updateTaskMutation.status === "pending" ||
+      deleteTaskMutation.status === "pending",
     error:
       tasksQuery.error ||
       collectionQuery.error ||

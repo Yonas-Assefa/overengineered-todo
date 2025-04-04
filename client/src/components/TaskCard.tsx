@@ -42,27 +42,17 @@ export const TaskCard: React.FC<TaskCardProps> = ({
         completed: !localTask.completed
       }))
     };
+    
     setLocalTask(updatedTask);
     
     try {
-      // Clear any pending update timeout
-      if (updateTimeoutRef.current) {
-        clearTimeout(updateTimeoutRef.current);
-      }
-      
-      // Debounce the actual API call to prevent rapid toggling
-      updateTimeoutRef.current = window.setTimeout(async () => {
-        await onUpdate(updatedTask);
-      }, 300);
+      await onUpdate(updatedTask);
+    } catch (error) {
+      // Revert local state on error
+      setLocalTask(task);
+      console.error("Failed to update task:", error);
     } finally {
-      // Keep isUpdating true until the timeout completes
-      if (updateTimeoutRef.current) {
-        updateTimeoutRef.current = window.setTimeout(() => {
-          setIsUpdating(false);
-        }, 300);
-      } else {
-        setIsUpdating(false);
-      }
+      setIsUpdating(false);
     }
   };
 
@@ -251,37 +241,22 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 
       {/* Subtasks */}
       {isExpanded && localTask.subtasks && localTask.subtasks.length > 0 && (
-        <div className="mt-2 pl-8 space-y-2">
+        <div className="mt-2 space-y-2 pl-8">
           {localTask.subtasks.map((subtask) => (
             <div
               key={subtask.id}
-              className={`p-3 bg-[#1E1F25] rounded-lg flex items-center gap-3 transition-all duration-200 ${
-                isUpdating ? 'opacity-75' : ''
-              }`}
+              className="flex items-center gap-3 p-3 bg-[#25262C] rounded-lg"
             >
-              <button
-                onClick={() => handleSubtaskToggle(subtask.id)}
-                disabled={isUpdating}
-                className={`relative w-5 h-5 rounded-full flex items-center justify-center transition-colors ${
-                  subtask.completed ? 'text-pink-500' : 'text-gray-400 hover:text-pink-400'
-                } ${isUpdating ? 'opacity-75' : ''}`}
-              >
-                {subtask.completed ? (
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
-                    <path d="M16.5 8.5L10.5 14.5L7.5 11.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                )}
-              </button>
-              <span className={`text-sm transition-all duration-200 ${
-                subtask.completed ? "text-gray-500 line-through" : "text-white"
+              <div className="relative w-5 h-5 rounded-full flex items-center justify-center text-gray-400">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              <div className={`text-sm transition-all duration-200 ${
+                subtask.completed ? "text-gray-500 line-through" : "text-gray-300"
               }`}>
                 {subtask.title}
-              </span>
+              </div>
             </div>
           ))}
         </div>

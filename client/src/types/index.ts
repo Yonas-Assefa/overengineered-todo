@@ -29,6 +29,8 @@ export interface TaskForExcludeFields extends Task {
   createdAt: string;
   updatedAt: string;
   recurrencePattern: string;
+  collection: any;
+  subtasks: Subtask[];
 }
 
 export interface Subtask {

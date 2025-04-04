@@ -67,6 +67,7 @@ export const TasksPage: React.FC = () => {
   // Memoize the update handler to prevent unnecessary re-renders
   const handleUpdateTask = useCallback(async (updatedTask: Task) => {
     try {
+      console.log("handleUpdateTask - updatedTask:", updatedTask);
       await updateTask(updatedTask);
     } catch (error) {
       console.error("Failed to update task:", error);
