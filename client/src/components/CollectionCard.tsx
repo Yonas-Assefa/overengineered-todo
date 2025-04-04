@@ -51,7 +51,7 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
 
   return (
     <div
-      className="group relative p-6 bg-[#1E1F25] rounded-2xl cursor-pointer hover:bg-[#25262C] transition-all duration-200"
+      className="group relative p-6 bg-[#1E1F25] rounded-2xl cursor-pointer hover:bg-[#25262C] transition-all duration-200 h-[200px]"
       onClick={(e) => {
         // Only navigate if not clicking the menu
         if (!(e.target as HTMLElement).closest('.menu-container')) {

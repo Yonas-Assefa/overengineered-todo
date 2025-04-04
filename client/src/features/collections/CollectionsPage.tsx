@@ -1,5 +1,6 @@
 import { useCollections } from "../../hooks/useCollections";
 import { CollectionCard } from "../../components/CollectionCard";
+import { CollectionSkeleton } from "../../components/CollectionSkeleton";
 import { useState } from "react";
 import { AddCollectionModal } from "../../components/modals/AddCollectionModal";
 import { EditCollectionModal } from "../../components/modals/EditCollectionModal";
@@ -21,7 +22,6 @@ export const CollectionsPage = () => {
   const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(null);
   const [collectionToDelete, setCollectionToDelete] = useState<Collection | null>(null);
 
-  if (isLoading) return <div className="text-white">Loading...</div>;
   if (error)
     return (
       <div className="text-red-500">Error: {(error as Error).message}</div>
@@ -81,28 +81,41 @@ export const CollectionsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCollections?.map((collection) => (
-            <CollectionCard
-              key={collection.id}
-              collection={collection}
-              onEdit={(collection) => setCollectionToEdit(collection)}
-              onDelete={(collection) => setCollectionToDelete(collection)}
-            />
-          ))}
+          {isLoading ? (
+            <>
+              <CollectionSkeleton />
+              <CollectionSkeleton />
+              <CollectionSkeleton />
+              <CollectionSkeleton />
+              <CollectionSkeleton />
+              <CollectionSkeleton />
+            </>
+          ) : (
+            <>
+              {filteredCollections?.map((collection) => (
+                <CollectionCard
+                  key={collection.id}
+                  collection={collection}
+                  onEdit={(collection) => setCollectionToEdit(collection)}
+                  onDelete={(collection) => setCollectionToDelete(collection)}
+                />
+              ))}
 
-          {activeFilter === "favorites" && filteredCollections?.length === 0 && (
-            <div className="col-span-full text-center py-12 text-gray-400">
-              You don't have any favorite collections yet.
-            </div>
-          )}
+              {activeFilter === "favorites" && filteredCollections?.length === 0 && (
+                <div className="col-span-full text-center py-12 text-gray-400">
+                  You don't have any favorite collections yet.
+                </div>
+              )}
 
-          {activeFilter === "all" && (
-            <button
-              onClick={openModal}
-              className="w-full aspect-square flex items-center justify-center rounded-2xl bg-[#1E1F25] cursor-pointer hover:bg-[#25262C] transition-all border-2 border-dashed border-gray-700"
-            >
-              <span className="text-gray-400 text-3xl">+</span>
-            </button>
+              {activeFilter === "all" && (
+                <button
+                  onClick={openModal}
+                  className="w-full h-[200px] flex items-center justify-center rounded-2xl bg-[#1E1F25] cursor-pointer hover:bg-[#25262C] transition-all border-2 border-dashed border-gray-700"
+                >
+                  <span className="text-gray-400 text-3xl">+</span>
+                </button>
+              )}
+            </>
           )}
         </div>
       </div>
