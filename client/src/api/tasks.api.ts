@@ -1,31 +1,53 @@
-import { SubtaskSchema, TaskSchema } from "../lib/schemas";
+import { SubtaskSchema } from "../lib/schemas";
 import { Subtask, Task, TaskForExcludeFields } from "../types";
-import { BASE_API_URL } from "../config/url.config";
+import axiosInstance from "../lib/axios";
 import { excludeFields } from "../utils/excludeFields";
 import { deepRemoveEmpty } from "../utils/deepRemoveEmpty";
+
+interface TaskResponse {
+  id: number;
+  title: string;
+  date: string;
+  completed: boolean;
+  collection: {
+    id: number;
+  };
+  subtasks?: Subtask[];
+}
+
+interface SubtaskResponse {
+  id: number;
+  title: string;
+  completed: boolean;
+  parentTask: {
+    id: number;
+  };
+}
+
+const transformTaskResponse = (data: TaskResponse): Task => ({
+  id: data.id,
+  title: data.title,
+  date: data.date,
+  completed: data.completed,
+  collectionId: data.collection.id,
+  subtasks: data.subtasks,
+});
 
 export const fetchTasksByCollection = async (
   collectionId: number
 ): Promise<Task[]> => {
-  const response = await fetch(
-    `${BASE_API_URL}/tasks/collection/${collectionId}`
+  const { data } = await axiosInstance.get<TaskResponse[]>(
+    `/tasks/collection/${collectionId}`
   );
-  const data = await response.json();
-  return data;
+  return data.map(transformTaskResponse);
 };
 
 export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
-  const response = await fetch(`${BASE_API_URL}/tasks`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(task),
-  });
-  const data = await response.json();
-  return TaskSchema.parse(data);
+  const { data } = await axiosInstance.post<TaskResponse>("/tasks", task);
+  return transformTaskResponse(data);
 };
 
 export const updateTask = async (task: Task): Promise<Task> => {
-  console.log("Updating task:", task);
   const payload = excludeFields(task as TaskForExcludeFields, [
     "id",
     "collection",
@@ -37,58 +59,33 @@ export const updateTask = async (task: Task): Promise<Task> => {
   ]);
   const cleanedPayload = deepRemoveEmpty(payload);
 
-  try {
-    const response = await fetch(`${BASE_API_URL}/tasks/${task.id}`, {
-      method: "PATCH", // Changed from PATCH to PUT
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...cleanedPayload,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Error updating task:", errorData);
-      throw new Error(
-        `Failed to update task: ${response.status} ${response.statusText}`
-      );
-    }
-
-    const data = await response.json();
-
-    return TaskSchema.parse({ ...data, collectionId: data?.collection.id });
-  } catch (error) {
-    console.error("Error in updateTask:", error);
-    throw error;
-  }
+  const { data } = await axiosInstance.patch<TaskResponse>(
+    `/tasks/${task.id}`,
+    cleanedPayload
+  );
+  return transformTaskResponse(data);
 };
 
 export const deleteTask = async (taskId: number): Promise<void> => {
-  await fetch(`${BASE_API_URL}/tasks/${taskId}`, {
-    method: "DELETE",
-  });
+  await axiosInstance.delete(`/tasks/${taskId}`);
 };
 
 export const createSubtask = async (
   parentTaskId: number,
   title: string
 ): Promise<Subtask> => {
-  const response = await fetch(
-    `${BASE_API_URL}/tasks/${parentTaskId}/subtasks`,
+  const { data } = await axiosInstance.post<SubtaskResponse>(
+    `/tasks/${parentTaskId}/subtasks`,
     {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title }),
+      title,
     }
   );
-  const data = await response.json();
 
-  const subtasks = SubtaskSchema.parse({
+  return SubtaskSchema.parse({
     ...data,
     parentTaskId: data.parentTask.id,
     taskId: data.id,
   });
-  return subtasks;
 };
 
 export const updateSubtask = async (
@@ -96,56 +93,35 @@ export const updateSubtask = async (
   subtaskId: number,
   title: string
 ): Promise<Subtask> => {
-  const response = await fetch(
-    `${BASE_API_URL}/tasks/${parentTaskId}/subtasks/${subtaskId}`,
-    {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title }),
-    }
+  const { data } = await axiosInstance.patch<SubtaskResponse>(
+    `/tasks/${parentTaskId}/subtasks/${subtaskId}`,
+    { title }
   );
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to update subtask");
-  }
-
-  const data = await response.json();
-  return data;
+  console.log("Updated subtask data:", data);
+  return SubtaskSchema.parse({
+    ...data,
+    taskId: data.parentTask?.id ?? parentTaskId,
+  });
 };
 
 export const deleteSubtask = async (
   parentTaskId: number,
   subtaskId: number
 ): Promise<void> => {
-  const response = await fetch(
-    `${BASE_API_URL}/tasks/${parentTaskId}/subtasks/${subtaskId}`,
-    {
-      method: "DELETE",
-    }
-  );
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to delete subtask");
-  }
+  await axiosInstance.delete(`/tasks/${parentTaskId}/subtasks/${subtaskId}`);
 };
 
 export const getSubtasksByTaskId = async (
   taskId: number
 ): Promise<Subtask[]> => {
-  const response = await fetch(`${BASE_API_URL}/tasks/${taskId}/subtasks`);
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Failed to fetch subtasks");
-  }
-
-  const data = await response.json();
-  return data.map((subtask: any) =>
+  const { data } = await axiosInstance.get<SubtaskResponse[]>(
+    `/tasks/${taskId}/subtasks`
+  );
+  console.log("Subtasks data:", data);
+  return data.map((subtask: SubtaskResponse) =>
     SubtaskSchema.parse({
       ...subtask,
-      parentTaskId: subtask.parentTask?.id,
+      parentTaskId: taskId,
       taskId: subtask.id,
     })
   );

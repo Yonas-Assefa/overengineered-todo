@@ -150,6 +150,7 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
       );
 
       // Fetch updated subtasks after update
+
       const updatedSubtasks = await getSubtasksByTaskId(task.id);
       setSubtasks(updatedSubtasks);
       setEditingSubtask(null);

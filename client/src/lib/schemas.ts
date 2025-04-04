@@ -6,6 +6,10 @@ export const CollectionSchema = z.object({
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
   isFavorite: z.boolean(),
+  completedTasks: z.number().optional(),
+  totalTasks: z.number().optional(),
+  iconBg: z.string().optional(),
+  progressColor: z.string().optional(),
 });
 export const collectionFormSchema = z.object({
   name: z.string().min(1, "Collection name is required"),

@@ -1,60 +1,56 @@
-import { CollectionSchema } from "../lib/schemas";
 import { Collection } from "../types";
-import { BASE_API_URL } from "../config/url.config";
+import axiosInstance from "../lib/axios";
 import { excludeFields } from "../utils/excludeFields";
+
 export const fetchCollections = async (): Promise<Collection[]> => {
-  const response = await fetch(`${BASE_API_URL}/collections`);
-  const data = await response.json();
-  console.log({ data });
-  return CollectionSchema.array().parse(data);
+  const { data } = await axiosInstance.get("/collections");
+  return data.map((collection: Collection) => ({
+    ...collection,
+    completedTasks: collection.completedTasks ?? 0,
+    totalTasks: collection.totalTasks ?? 0,
+  }));
 };
 
 export const createCollection = async (values: {
   name: string;
   isFavorite: boolean;
-}) => {
-  const response = await fetch(`${BASE_API_URL}/collections`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(values),
-  });
-  const data = await response.json();
-  return CollectionSchema.parse(data);
+}): Promise<Collection> => {
+  const { data } = await axiosInstance.post("/collections", values);
+  return {
+    ...data,
+    completedTasks: data.completedTasks ?? 0,
+    totalTasks: data.totalTasks ?? 0,
+  };
 };
 
 export const fetchCollection = async (
   collectionId: number
 ): Promise<{ id: number; name: string }> => {
-  const response = await fetch(`${BASE_API_URL}/collections/${collectionId}`);
-  const data = await response.json();
-  return data;
+  const { data } = await axiosInstance.get(`/collections/${collectionId}`);
+  return { id: data.id, name: data.name };
 };
 
-export const updateCollection = async (collection: Collection): Promise<Collection> => {
-  const payload = excludeFields(collection, ['id', 'createdAt', 'updatedAt']);
-  const response = await fetch(`${BASE_API_URL}/collections/${collection.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to update collection");
-  }
-
-  return response.json();
+export const updateCollection = async (
+  collection: Collection
+): Promise<Collection> => {
+  const payload = excludeFields(collection, [
+    "id",
+    "completedTasks",
+    "totalTasks",
+    "createdAt",
+    "updatedAt",
+  ]);
+  const { data } = await axiosInstance.patch(
+    `/collections/${collection.id}`,
+    payload
+  );
+  return {
+    ...data,
+    completedTasks: data.completedTasks ?? 0,
+    totalTasks: data.totalTasks ?? 0,
+  };
 };
 
 export const deleteCollection = async (collectionId: number): Promise<void> => {
-  const response = await fetch(`${BASE_API_URL}/collections/${collectionId}`, {
-    method: "DELETE",
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to delete collection");
-  }
+  await axiosInstance.delete(`/collections/${collectionId}`);
 };
