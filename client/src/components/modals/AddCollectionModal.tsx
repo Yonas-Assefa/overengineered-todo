@@ -36,23 +36,21 @@ export const AddCollectionModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-gray-800 rounded-lg p-6 w-full max-w-md border border-gray-700">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-semibold text-white">
-            Create New Collection
-          </h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-white">
-            ×
-          </button>
-        </div>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+      <div className="bg-[#1E1F25] rounded-xl p-6 w-full max-w-md">
+        <h2 className="text-xl font-semibold text-white mb-6">
+          Create New Collection
+        </h2>
 
-        <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
           <div>
+            <label className="block text-sm font-medium text-gray-400 mb-2">
+              Collection Name
+            </label>
             <input
               {...register("name")}
-              placeholder="Collection name"
-              className="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              placeholder="Enter collection name"
+              className="w-full p-3 bg-[#17181C] text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
             {errors.name && (
               <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -64,26 +62,26 @@ export const AddCollectionModal = ({
               type="checkbox"
               id="isFavorite"
               {...register("isFavorite")}
-              className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-indigo-600 focus:ring-indigo-500"
+              className="h-4 w-4 rounded border-gray-700 bg-[#17181C] text-pink-500 focus:ring-pink-500"
             />
-            <label htmlFor="isFavorite" className="ml-2 text-sm text-gray-300">
+            <label htmlFor="isFavorite" className="ml-2 text-sm text-gray-400">
               Add to favorites
             </label>
           </div>
 
-          <div className="flex justify-end space-x-2 pt-4">
+          <div className="flex justify-end gap-3 pt-4">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded border border-gray-600 text-gray-300 hover:bg-gray-700"
+              className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700"
+              className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors"
             >
-              Create
+              Create Collection
             </button>
           </div>
         </form>
