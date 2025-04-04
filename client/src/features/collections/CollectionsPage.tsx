@@ -10,10 +10,10 @@ import { useAddCollectionModal } from "../../hooks/useAddCollectionModal";
 import { useCreateCollection } from "../../hooks/useCreateCollection";
 import { useUpdateCollection } from "../../hooks/useUpdateCollection";
 import { useDeleteCollection } from "../../hooks/useDeleteCollection";
+import { useCreateTask } from "../../hooks/useCreateTask";
 import { Collection, CollectionFormData } from "../../types";
 import { SubmitHandler } from "react-hook-form";
 import { FaEllipsisV } from "react-icons/fa";
-import { useTasks } from "../../hooks/useTasks";
 
 export const CollectionsPage = () => {
   const { data: collections, isLoading, error } = useCollections();
@@ -22,11 +22,11 @@ export const CollectionsPage = () => {
   const { mutate: createCollection } = useCreateCollection();
   const { mutate: updateCollection } = useUpdateCollection();
   const { mutate: deleteCollection } = useDeleteCollection();
+  const { mutate: createTask } = useCreateTask();
   const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(null);
   const [collectionToDelete, setCollectionToDelete] = useState<Collection | null>(null);
   const [showMenu, setShowMenu] = useState(false);
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
-  const { createTask } = useTasks(collections?.[0]?.id || 0);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

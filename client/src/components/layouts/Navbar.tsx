@@ -5,7 +5,6 @@ import {
   FaSearch,
   FaBell,
   FaThLarge,
-  FaRegFileAlt,
   FaBars,
 } from "react-icons/fa";
 

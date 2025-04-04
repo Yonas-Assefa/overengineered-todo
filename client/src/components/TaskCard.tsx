@@ -21,7 +21,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   const [isUpdating, setIsUpdating] = useState(false);
   const [localTask, setLocalTask] = useState<Task>(task);
   const menuRef = useRef<HTMLDivElement>(null);
-  const updateTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     setLocalTask(task);
@@ -52,51 +51,6 @@ export const TaskCard: React.FC<TaskCardProps> = ({
       setIsUpdating(false);
     }
   };
-
-  const handleSubtaskToggle = async (subtaskId: number) => {
-    if (!localTask.subtasks || isUpdating) return;
-    
-    setIsUpdating(true);
-    
-    const updatedSubtasks = localTask.subtasks.map(st =>
-      st.id === subtaskId ? { ...st, completed: !st.completed } : st
-    );
-    
-    const allSubtasksCompleted = updatedSubtasks.every(st => st.completed);
-    
-    const updatedTask = {
-      ...localTask,
-      completed: allSubtasksCompleted,
-      subtasks: updatedSubtasks
-    };
-    setLocalTask(updatedTask);
-    
-    try {
-      if (updateTimeoutRef.current) {
-        clearTimeout(updateTimeoutRef.current);
-      }
-      
-      updateTimeoutRef.current = window.setTimeout(async () => {
-        await onUpdate(updatedTask);
-      }, 300);
-    } finally {
-      if (updateTimeoutRef.current) {
-        updateTimeoutRef.current = window.setTimeout(() => {
-          setIsUpdating(false);
-        }, 300);
-      } else {
-        setIsUpdating(false);
-      }
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      if (updateTimeoutRef.current) {
-        clearTimeout(updateTimeoutRef.current);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

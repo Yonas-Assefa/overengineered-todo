@@ -1,5 +1,5 @@
 import { SubtaskSchema } from "../lib/schemas";
-import { Subtask, Task, TaskForExcludeFields } from "../types";
+import { Subtask, Task } from "../types";
 import axiosInstance from "../lib/axios";
 import { excludeFields } from "../utils/excludeFields";
 import { deepRemoveEmpty } from "../utils/deepRemoveEmpty";
@@ -48,14 +48,12 @@ export const createTask = async (task: Omit<Task, "id">): Promise<Task> => {
 };
 
 export const updateTask = async (task: Task): Promise<Task> => {
-  const payload = excludeFields(task as TaskForExcludeFields, [
-    "id",
-    "collection",
-    "subtasks",
-    "createdAt",
-    "updatedAt",
-    "recurrencePattern",
-    "taskId",
+  const payload = excludeFields(task as unknown as Record<string, unknown>, [
+    'id',
+    'createdAt',
+    'updatedAt',
+    'collection',
+    'subtasks',
   ]);
   const cleanedPayload = deepRemoveEmpty(payload);
 

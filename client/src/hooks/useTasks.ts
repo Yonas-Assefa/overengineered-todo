@@ -45,7 +45,7 @@ export const useTasks = (collectionId: number) => {
 
       return { previousTasks };
     },
-    onError: (err, newTask, context) => {
+    onError: (_err, _newTask, context) => {
       if (context?.previousTasks) {
         queryClient.setQueryData(
           ["tasksofacollection", collectionId],
@@ -85,7 +85,7 @@ export const useTasks = (collectionId: number) => {
 
       return { previousTasks };
     },
-    onError: (err, updatedTask, context) => {
+    onError: (_err, _updatedTask, context) => {
       if (context?.previousTasks) {
         queryClient.setQueryData(
           ["tasksofacollection", collectionId],
@@ -123,7 +123,7 @@ export const useTasks = (collectionId: number) => {
 
       return { previousTasks };
     },
-    onError: (err, taskId, context) => {
+    onError: (_err, _taskId, context) => {
       if (context?.previousTasks) {
         queryClient.setQueryData(
           ["tasksofacollection", collectionId],

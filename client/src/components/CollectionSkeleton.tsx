@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const CollectionSkeleton = () => {
   return (
     <div className="group relative p-6 bg-[#1E1F25] rounded-2xl h-[200px] animate-pulse">
