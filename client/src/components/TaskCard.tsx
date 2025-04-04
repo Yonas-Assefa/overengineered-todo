@@ -85,13 +85,13 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 
   return (
     <div 
-      className={`group transition-all duration-200 ${
-        localTask.completed ? 'opacity-50' : ''
-      } ${isUpdating ? 'pointer-events-none' : ''}`}
+      className="group transition-all duration-200"
     >
       <div
-        className={`p-4 bg-[#1E1F25] rounded-xl flex items-start gap-3 cursor-pointer hover:bg-[#25262C] transition-colors duration-200 ${
-          isUpdating ? 'opacity-75' : ''
+        className={`p-4 bg-[#1E1F25] rounded-xl flex items-start gap-3 cursor-pointer ${
+          !localTask.completed ? 'hover:bg-[#25262C]' : ''
+        } transition-colors duration-200 ${
+          isUpdating ? 'pointer-events-none' : ''
         }`}
         onDoubleClick={() => onEdit(localTask)}
       >
@@ -117,11 +117,11 @@ export const TaskCard: React.FC<TaskCardProps> = ({
         <div className="flex-1 min-w-0">
           <div className="space-y-1">
             <div className={`text-base transition-all duration-200 ${
-              localTask.completed ? "text-gray-500 line-through" : "text-white"
+              localTask.completed ? "text-gray-500 line-through opacity-50" : "text-white"
             }`}>
               {localTask.title}
             </div>
-            <div className="text-sm text-gray-500">
+            <div className={`text-sm text-gray-500 ${localTask.completed ? "opacity-50" : ""}`}>
               {formatDate(localTask.date)}
             </div>
           </div>
