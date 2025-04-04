@@ -1,3 +1,49 @@
+# Overengineered Todo
+
+A modern, full-stack todo application built with React, Node.js, and TypeScript. The project follows clean architecture principles and features a robust API server with a beautiful, responsive client interface.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v18 or higher)
+- MySQL (v8.0 or higher)
+- npm or yarn
+
+### Running the Application
+
+1. Start the server:
+   ```bash
+   cd server
+   npm install
+   cp .env.example .env  # Configure your database credentials
+   npm run dev
+   ```
+
+2. Start the client:
+   ```bash
+   cd client
+   npm install
+   cp .env.example .env  # Configure API URL if needed
+   npm run dev
+   ```
+
+The application will be available at:
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:3000
+- API Documentation: http://localhost:3000/api-docs
+
+## 📁 Project Structure
+
+```
+.
+├── client/     # React frontend application
+└── server/     # Node.js backend API server
+```
+
+For detailed documentation, see the README files in each directory:
+- [Client Documentation](./client/README.md)
+- [Server Documentation](./server/README.md)
+
 ## 📌 Project: Overengineered To-Do App
 
 Your task is to build a **CRUD To-Do Web Application** using the following stack:
@@ -7,13 +53,13 @@ Your task is to build a **CRUD To-Do Web Application** using the following stack
 - **Database**: MySQL **or** PostgreSQL (You can use an ORM eg. Prisma)
 - **Language**: **TypeScript** (for both frontend and backend)
 
-You’ll be working with a simple task management system based on a database schema we’ve defined for you below.
+You'll be working with a simple task management system based on a database schema we've defined for you below.
 
 ---
 
 ## 🗃️ Database Structure
 
-You’ll start with a database named `task-database` with two base tables:
+You'll start with a database named `task-database` with two base tables:
 
 ### `collections`
 
@@ -47,7 +93,7 @@ Each task belongs to a collection via a foreign key (`collection_id`).
 ---
 
 **Note:**  
-You are encouraged to **tweak or expand the database schema** as needed to support the features you’re building. You can choose between **MySQL or PostgreSQL**, depending on your comfort and the features you want to implement.
+You are encouraged to **tweak or expand the database schema** as needed to support the features you're building. You can choose between **MySQL or PostgreSQL**, depending on your comfort and the features you want to implement.
 
 ---
 
@@ -105,7 +151,7 @@ This is called the **Overengineered To-Do App** for a reason:
 
 - Code should be structured for testability and future scaling — including thoughtful abstractions in your API, logic, and domain models.
 
-- Your codebase should be structured in a way that makes it easy to test — even if you don’t write the actual tests.
+- Your codebase should be structured in a way that makes it easy to test — even if you don't write the actual tests.
 
 - Typed code should be expressive and safe — avoid relying on `any`, and model your data structures clearly and intentionally.
 
@@ -136,4 +182,4 @@ Please submit the following:
 
 ---
 
-We’re looking forward to seeing your take on a simple idea done really well. Overengineer away — and have fun with it!
+We're looking forward to seeing your take on a simple idea done really well. Overengineer away — and have fun with it!
