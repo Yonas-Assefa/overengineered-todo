@@ -1,16 +1,19 @@
 import { useCollections } from "../../hooks/useCollections";
 import { CollectionCard } from "../../components/CollectionCard";
 import { CollectionSkeleton } from "../../components/CollectionSkeleton";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AddCollectionModal } from "../../components/modals/AddCollectionModal";
 import { EditCollectionModal } from "../../components/modals/EditCollectionModal";
 import { DeleteCollectionModal } from "../../components/modals/DeleteCollectionModal";
+import { CreateTaskModal } from "../../components/modals/CreateTaskModal";
 import { useAddCollectionModal } from "../../hooks/useAddCollectionModal";
 import { useCreateCollection } from "../../hooks/useCreateCollection";
 import { useUpdateCollection } from "../../hooks/useUpdateCollection";
 import { useDeleteCollection } from "../../hooks/useDeleteCollection";
 import { Collection, CollectionFormData } from "../../types";
 import { SubmitHandler } from "react-hook-form";
+import { FaEllipsisV } from "react-icons/fa";
+import { useTasks } from "../../hooks/useTasks";
 
 export const CollectionsPage = () => {
   const { data: collections, isLoading, error } = useCollections();
@@ -21,6 +24,21 @@ export const CollectionsPage = () => {
   const { mutate: deleteCollection } = useDeleteCollection();
   const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(null);
   const [collectionToDelete, setCollectionToDelete] = useState<Collection | null>(null);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+  const { createTask } = useTasks(collections?.[0]?.id || 0);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (showMenu && menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showMenu]);
 
   if (error)
     return (
@@ -47,13 +65,50 @@ export const CollectionsPage = () => {
     setCollectionToDelete(null);
   };
 
+  const handleCreateTask = async (taskData: { title: string; date: string; collectionId?: number }) => {
+    if (!taskData.collectionId) return;
+    
+    try {
+      await createTask({
+        title: taskData.title,
+        date: taskData.date,
+        completed: false,
+        collectionId: taskData.collectionId,
+      });
+      setShowCreateTaskModal(false);
+    } catch (error) {
+      console.error("Failed to create task:", error);
+    }
+  };
+
   return (
     <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-semibold">Collections</h1>
           <div className="flex items-center gap-4">
-            {/* Add your notification and profile icons here */}
+            <div className="relative" ref={menuRef}>
+              <button
+                onClick={() => setShowMenu(!showMenu)}
+                className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31]"
+              >
+                <FaEllipsisV size={14} />
+              </button>
+
+              {showMenu && (
+                <div className="absolute right-0 top-full mt-1 w-48 py-2 bg-[#25262C] rounded-lg shadow-lg z-10">
+                  <button
+                    onClick={() => {
+                      setShowMenu(false);
+                      setShowCreateTaskModal(true);
+                    }}
+                    className="w-full px-4 py-2 text-left text-gray-300 hover:bg-[#1E1F25] hover:text-white transition-colors"
+                  >
+                    Create Task
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -141,6 +196,13 @@ export const CollectionsPage = () => {
           onCancel={() => setCollectionToDelete(null)}
         />
       )}
+
+      <CreateTaskModal
+        isOpen={showCreateTaskModal}
+        onClose={() => setShowCreateTaskModal(false)}
+        onSubmit={handleCreateTask}
+        collections={collections || []}
+      />
     </div>
   );
 };

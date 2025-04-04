@@ -6,7 +6,6 @@ const port = 3000;
 
 import { NextFunction, Request, Response } from "express";
 
-// Middleware to parse JSON bodies
 app.use(express.json());
 
 interface UserDto {
@@ -23,10 +22,8 @@ interface UserEntry {
   passwordhash: string;
 }
 
-// Define strong types for the memory database
 const MEMORY_DB: Record<string, UserEntry> = {};
 
-// Validation schema using Joi
 const userSchema = Joi.object({
   username: Joi.string()
     .min(3)

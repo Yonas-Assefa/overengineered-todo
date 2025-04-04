@@ -18,7 +18,6 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Get the appropriate icon and color based on collection name
   const getCollectionStyle = (name: string) => {
     switch (name.toLowerCase()) {
       case "school":
@@ -54,7 +53,6 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({
     }
   };
 
-  // Handle click outside menu
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (

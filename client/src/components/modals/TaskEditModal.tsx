@@ -40,7 +40,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
   const saveTimeoutRef = useRef<number | null>(null);
   const isMountedRef = useRef(true);
 
-  // Update state when task prop changes
   useEffect(() => {
     setTitle(task.title);
     setCompleted(task.completed);
@@ -52,7 +51,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
     }
   }, [task]);
 
-  // Clean up on unmount
   useEffect(() => {
     return () => {
       isMountedRef.current = false;
@@ -74,7 +72,7 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
         title: title.trim(),
         date: formattedDate,
         completed,
-        subtasks, // Ensure subtasks are included
+        subtasks,
       };
 
       await onSave(updatedTask);
@@ -86,7 +84,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
     }
   };
 
-  // TaskEditModal.tsx
   const handleAddSubtask = async () => {
     if (!newSubtaskTitle.trim() || isSaving) return;
 
@@ -129,7 +126,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
     setIsSaving(true);
     try {
       await deleteSubtask(task.id, subtaskId);
-      // Update local state immediately
       setSubtasks(subtasks.filter((st) => st.id !== subtaskId));
     } catch (error) {
       console.error("Error deleting subtask:", error);
@@ -137,7 +133,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
       setIsSaving(false);
     }
   };
-  // TaskEditModal.tsx
   const handleEditSubtaskSubmit = async () => {
     if (!editingSubtask || !editingSubtask.title.trim() || isSaving) return;
 
@@ -148,8 +143,6 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
         editingSubtask.id,
         editingSubtask.title.trim()
       );
-
-      // Fetch updated subtasks after update
 
       const updatedSubtasks = await getSubtasksByTaskId(task.id);
       setSubtasks(updatedSubtasks);

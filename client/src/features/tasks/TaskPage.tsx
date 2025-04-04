@@ -1,4 +1,3 @@
-// TasksPage.tsx
 import { useParams, useNavigate } from "react-router-dom";
 import { useTasks } from "../../hooks/useTasks";
 import { TaskCard } from "../../components/TaskCard";
@@ -22,12 +21,12 @@ export const TasksPage: React.FC = () => {
   const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
   const [taskToEdit, setTaskToEdit] = useState<Task | null>(null);
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 768);
-  
+
   const {
     data: tasks,
     isLoading: tasksLoading,
     error: tasksError,
-    refetch: refetchTasks
+    refetch: refetchTasks,
   } = tasksQuery;
   const {
     data: collection,
@@ -35,24 +34,25 @@ export const TasksPage: React.FC = () => {
     error: collectionError,
   } = collectionQuery;
 
-  // Handle window resize for responsive sidebar
   useEffect(() => {
     const handleResize = () => {
       setShowSidebar(window.innerWidth >= 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Refetch tasks when the modal is closed after creating a task
   useEffect(() => {
     if (!showCreateTaskModal && tasks) {
       refetchTasks();
     }
   }, [showCreateTaskModal, refetchTasks, tasks]);
 
-  const handleCreateTask = async (taskData: { title: string; date: string }) => {
+  const handleCreateTask = async (taskData: {
+    title: string;
+    date: string;
+  }) => {
     try {
       await createTask({
         title: taskData.title,
@@ -75,13 +75,16 @@ export const TasksPage: React.FC = () => {
     }
   };
 
-  const handleUpdateTask = useCallback(async (updatedTask: Task) => {
-    try {
-      await updateTask(updatedTask);
-    } catch (error) {
-      console.error("Failed to update task:", error);
-    }
-  }, [updateTask]);
+  const handleUpdateTask = useCallback(
+    async (updatedTask: Task) => {
+      try {
+        await updateTask(updatedTask);
+      } catch (error) {
+        console.error("Failed to update task:", error);
+      }
+    },
+    [updateTask]
+  );
 
   const activeTasks = tasks?.filter((task) => !task.completed) || [];
   const completedTasks = tasks?.filter((task) => task.completed) || [];
@@ -91,8 +94,7 @@ export const TasksPage: React.FC = () => {
 
   return (
     <div className="flex min-h-screen bg-[#17181C]">
-      {/* Sidebar - Hidden on mobile by default */}
-      <div className={`${showSidebar ? 'block' : 'hidden'} md:block`}>
+      <div className={`${showSidebar ? "block" : "hidden"} md:block`}>
         <Sidebar />
       </div>
 
@@ -152,7 +154,9 @@ export const TasksPage: React.FC = () => {
                       task={task}
                       onUpdate={handleUpdateTask}
                       onDelete={(taskId) => {
-                        const taskToDelete = tasks?.find(t => t.id === taskId);
+                        const taskToDelete = tasks?.find(
+                          (t) => t.id === taskId
+                        );
                         if (taskToDelete) {
                           setTaskToDelete(taskToDelete);
                         }
@@ -182,7 +186,9 @@ export const TasksPage: React.FC = () => {
                         task={task}
                         onUpdate={handleUpdateTask}
                         onDelete={(taskId) => {
-                          const taskToDelete = tasks?.find(t => t.id === taskId);
+                          const taskToDelete = tasks?.find(
+                            (t) => t.id === taskId
+                          );
                           if (taskToDelete) {
                             setTaskToDelete(taskToDelete);
                           }
