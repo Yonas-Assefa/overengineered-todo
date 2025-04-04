@@ -15,7 +15,7 @@ A modern, full-stack todo application built with React, Node.js, and TypeScript.
    ```bash
    cd server
    npm install
-   cp .env.example .env  # Configure your database credentials
+   cp .env.example .env  # Configure your database credentials and required app config variables
    npm run dev
    ```
 
