@@ -592,3 +592,36 @@
 {"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 18:41:35"}
 {"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 18:41:35"}
 {"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 18:41:35"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:25:23"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:25:35"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:25:35"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:25:35"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:25:35"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:26:48"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:26:52"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:26:52"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:26:52"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:26:52"}
+{"headers":{"accept":"application/json","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","cookie":"maintenanceMode=false","host":"localhost:3000","if-none-match":"W/\"276-57ED9UnjyzKqsrLKGR2khs3zMfQ\"","referer":"http://localhost:3000/api-docs/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 19:27:02"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 19:27:02"}
+{"error":"Table 'task-database-test.collections' doesn't exist","level":"error","message":"\u001b[31mCollectionRepository.findAll - Error\u001b[39m","stack":"QueryFailedError: Table 'task-database-test.collections' doesn't exist\n    at Query.onResult (/home/yo/Desktop/overengineered-todo/server/node_modules/typeorm/driver/mysql/MysqlQueryRunner.js:165:37)\n    at Query.execute (/home/yo/Desktop/overengineered-todo/server/node_modules/mysql2/lib/commands/command.js:36:14)\n    at PoolConnection.handlePacket (/home/yo/Desktop/overengineered-todo/server/node_modules/mysql2/lib/base/connection.js:475:34)\n    at PacketParser.onPacket (/home/yo/Desktop/overengineered-todo/server/node_modules/mysql2/lib/base/connection.js:93:12)\n    at PacketParser.executeStart (/home/yo/Desktop/overengineered-todo/server/node_modules/mysql2/lib/packet_parser.js:75:16)\n    at Socket.<anonymous> (/home/yo/Desktop/overengineered-todo/server/node_modules/mysql2/lib/base/connection.js:100:25)\n    at Socket.emit (node:events:518:28)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Readable.push (node:internal/streams/readable:392:5)","timestamp":"2025-04-07 19:27:02"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:28:25"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:28:25"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:28:25"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:28:25"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:30:51"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:31:08"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:31:08"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:31:08"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:31:08"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:31:22"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:31:29"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:31:29"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:31:29"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:31:29"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:31:50"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 19:32:00"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 19:32:00"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:32:00"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:32:00"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:32:10"}

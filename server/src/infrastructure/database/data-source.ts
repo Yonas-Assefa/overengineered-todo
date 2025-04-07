@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
   password: config.db.password,
   database: config.db.database,
   entities: [CollectionEntity, TaskEntity],
-  migrations: ["dist/src/infrastructure/database/migrations/*.js"],
+  migrations: ["dist/infrastructure/database/migrations/*.js"],
   migrationsRun: config.db.migrationsRun,
   migrationsTableName: "migrations",
   synchronize: config.env !== "production",
