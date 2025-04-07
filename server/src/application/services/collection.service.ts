@@ -2,12 +2,14 @@ import { Collection } from "../../domain/entities/collection.entity";
 import type { ICollectionRepository } from "../../domain/interfaces/repository.interface";
 import type { CreateCollectionDto, UpdateCollectionDto } from "../dtos/collection.dto";
 import { TaskRepository } from "../../infrastructure/repositories/task.repository";
+import type { CollectionRepository } from "../../infrastructure/repositories/collection.repository";
+import Logger from "../../infrastructure/middleware/logger/logger";
 
 export class CollectionService {
   private taskRepository: TaskRepository;
 
   constructor(
-    private repository: ICollectionRepository,
+    private repository: CollectionRepository,
   ) {
     this.taskRepository = new TaskRepository();
   }
@@ -53,5 +55,29 @@ export class CollectionService {
   async deleteCollection(id: number): Promise<void> {
     await this.getCollectionById(id);
     return this.repository.delete(id);
+  }
+
+  async findAll() {
+    try {
+      Logger.info("CollectionService.findAll - Starting", {
+        timestamp: new Date().toISOString()
+      });
+
+      const collections = await this.repository.findAll();
+      
+      Logger.info("CollectionService.findAll - Success", {
+        count: collections.length,
+        timestamp: new Date().toISOString()
+      });
+
+      return collections;
+    } catch (error) {
+      Logger.error("CollectionService.findAll - Error", {
+        error: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      });
+      throw error;
+    }
   }
 }

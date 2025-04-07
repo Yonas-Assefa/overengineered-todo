@@ -5,6 +5,7 @@ import type { ICollectionRepository } from "../../domain/interfaces/repository.i
 import { AppDataSource } from "../database/data-source";
 import { CollectionEntity } from "../database/entities/collection.entity";
 import type { TaskEntity } from "../database/entities/task.entity";
+import Logger from "../middleware/logger/logger";
 
 export class CollectionRepository implements ICollectionRepository {
   private repo: Repository<CollectionEntity>;
@@ -26,8 +27,27 @@ export class CollectionRepository implements ICollectionRepository {
   }
 
   async findAll(): Promise<Collection[]> {
-    const entities = await this.repo.find({ relations: ["tasks"] });
-    return entities.map(this.toDomain);
+    try {
+      Logger.info("CollectionRepository.findAll - Starting", {
+        timestamp: new Date().toISOString()
+      });
+
+      const entities = await this.repo.find({ relations: ["tasks"] });
+      
+      Logger.info("CollectionRepository.findAll - Success", {
+        count: entities.length,
+        timestamp: new Date().toISOString()
+      });
+
+      return entities.map(this.toDomain);
+    } catch (error) {
+      Logger.error("CollectionRepository.findAll - Error", {
+        error: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      });
+      throw error;
+    }
   }
 
   async findById(id: number): Promise<Collection | null> {

@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import type { CreateCollectionDto, UpdateCollectionDto } from "../../application/dtos/collection.dto";
 import type { CollectionService } from "../../application/services/collection.service";
+import Logger from "../../infrastructure/middleware/logger/logger";
 
 export class CollectionController {
   constructor(private service: CollectionService) {}
@@ -15,12 +16,29 @@ export class CollectionController {
     }
   };
 
-  findAll = async (_req: Request, res: Response, next: NextFunction) => {
+  findAll = async (req: Request, res: Response) => {
     try {
+      Logger.info("GET /collections - Starting request", {
+        query: req.query,
+        headers: req.headers,
+        timestamp: new Date().toISOString()
+      });
+
       const collections = await this.service.getAllCollections();
-      res.json(collections);
+      
+      Logger.info("GET /collections - Success", {
+        count: collections.length,
+        timestamp: new Date().toISOString()
+      });
+
+      res.status(200).json(collections);
     } catch (error) {
-      next(error);
+      Logger.error("GET /collections - Error", {
+        error: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      });
+      throw error;
     }
   };
 
