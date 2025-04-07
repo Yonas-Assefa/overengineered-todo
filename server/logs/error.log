@@ -1,2 +1,7 @@
 [2025-04-04 15:23:02] - [[31merror[39m] - [31mCollection not found[39m
 [2025-04-04 15:23:46] - [error] - [31mCollection not found[39m
+[2025-04-07 14:45:09] - [error] - [31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306[39m
+[2025-04-07 14:57:33] - [error] - [31mDatabase connection error: Unexpected strict mode reserved word[39m
+[2025-04-07 14:58:22] - [error] - [31mDatabase connection error: Unexpected strict mode reserved word[39m
+[2025-04-07 14:59:59] - [error] - [31mDatabase connection error: Unexpected strict mode reserved word[39m
+[2025-04-07 15:00:46] - [error] - [31mDatabase connection error: Unexpected strict mode reserved word[39m

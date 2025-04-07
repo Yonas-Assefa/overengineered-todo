@@ -15,6 +15,6 @@
     "types": ["node", "mocha", "chai"],
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["index.ts", "tests/**/*.ts"],
+  "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules"]
 }

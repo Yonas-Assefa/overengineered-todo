@@ -455,3 +455,72 @@
 {"level":"http","message":"\u001b[35mGET /collections/8 304 - - 24.718 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-04 16:40:50"}
 {"level":"http","message":"\u001b[35mGET /tasks/collection/8 304 - - 11.756 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-04 16:40:50"}
 {"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-04 16:43:03"}
+{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"fatal":true,"level":"error","message":"\u001b[31mDatabase connection error: connect ECONNREFUSED 127.0.0.1:3306\u001b[39m","port":3306,"stack":"Error: connect ECONNREFUSED 127.0.0.1:3306\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1610:16)","syscall":"connect","timestamp":"2025-04-07 14:45:09"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 14:47:32"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 14:47:32"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 14:47:32"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 14:47:32"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 14:47:41"}
+{"level":"error","message":"\u001b[31mDatabase connection error: Unexpected strict mode reserved word\u001b[39m","stack":"SyntaxError: Unexpected strict mode reserved word\n    at compileSourceTextModule (node:internal/modules/esm/utils:340:16)\n    at ModuleLoader.importSyncForRequire (node:internal/modules/esm/loader:318:18)\n    at loadESMFromCJS (node:internal/modules/cjs/loader:1381:24)\n    at Module._compile (node:internal/modules/cjs/loader:1503:5)\n    at Object..js (node:internal/modules/cjs/loader:1689:10)\n    at Module.load (node:internal/modules/cjs/loader:1318:32)\n    at Function._load (node:internal/modules/cjs/loader:1128:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)\n    at Module.require (node:internal/modules/cjs/loader:1340:12)","timestamp":"2025-04-07 14:57:33"}
+{"level":"error","message":"\u001b[31mDatabase connection error: Unexpected strict mode reserved word\u001b[39m","stack":"SyntaxError: Unexpected strict mode reserved word\n    at compileSourceTextModule (node:internal/modules/esm/utils:340:16)\n    at ModuleLoader.importSyncForRequire (node:internal/modules/esm/loader:318:18)\n    at loadESMFromCJS (node:internal/modules/cjs/loader:1381:24)\n    at Module._compile (node:internal/modules/cjs/loader:1503:5)\n    at Object..js (node:internal/modules/cjs/loader:1689:10)\n    at Module.load (node:internal/modules/cjs/loader:1318:32)\n    at Function._load (node:internal/modules/cjs/loader:1128:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)\n    at Module.require (node:internal/modules/cjs/loader:1340:12)","timestamp":"2025-04-07 14:58:22"}
+{"level":"error","message":"\u001b[31mDatabase connection error: Unexpected strict mode reserved word\u001b[39m","stack":"SyntaxError: Unexpected strict mode reserved word\n    at compileSourceTextModule (node:internal/modules/esm/utils:340:16)\n    at ModuleLoader.importSyncForRequire (node:internal/modules/esm/loader:318:18)\n    at loadESMFromCJS (node:internal/modules/cjs/loader:1381:24)\n    at Module._compile (node:internal/modules/cjs/loader:1503:5)\n    at Object..js (node:internal/modules/cjs/loader:1689:10)\n    at Module.load (node:internal/modules/cjs/loader:1318:32)\n    at Function._load (node:internal/modules/cjs/loader:1128:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)\n    at Module.require (node:internal/modules/cjs/loader:1340:12)","timestamp":"2025-04-07 14:59:59"}
+{"level":"error","message":"\u001b[31mDatabase connection error: Unexpected strict mode reserved word\u001b[39m","stack":"SyntaxError: Unexpected strict mode reserved word\n    at compileSourceTextModule (node:internal/modules/esm/utils:340:16)\n    at ModuleLoader.importSyncForRequire (node:internal/modules/esm/loader:318:18)\n    at loadESMFromCJS (node:internal/modules/cjs/loader:1381:24)\n    at Module._compile (node:internal/modules/cjs/loader:1503:5)\n    at Object..js (node:internal/modules/cjs/loader:1689:10)\n    at Module.load (node:internal/modules/cjs/loader:1318:32)\n    at Function._load (node:internal/modules/cjs/loader:1128:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:315:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)\n    at Module.require (node:internal/modules/cjs/loader:1340:12)","timestamp":"2025-04-07 15:00:46"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:01:36"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:01:36"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:01:36"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:01:36"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:05:05"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:05:05"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:05:05"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:05:05"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:06:52"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:07:02"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:07:02"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:07:02"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:07:02"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:07:42"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:08:25"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:08:25"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:08:25"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:08:25"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:10:27"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:10:35"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:10:35"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:10:35"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:10:35"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:11:10"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:11:17"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:11:17"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:11:17"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:11:17"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:11:55"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:12:02"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:12:02"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:12:02"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:12:02"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:12:24"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:12:33"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:12:33"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:12:33"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:12:33"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:13:30"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:13:36"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:13:36"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:13:36"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:13:36"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:14:32"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:14:40"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:14:40"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:14:40"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:14:40"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:15:12"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:15:49"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:15:49"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:15:49"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:15:49"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:17:38"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 15:23:41"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 15:23:41"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 15:23:41"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 15:23:41"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 15:24:40"}

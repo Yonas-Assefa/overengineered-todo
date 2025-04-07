@@ -4,6 +4,12 @@ import { verify } from "jsonwebtoken";
 import config from "../config/config";
 import { ApiError } from "./errors/api.error";
 
+declare module 'express' {
+  interface Request {
+    user?: string;
+  }
+}
+
 export const authenticateMiddleware = async (
   req: Request,
   res: Response,
@@ -15,7 +21,7 @@ export const authenticateMiddleware = async (
     if (!decoded || typeof decoded.sub !== "string") {
       throw new ApiError(HttpStatus.BAD_REQUEST, "bad user");
     }
-    const user =
+    const user = decoded.sub;
     if (!user) {
       throw new ApiError(HttpStatus.UNAUTHORIZED, "Please authenticate.");
     }
