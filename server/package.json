@@ -5,7 +5,8 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node src/server.ts",
-    "build": "tsc",
+    "copy-migrations": "cp -r src/infrastructure/database/migrations dist/src/infrastructure/database/",
+    "build": "tsc && npm run copy-migrations",
     "start": "node dist/server.js",
     "start:prod": "NODE_ENV=production npm run build && NODE_ENV=production npm run start",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
