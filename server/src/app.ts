@@ -45,12 +45,10 @@ app.use("/tasks", taskRouter.router);
 // Swagger UI
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// 404 Middleware (after routes)
 app.use((req: Request, res: Response, next: NextFunction) => {
   next(new ApiError(httpStatus.NOT_FOUND, "Unknown route"));
 });
 
-// Error Handling (after 404)
 app.use(errorConverter);
 app.use(errorHandler);
 
