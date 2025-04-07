@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { FaFolder } from "react-icons/fa";
 import { useCollections } from "../../hooks/useCollections";
+import { ErrorDisplay } from "../ErrorDisplay";
 
 export const Sidebar = () => {
   const { collectionId } = useParams<{ collectionId: string }>();
@@ -9,7 +10,9 @@ export const Sidebar = () => {
   if (isLoading) return <div className="text-white p-4">Loading...</div>;
   if (error)
     return (
-      <div className="text-red-500 p-4">Error: {(error as Error).message}</div>
+      <div className="w-64 bg-gray-800 h-screen p-4 overflow-y-auto">
+        <ErrorDisplay error={error} className="min-h-[100px]" />
+      </div>
     );
 
   return (

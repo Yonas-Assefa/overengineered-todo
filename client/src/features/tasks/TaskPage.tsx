@@ -10,6 +10,7 @@ import { DeleteConfirmationModal } from "../../components/modals/DeleteConfirmat
 import { TaskEditModal } from "../../components/modals/TaskEditModal";
 import { CreateTaskModal } from "../../components/modals/CreateTaskModal";
 import { Task } from "../../types";
+import { ErrorDisplay } from "../../components/ErrorDisplay";
 
 export const TasksPage: React.FC = () => {
   const { collectionId } = useParams<{ collectionId: string }>();
@@ -90,7 +91,13 @@ export const TasksPage: React.FC = () => {
   const completedTasks = tasks?.filter((task) => task.completed) || [];
 
   if (tasksError || collectionError)
-    return <div className="text-red-500">Error loading tasks</div>;
+    return (
+      <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
+        <div className="max-w-6xl mx-auto">
+          <ErrorDisplay error={tasksError || collectionError || 'An error occurred while loading tasks'} />
+        </div>
+      </div>
+    );
 
   return (
     <div className="flex min-h-screen bg-[#17181C]">

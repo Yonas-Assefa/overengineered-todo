@@ -14,6 +14,7 @@ import { useCreateTask } from "../../hooks/useCreateTask";
 import { Collection, CollectionFormData } from "../../types";
 import { SubmitHandler } from "react-hook-form";
 import { FaEllipsisV } from "react-icons/fa";
+import { ErrorDisplay } from "../../components/ErrorDisplay";
 
 export const CollectionsPage = () => {
   const { data: collections, isLoading, error } = useCollections();
@@ -42,7 +43,11 @@ export const CollectionsPage = () => {
 
   if (error)
     return (
-      <div className="text-red-500">Error: {(error as Error).message}</div>
+      <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
+        <div className="max-w-6xl mx-auto">
+          <ErrorDisplay error={error} />
+        </div>
+      </div>
     );
 
   const filteredCollections =
