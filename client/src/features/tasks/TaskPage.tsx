@@ -15,25 +15,23 @@ import { ErrorDisplay } from "../../components/ErrorDisplay";
 export const TasksPage: React.FC = () => {
   const { collectionId } = useParams<{ collectionId: string }>();
   const navigate = useNavigate();
-  const { tasksQuery, collectionQuery, createTask, updateTask, deleteTask } =
-    useTasks(Number(collectionId));
+  
+  if (!collectionId) {
+    return (
+      <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
+        <div className="max-w-6xl mx-auto">
+          <ErrorDisplay error="Invalid collection ID" />
+        </div>
+      </div>
+    );
+  }
+
+  const { tasks, isLoading: tasksLoading, error: tasksError, createTask, updateTask, deleteTask, collection } = useTasks(Number(collectionId));
 
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
   const [taskToEdit, setTaskToEdit] = useState<Task | null>(null);
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 768);
-
-  const {
-    data: tasks,
-    isLoading: tasksLoading,
-    error: tasksError,
-    refetch: refetchTasks,
-  } = tasksQuery;
-  const {
-    data: collection,
-    isLoading: collectionLoading,
-    error: collectionError,
-  } = collectionQuery;
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,12 +41,6 @@ export const TasksPage: React.FC = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    if (!showCreateTaskModal && tasks) {
-      refetchTasks();
-    }
-  }, [showCreateTaskModal, refetchTasks, tasks]);
 
   const handleCreateTask = async (taskData: {
     title: string;
@@ -90,11 +82,11 @@ export const TasksPage: React.FC = () => {
   const activeTasks = tasks?.filter((task) => !task.completed) || [];
   const completedTasks = tasks?.filter((task) => task.completed) || [];
 
-  if (tasksError || collectionError)
+  if (tasksError)
     return (
       <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
         <div className="max-w-6xl mx-auto">
-          <ErrorDisplay error={tasksError || collectionError || 'An error occurred while loading tasks'} />
+          <ErrorDisplay error={tasksError || 'An error occurred while loading tasks'} />
         </div>
       </div>
     );
@@ -122,7 +114,7 @@ export const TasksPage: React.FC = () => {
                 <MdArrowBackIos size={20} />
               </button>
               <h1 className="text-2xl font-semibold text-white">
-                {collectionLoading ? (
+                {tasksLoading ? (
                   <div className="h-8 w-32 bg-[#25262C] rounded-lg animate-pulse"></div>
                 ) : (
                   collection?.name

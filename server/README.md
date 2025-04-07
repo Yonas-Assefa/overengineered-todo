@@ -66,6 +66,7 @@ src/
 ### Security
 - **JWT**: jsonwebtoken
 - **CORS**: cors
+- **Password Hashing**: bcrypt/bcryptjs
 
 ### Validation & Documentation
 - **API Validation**: Joi
@@ -74,6 +75,7 @@ src/
 ### Testing & Development
 - **Testing Framework**: Mocha
 - **Assertions**: Chai
+- **HTTP Testing**: Supertest
 - **Linting**: Biome
 
 ### Logging & Monitoring
@@ -108,22 +110,19 @@ src/
 
    Configure the following variables in `.env` or modify those copied from .env.example if needed:
    ```env
-   PORT=3000
-   NODE_ENV=development
+   # JWT Configuration
+   JWT_SECRET=your_jwt_secret
+   BASE_URL=http://localhost:3000
    
-   # Database
+   # Database Configuration
    DB_HOST=localhost
    DB_PORT=3306
-   DB_USERNAME=your_username
+   DB_USER=your_username
    DB_PASSWORD=your_password
-   DB_DATABASE=todo_db
+   DB_NAME=your_database_name
    
-   # JWT
-   JWT_SECRET=your_jwt_secret
-   JWT_EXPIRATION=24h
-   
-   # Logging
-   LOG_LEVEL=debug
+   # Database Migrations
+   DB_MIGRATIONS_RUN=true
    ```
 
 4. Create database and run migrations:

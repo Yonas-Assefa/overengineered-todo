@@ -625,3 +625,230 @@
 {"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 19:32:00"}
 {"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 19:32:00"}
 {"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 19:32:10"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 21:09:26"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 21:09:26"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 21:09:26"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 21:09:26"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"276-57ED9UnjyzKqsrLKGR2khs3zMfQ\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:10:20"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:10:20"}
+{"count":4,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:10:20"}
+{"count":4,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:10:20"}
+{"level":"http","message":"\u001b[35mGET /collections 200 630 - 160.902 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:10:20"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 21:10:25"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 21:10:54"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 21:10:54"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 21:10:54"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 21:10:54"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"276-cUrNSryxyjajubdTLOyWkFySgpg\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:10:57"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:10:57"}
+{"count":4,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:10:57"}
+{"count":4,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:10:57"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 245.073 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:10:57"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 128 - 73.671 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:11:06"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:11:06"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:11:06"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:11:06"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:11:06"}
+{"level":"http","message":"\u001b[35mGET /collections 200 793 - 59.642 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:11:06"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"319-xsPkKU6uxR4XF91a4xDVNClMwYE\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:12:14"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 2 - 29.444 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 60.101 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 44.028 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:14"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 257 - 44.540 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:23"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 379 - 13.889 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:23"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 25.004 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:23"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 376 - 74.899 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:25"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 378 - 16.033 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:25"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 38.989 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:26"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 377 - 60.882 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:28"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 379 - 21.338 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:28"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 42.516 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:28"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 376 - 74.183 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:30"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 378 - 18.232 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:30"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 42.630 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:30"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 381 - 29.685 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:39"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 383 - 5.468 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:39"}
+{"level":"http","message":"\u001b[35mGET /collections/5 304 - - 10.470 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:39"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 382 - 70.102 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:41"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 384 - 39.994 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:42"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 60.318 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:42"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 382 - 57.982 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:49"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 384 - 11.383 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:49"}
+{"level":"http","message":"\u001b[35mGET /collections/5 304 - - 25.033 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:12:49"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 201 281 - 44.255 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:02"}
+{"level":"http","message":"\u001b[35mPOST /tasks/1/subtasks 201 280 - 45.536 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:08"}
+{"isOperational":true,"level":"error","statusCode":400,"timestamp":"2025-04-07 21:13:11"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1/subtasks/2 400 1274 - 29.977 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:11"}
+{"isOperational":true,"level":"error","statusCode":400,"timestamp":"2025-04-07 21:13:13"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1/subtasks/3 400 1274 - 7.500 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:13"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1/subtasks/3 200 396 - 60.559 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:19"}
+{"level":"http","message":"\u001b[35mGET /tasks/1/subtasks 200 451 - 13.213 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:19"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/1/subtasks/2 204 - - 27.822 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:22"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 607 - 58.336 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:23"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 609 - 22.841 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:23"}
+{"level":"http","message":"\u001b[35mGET /collections/5 304 - - 21.805 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:23"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 606 - 53.782 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:29"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 608 - 18.663 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:29"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 33.404 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:29"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/1 200 607 - 63.512 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:30"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/5 200 609 - 17.284 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:30"}
+{"level":"http","message":"\u001b[35mGET /collections/5 200 162 - 55.504 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:30"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 257 - 50.251 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:46"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/2 200 2 - 21.462 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:49"}
+{"level":"http","message":"\u001b[35mGET /collections/2 200 157 - 50.807 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:49"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 2 - 5.955 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:51"}
+{"level":"http","message":"\u001b[35mGET /collections/1 200 155 - 15.914 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:51"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/3 200 372 - 10.007 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:53"}
+{"level":"http","message":"\u001b[35mGET /collections/3 200 155 - 28.271 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:53"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/4 204 - - 22.488 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:59"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/3 200 2 - 11.749 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:59"}
+{"level":"http","message":"\u001b[35mGET /collections/3 200 155 - 25.843 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:13:59"}
+{"level":"http","message":"\u001b[35mDELETE /collections/5 204 - - 34.751 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:14:07"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"319-xsPkKU6uxR4XF91a4xDVNClMwYE\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:14:07"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:14:07"}
+{"count":4,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:14:07"}
+{"count":4,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:14:07"}
+{"level":"http","message":"\u001b[35mGET /collections 200 630 - 30.427 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:14:07"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 21:14:34"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 21:21:12"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 21:21:12"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 21:21:12"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 21:21:12"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"276-cUrNSryxyjajubdTLOyWkFySgpg\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:21:21"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:21:21"}
+{"count":4,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:21:21"}
+{"count":4,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:21:21"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 96.741 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:21:21"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"276-cUrNSryxyjajubdTLOyWkFySgpg\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:21:34"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:21:34"}
+{"count":4,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:21:34"}
+{"count":4,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:21:34"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 35.026 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:21:34"}
+{"level":"http","message":"\u001b[35mPOST /collections 201 122 - 77.053 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:21:51"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:21:51"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:21:51"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:21:51"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:21:51"}
+{"level":"http","message":"\u001b[35mGET /collections 200 787 - 64.005 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:21:51"}
+{"level":"http","message":"\u001b[35mPATCH /collections/6 200 158 - 102.978 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:00"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"313-MrHih8RFwRMDxq+DwXFwXavD+eA\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:22:00"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:22:00"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:22:00"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:22:00"}
+{"level":"http","message":"\u001b[35mGET /collections 200 789 - 43.554 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:00"}
+{"level":"http","message":"\u001b[35mPATCH /collections/6 200 159 - 42.006 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:10"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"315-6/X6al6L7tO2keD4BDQbjzU3TLY\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:22:10"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:22:10"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:22:10"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:22:10"}
+{"level":"http","message":"\u001b[35mGET /collections 200 790 - 34.497 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:10"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 261 - 40.244 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:34"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 380 - 16.622 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:39"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 83.126 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:22:39"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 381 - 44.638 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:00"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 383 - 10.044 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:00"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 20.639 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:00"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 380 - 47.842 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:09"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 382 - 9.347 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:09"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 15.640 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:09"}
+{"level":"http","message":"\u001b[35mPOST /tasks/5/subtasks 201 290 - 44.444 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:24"}
+{"level":"http","message":"\u001b[35mPOST /tasks/5/subtasks 201 291 - 35.033 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:32"}
+{"level":"http","message":"\u001b[35mPOST /tasks/5/subtasks 201 283 - 42.442 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:51"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 1073 - 53.515 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:53"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 1075 - 32.001 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:53"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 38.457 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:23:53"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 1072 - 53.731 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:13"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 1074 - 12.606 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:13"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 30.178 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:13"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 1073 - 46.280 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:20"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 1075 - 23.320 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:20"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 33.679 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:20"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 260 - 26.742 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:32"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 1453 - 13.935 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:32"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 26.172 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:32"}
+{"level":"http","message":"\u001b[35mPOST /tasks/9/subtasks 201 290 - 33.512 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:51"}
+{"level":"http","message":"\u001b[35mPOST /tasks/9/subtasks 201 289 - 39.682 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:24:59"}
+{"level":"http","message":"\u001b[35mPOST /tasks/9/subtasks 201 290 - 50.047 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:06"}
+{"level":"http","message":"\u001b[35mPOST /tasks/9/subtasks 201 286 - 48.758 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:12"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/9 200 1306 - 47.981 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:13"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2382 - 7.192 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:13"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 21.856 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:13"}
+{"level":"http","message":"\u001b[35mPOST /tasks 201 259 - 21.146 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:33"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2759 - 9.027 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:33"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 20.963 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:33"}
+{"level":"http","message":"\u001b[35mPOST /tasks/14/subtasks 201 292 - 38.903 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:49"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/14 200 609 - 58.085 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:50"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2992 - 16.780 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:50"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 30.927 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:50"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/9 200 1305 - 57.681 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:57"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2991 - 10.494 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:57"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 33.468 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:25:57"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/14 200 608 - 40.760 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:05"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2990 - 8.298 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:05"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 32.052 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:05"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 1072 - 46.259 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:08"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2989 - 19.995 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:08"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 33.269 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:08"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/14 200 609 - 35.447 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:17"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2990 - 19.223 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:17"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 19.331 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:17"}
+{"level":"http","message":"\u001b[35mDELETE /tasks/14 204 - - 33.642 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:30"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2380 - 12.786 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:30"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 44.449 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:30"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5 200 1073 - 61.084 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:35"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2381 - 10.230 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:35"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 31.609 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:35"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/9 200 1306 - 48.713 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:36"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 200 2382 - 16.218 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:36"}
+{"level":"http","message":"\u001b[35mGET /collections/6 200 159 - 28.091 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:36"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/4 200 2 - 8.105 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:38"}
+{"level":"http","message":"\u001b[35mGET /collections/4 200 158 - 45.455 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:38"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/3 304 - - 10.867 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:39"}
+{"level":"http","message":"\u001b[35mGET /collections/3 304 - - 24.494 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:39"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/2 304 - - 14.743 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:41"}
+{"level":"http","message":"\u001b[35mGET /collections/2 304 - - 31.816 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:41"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 14.703 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:42"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 29.723 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:26:42"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-TcoZqem8SXgF5+MTngWDVnmOWpI\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?1","sec-ch-ua-platform":"\"Android\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:27:20"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:27:20"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:27:20"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:27:20"}
+{"level":"http","message":"\u001b[35mGET /collections 200 790 - 41.154 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:27:20"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-tQH1gbHyH5MVEp51LSaN96yRRi0\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?1","sec-ch-ua-platform":"\"Android\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:27:50"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:27:50"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:27:50"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:27:50"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 31.696 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:27:50"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 304 - - 4.777 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:27:54"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 38.199 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:27:54"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-tQH1gbHyH5MVEp51LSaN96yRRi0\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?1","sec-ch-ua-platform":"\"Android\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:28:02"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 49.090 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 304 - - 21.460 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 33.552 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:28:02"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 21:28:11"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 21:28:56"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 21:28:56"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 21:28:56"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 21:28:56"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-tQH1gbHyH5MVEp51LSaN96yRRi0\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?1","sec-ch-ua-platform":"\"Android\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:28:58"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:28:58"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:28:58"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:28:58"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 159.234 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:28:58"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-tQH1gbHyH5MVEp51LSaN96yRRi0\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?1","sec-ch-ua-platform":"\"Android\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-07 21:38:51"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-07 21:38:51"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-07 21:38:51"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-07 21:38:51"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 108.221 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:38:51"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 14.272 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:38:55"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 29.814 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:38:55"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/6 304 - - 19.250 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:38:59"}
+{"level":"http","message":"\u001b[35mGET /collections/6 304 - - 49.681 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:38:59"}
+{"isOperational":true,"level":"error","statusCode":400,"timestamp":"2025-04-07 21:39:10"}
+{"level":"http","message":"\u001b[35mPATCH /tasks/5/subtasks/6 400 1274 - 31.339 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 21:39:10"}

@@ -9,3 +9,6 @@
 [2025-04-07 18:04:06] - [error] - [31mUnknown route[39m
 [2025-04-07 18:21:49] - [error] - [31mUnknown route[39m
 [2025-04-07 19:27:02] - [error] - [31mCollectionRepository.findAll - Error[39m
+[2025-04-07 21:13:11] - [error] - [31m"title" is not allowed to be empty[39m
+[2025-04-07 21:13:13] - [error] - [31m"title" is not allowed to be empty[39m
+[2025-04-07 21:39:10] - [error] - [31m"title" is not allowed to be empty[39m
