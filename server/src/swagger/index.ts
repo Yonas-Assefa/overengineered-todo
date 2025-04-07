@@ -3,10 +3,8 @@ import path from "path";
 
 const isProduction = process.env.NODE_ENV === "production";
 
-// In production, look for compiled .js files in the dist directory
-const routeFiles = isProduction
-  ? path.join(__dirname, "../../dist/src/presentation/routes/*.js")
-  : path.join(__dirname, "../presentation/routes/*.ts");
+// Get the absolute path to the routes directory
+const routesPath = path.resolve(__dirname, isProduction ? "../presentation/routes" : "../presentation/routes");
 
 const options = {
   definition: {
@@ -156,7 +154,7 @@ const options = {
       }
     }
   },
-  apis: [routeFiles],
+  apis: [`${routesPath}/*.{ts,js}`], // Look for both .ts and .js files
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
