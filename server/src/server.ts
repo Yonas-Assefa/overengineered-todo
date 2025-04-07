@@ -11,7 +11,7 @@ async function startServer() {
     await AppDataSource.initialize();
     Logger.info("Connected to the MySQL database");
 
-    server.listen(config.port, () => {
+    server.listen(config.port, '0.0.0.0', () => {
       Logger.info(`Server is running on port ${config.port}`);
       Logger.info("/collections - GET/POST - Manage collections");
       Logger.info("/tasks - GET/POST - Manage tasks");
