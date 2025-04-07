@@ -1,5 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
-import type { CreateCollectionDto, UpdateCollectionDto } from "../../application/dtos/collection.dto";
+import type {
+  CreateCollectionDto,
+  UpdateCollectionDto,
+} from "../../application/dtos/collection.dto";
 import type { CollectionService } from "../../application/services/collection.service";
 import Logger from "../../infrastructure/middleware/logger/logger";
 
@@ -21,14 +24,14 @@ export class CollectionController {
       Logger.info("GET /collections - Starting request", {
         query: req.query,
         headers: req.headers,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
 
       const collections = await this.service.getAllCollections();
-      
+
       Logger.info("GET /collections - Success", {
         count: collections.length,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
 
       res.status(200).json(collections);
@@ -36,7 +39,7 @@ export class CollectionController {
       Logger.error("GET /collections - Error", {
         error: error instanceof Error ? error.message : "Unknown error",
         stack: error instanceof Error ? error.stack : undefined,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
       throw error;
     }
