@@ -4,9 +4,9 @@ import path from "path";
 const isProduction = process.env.NODE_ENV === "production";
 
 const routeFiles = isProduction
-  ? path.join(__dirname, "../../dist/src/presentation/routes/*.js")
+  ? path.join(__dirname, "../presentation/routes/*.ts")
   : path.join(__dirname, "../presentation/routes/*.ts");
-console.log("Route files path:", routeFiles);
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -17,7 +17,11 @@ const options = {
     },
     servers: [
       {
-        url: process.env.BASE_URL || "http://localhost:3000", // Fallback to localhost if BASE_URL is not set
+        url: process.env.BASE_URL || "https://overengineered-todo-production.up.railway.app",
+        description: "Production server",
+      },
+      {
+        url: "http://localhost:3000",
         description: "Development server",
       },
     ],

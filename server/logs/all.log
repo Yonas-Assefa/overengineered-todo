@@ -549,3 +549,7 @@
 {"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 0.644 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:06:09"}
 {"level":"http","message":"\u001b[35mGET /swagger/favicon-32x32.png 200 628 - 10.301 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:06:11"}
 {"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 18:06:56"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 18:13:40"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 18:13:40"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 18:13:40"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 18:13:40"}
