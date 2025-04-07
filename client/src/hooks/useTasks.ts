@@ -33,10 +33,11 @@ export const useTasks = (collectionId: number) => {
       });
 
       // Snapshot the previous value
-      const previousTasks = queryClient.getQueryData<Task[]>([
-        "tasksofacollection",
-        collectionId,
-      ]) || [];
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
 
       // Create optimistic task
       const optimisticTask: Task = {
@@ -51,18 +52,15 @@ export const useTasks = (collectionId: number) => {
       );
 
       // Also update collection task counts optimistically
-      const collection = queryClient.getQueryData<{ completedTasks: number; totalTasks: number }>([
-        "collection",
-        collectionId,
-      ]);
+      const collection = queryClient.getQueryData<{
+        completedTasks: number;
+        totalTasks: number;
+      }>(["collection", collectionId]);
       if (collection) {
-        queryClient.setQueryData(
-          ["collection", collectionId],
-          {
-            ...collection,
-            totalTasks: collection.totalTasks + 1,
-          }
-        );
+        queryClient.setQueryData(["collection", collectionId], {
+          ...collection,
+          totalTasks: collection.totalTasks + 1,
+        });
       }
 
       return { previousTasks, collection };
@@ -100,10 +98,11 @@ export const useTasks = (collectionId: number) => {
         queryKey: ["tasksofacollection", collectionId],
       });
 
-      const previousTasks = queryClient.getQueryData<Task[]>([
-        "tasksofacollection",
-        collectionId,
-      ]) || [];
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
 
       // Optimistically update the task
       const optimisticTasks = previousTasks.map((task) =>
@@ -117,20 +116,17 @@ export const useTasks = (collectionId: number) => {
 
       // Update collection task counts if completion status changed
       if ("completed" in updatedTask) {
-        const collection = queryClient.getQueryData<{ completedTasks: number; totalTasks: number }>([
-          "collection",
-          collectionId,
-        ]);
+        const collection = queryClient.getQueryData<{
+          completedTasks: number;
+          totalTasks: number;
+        }>(["collection", collectionId]);
         if (collection) {
-          const task = previousTasks.find((t) => t.id === updatedTask.id);
+          // const task = previousTasks.find((t) => t.id === updatedTask.id);
           const completedDelta = updatedTask.completed ? 1 : -1;
-          queryClient.setQueryData(
-            ["collection", collectionId],
-            {
-              ...collection,
-              completedTasks: collection.completedTasks + completedDelta,
-            }
-          );
+          queryClient.setQueryData(["collection", collectionId], {
+            ...collection,
+            completedTasks: collection.completedTasks + completedDelta,
+          });
         }
       }
 
@@ -161,10 +157,11 @@ export const useTasks = (collectionId: number) => {
         queryKey: ["tasksofacollection", collectionId],
       });
 
-      const previousTasks = queryClient.getQueryData<Task[]>([
-        "tasksofacollection",
-        collectionId,
-      ]) || [];
+      const previousTasks =
+        queryClient.getQueryData<Task[]>([
+          "tasksofacollection",
+          collectionId,
+        ]) || [];
 
       // Optimistically remove the task
       queryClient.setQueryData(
@@ -173,22 +170,19 @@ export const useTasks = (collectionId: number) => {
       );
 
       // Update collection task counts
-      const collection = queryClient.getQueryData<{ completedTasks: number; totalTasks: number }>([
-        "collection",
-        collectionId,
-      ]);
+      const collection = queryClient.getQueryData<{
+        completedTasks: number;
+        totalTasks: number;
+      }>(["collection", collectionId]);
       if (collection) {
         const task = previousTasks.find((t) => t.id === taskId);
-        queryClient.setQueryData(
-          ["collection", collectionId],
-          {
-            ...collection,
-            totalTasks: collection.totalTasks - 1,
-            completedTasks: task?.completed
-              ? collection.completedTasks - 1
-              : collection.completedTasks,
-          }
-        );
+        queryClient.setQueryData(["collection", collectionId], {
+          ...collection,
+          totalTasks: collection.totalTasks - 1,
+          completedTasks: task?.completed
+            ? collection.completedTasks - 1
+            : collection.completedTasks,
+        });
       }
 
       return { previousTasks, collection };
