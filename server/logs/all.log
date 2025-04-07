@@ -553,3 +553,38 @@
 {"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 18:13:40"}
 {"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 18:13:40"}
 {"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 18:13:40"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 18:21:01"}
+{"level":"info","message":"\u001b[32mConnected to the MySQL database\u001b[39m","timestamp":"2025-04-07 18:21:06"}
+{"level":"info","message":"\u001b[32mServer is running on port 3000\u001b[39m","timestamp":"2025-04-07 18:21:06"}
+{"level":"info","message":"\u001b[32m/collections - GET/POST - Manage collections\u001b[39m","timestamp":"2025-04-07 18:21:06"}
+{"level":"info","message":"\u001b[32m/tasks - GET/POST - Manage tasks\u001b[39m","timestamp":"2025-04-07 18:21:06"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 18.073 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 6.368 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 8.790 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 200 21821 - 0.880 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 3.995 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/favicon-32x32.png 304 - - 2.246 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:12"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 0.722 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:19"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 0.705 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:19"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 1.304 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:19"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 304 - - 0.788 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:19"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 6.338 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:19"}
+{"level":"http","message":"\u001b[35mGET /swagger/favicon-32x32.png 304 - - 0.725 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:20"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 0.573 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:28"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 0.730 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:28"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 0.570 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:28"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 304 - - 0.694 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:28"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 5.021 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:28"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 1.385 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 0.519 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 0.573 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 0.763 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:46"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 304 - - 0.848 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:46"}
+{"isOperational":true,"level":"error","statusCode":404,"timestamp":"2025-04-07 18:21:49"}
+{"level":"http","message":"\u001b[35mGET / 404 5197 - 10.563 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:49"}
+{"level":"http","message":"\u001b[35mGET /swagger/ 304 - - 1.368 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:53"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui.css 304 - - 0.367 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:53"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-bundle.js 304 - - 1.547 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:53"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-standalone-preset.js 304 - - 2.458 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:53"}
+{"level":"http","message":"\u001b[35mGET /swagger/swagger-ui-init.js 304 - - 0.524 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-07 18:21:53"}
+{"level":"info","message":"\u001b[32mServer is shutting down\u001b[39m","timestamp":"2025-04-07 18:23:13"}

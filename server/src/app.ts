@@ -43,7 +43,7 @@ app.use("/collections", collectionRouter.router);
 app.use("/tasks", taskRouter.router);
 
 // Swagger UI
-app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 404 Middleware (after routes)
 app.use((req: Request, res: Response, next: NextFunction) => {
