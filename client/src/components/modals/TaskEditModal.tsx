@@ -253,7 +253,7 @@ export const TaskEditModal: React.FC<TaskEditModalProps> = ({
                           completed: !subtask.completed,
                         })
                       }
-                      disabled={isSaving}
+                      disabled
                       className={`relative w-5 h-5 rounded-full flex items-center justify-center transition-colors ${
                         subtask.completed
                           ? "text-pink-500"
