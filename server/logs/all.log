@@ -1156,3 +1156,10 @@
 {"level":"http","message":"\u001b[35mGET /collections 200 790 - 10.723 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:46:10"}
 {"level":"http","message":"\u001b[35mGET /tasks/collection/1 200 1407 - 3.958 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:46:12"}
 {"level":"http","message":"\u001b[35mGET /collections/1 200 155 - 19.096 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:46:12"}
+{"headers":{"accept":"application/json, text/plain, */*","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en-US,en;q=0.9","connection":"keep-alive","host":"localhost:3000","if-none-match":"W/\"316-U/7ghNle9S4GgFOuvCKTLe3j2ZY\"","origin":"http://localhost:5173","referer":"http://localhost:5173/","sec-ch-ua":"\"Chromium\";v=\"135\", \"Not-A.Brand\";v=\"8\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Linux\"","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"},"level":"info","message":"\u001b[32mGET /collections - Starting request\u001b[39m","query":{},"timestamp":"2025-04-09 11:48:31"}
+{"level":"info","message":"\u001b[32mCollectionRepository.findAll - Starting\u001b[39m","timestamp":"2025-04-09 11:48:31"}
+{"count":5,"level":"info","message":"\u001b[32mCollectionRepository.findAll - Success\u001b[39m","timestamp":"2025-04-09 11:48:31"}
+{"level":"http","message":"\u001b[35mGET /tasks/collection/1 304 - - 11.040 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:48:31"}
+{"count":5,"level":"info","message":"\u001b[32mGET /collections - Success\u001b[39m","timestamp":"2025-04-09 11:48:31"}
+{"level":"http","message":"\u001b[35mGET /collections 304 - - 19.961 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:48:31"}
+{"level":"http","message":"\u001b[35mGET /collections/1 304 - - 18.214 ms\u001b[39m\n\u001b[35m\u001b[39m","timestamp":"2025-04-09 11:48:31"}
