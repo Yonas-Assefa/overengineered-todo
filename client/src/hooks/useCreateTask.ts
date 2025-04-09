@@ -12,10 +12,14 @@ export const useCreateTask = () => {
       queryClient.invalidateQueries({
         queryKey: ["tasksofacollection", task.collectionId],
       });
-      // Also invalidate the collection query to update task counts
+      // Invalidate the specific collection query
       queryClient.invalidateQueries({
         queryKey: ["collection", task.collectionId],
       });
+      // Invalidate the all-collections query to update the CollectionsPage
+      queryClient.invalidateQueries({
+        queryKey: ["collections"],
+      });
     },
   });
-}; 
+};

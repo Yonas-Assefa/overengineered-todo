@@ -15,18 +15,16 @@ import { ErrorDisplay } from "../../components/ErrorDisplay";
 export const TasksPage: React.FC = () => {
   const { collectionId } = useParams<{ collectionId: string }>();
   const navigate = useNavigate();
-  
-  if (!collectionId) {
-    return (
-      <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
-        <div className="max-w-6xl mx-auto">
-          <ErrorDisplay error="Invalid collection ID" />
-        </div>
-      </div>
-    );
-  }
 
-  const { tasks, isLoading: tasksLoading, error: tasksError, createTask, updateTask, deleteTask, collection } = useTasks(Number(collectionId));
+  const {
+    tasks,
+    isLoading: tasksLoading,
+    error: tasksError,
+    createTask,
+    updateTask,
+    deleteTask,
+    collection,
+  } = useTasks(Number(collectionId));
 
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
@@ -82,11 +80,23 @@ export const TasksPage: React.FC = () => {
   const activeTasks = tasks?.filter((task) => !task.completed) || [];
   const completedTasks = tasks?.filter((task) => task.completed) || [];
 
+  if (!collectionId) {
+    return (
+      <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
+        <div className="max-w-6xl mx-auto">
+          <ErrorDisplay error="Invalid collection ID" />
+        </div>
+      </div>
+    );
+  }
+
   if (tasksError)
     return (
       <div className="w-full min-h-screen p-8 bg-[#17181C] text-white">
         <div className="max-w-6xl mx-auto">
-          <ErrorDisplay error={tasksError || 'An error occurred while loading tasks'} />
+          <ErrorDisplay
+            error={tasksError || "An error occurred while loading tasks"}
+          />
         </div>
       </div>
     );

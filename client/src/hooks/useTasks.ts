@@ -1,4 +1,3 @@
-// hooks/useTasks.ts
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   fetchTasksByCollection,
@@ -8,6 +7,7 @@ import {
 } from "../api/tasks.api";
 import { fetchCollection } from "../api/collections.api";
 import type { Task } from "../types";
+import { STALE_TIME } from "../config/app.config";
 
 export const useTasks = (collectionId: number) => {
   const queryClient = useQueryClient();
@@ -15,43 +15,38 @@ export const useTasks = (collectionId: number) => {
   const tasksQuery = useQuery({
     queryKey: ["tasksofacollection", collectionId],
     queryFn: () => fetchTasksByCollection(collectionId),
-    staleTime: 1000 * 60 * 5, // Consider data fresh for 5 minutes
+    staleTime: STALE_TIME,
   });
 
   const collectionQuery = useQuery({
     queryKey: ["collection", collectionId],
     queryFn: () => fetchCollection(collectionId),
-    staleTime: 1000 * 60 * 5, // Consider data fresh for 5 minutes
+    staleTime: STALE_TIME,
   });
 
   const createTaskMutation = useMutation({
     mutationFn: createTask,
     onMutate: async (newTask) => {
-      // Cancel any outgoing refetches
       await queryClient.cancelQueries({
         queryKey: ["tasksofacollection", collectionId],
       });
 
-      // Snapshot the previous value
       const previousTasks =
         queryClient.getQueryData<Task[]>([
           "tasksofacollection",
           collectionId,
         ]) || [];
 
-      // Create optimistic task
       const optimisticTask: Task = {
         ...newTask,
         id: Date.now(),
       };
 
-      // Optimistically update to the new value
       queryClient.setQueryData(
         ["tasksofacollection", collectionId],
         [...previousTasks, optimisticTask]
       );
 
-      // Also update collection task counts optimistically
       const collection = queryClient.getQueryData<{
         completedTasks: number;
         totalTasks: number;
@@ -66,7 +61,6 @@ export const useTasks = (collectionId: number) => {
       return { previousTasks, collection };
     },
     onError: (_err, _newTask, context) => {
-      // If the mutation fails, use the context returned from onMutate to roll back
       if (context?.previousTasks) {
         queryClient.setQueryData(
           ["tasksofacollection", collectionId],
@@ -81,7 +75,6 @@ export const useTasks = (collectionId: number) => {
       }
     },
     onSettled: () => {
-      // Always refetch after error or success to ensure cache consistency
       queryClient.invalidateQueries({
         queryKey: ["tasksofacollection", collectionId],
       });
@@ -104,7 +97,6 @@ export const useTasks = (collectionId: number) => {
           collectionId,
         ]) || [];
 
-      // Optimistically update the task
       const optimisticTasks = previousTasks.map((task) =>
         task.id === updatedTask.id ? { ...task, ...updatedTask } : task
       );
@@ -114,14 +106,12 @@ export const useTasks = (collectionId: number) => {
         optimisticTasks
       );
 
-      // Update collection task counts if completion status changed
       if ("completed" in updatedTask) {
         const collection = queryClient.getQueryData<{
           completedTasks: number;
           totalTasks: number;
         }>(["collection", collectionId]);
         if (collection) {
-          // const task = previousTasks.find((t) => t.id === updatedTask.id);
           const completedDelta = updatedTask.completed ? 1 : -1;
           queryClient.setQueryData(["collection", collectionId], {
             ...collection,
@@ -163,13 +153,11 @@ export const useTasks = (collectionId: number) => {
           collectionId,
         ]) || [];
 
-      // Optimistically remove the task
       queryClient.setQueryData(
         ["tasksofacollection", collectionId],
         previousTasks.filter((task) => task.id !== taskId)
       );
 
-      // Update collection task counts
       const collection = queryClient.getQueryData<{
         completedTasks: number;
         totalTasks: number;

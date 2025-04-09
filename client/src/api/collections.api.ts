@@ -25,13 +25,10 @@ export const fetchCollection = async (
 export const updateCollection = async (
   collection: Collection
 ): Promise<Collection> => {
-  const payload = excludeFields(collection as unknown as Record<string, unknown>, [
-    'id',
-    'createdAt',
-    'updatedAt',
-    'completedTasks',
-    'totalTasks',
-  ]);
+  const payload = excludeFields(
+    collection as unknown as Record<string, unknown>,
+    ["id", "createdAt", "updatedAt", "completedTasks", "totalTasks"]
+  );
   const { data } = await axiosInstance.patch(
     `/collections/${collection.id}`,
     payload

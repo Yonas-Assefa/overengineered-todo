@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import type { Task } from "../types";
 import { FaChevronDown, FaChevronUp, FaEllipsisV } from "react-icons/fa";
-import { format, parseISO } from "date-fns";
+import { formatDate } from "../utils/dateUtils";
+import { LONG_PRESS_THRESHOLD } from "../config/app.config";
 
 interface TaskCardProps {
   task: Task;
@@ -21,6 +22,8 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   const [isUpdating, setIsUpdating] = useState(false);
   const [localTask, setLocalTask] = useState<Task>(task);
   const menuRef = useRef<HTMLDivElement>(null);
+  const longPressTimer = useRef<number | null>(null);
+  const [isLongPressing, setIsLongPressing] = useState(false);
 
   useEffect(() => {
     setLocalTask(task);
@@ -28,20 +31,20 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 
   const handleToggleComplete = async () => {
     if (isUpdating) return;
-    
+
     setIsUpdating(true);
-    
+
     const updatedTask = {
       ...localTask,
       completed: !localTask.completed,
-      subtasks: localTask.subtasks?.map(subtask => ({
+      subtasks: localTask.subtasks?.map((subtask) => ({
         ...subtask,
-        completed: !localTask.completed
-      }))
+        completed: !localTask.completed,
+      })),
     };
-    
+
     setLocalTask(updatedTask);
-    
+
     try {
       await onUpdate(updatedTask);
     } catch (error) {
@@ -54,75 +57,121 @@ export const TaskCard: React.FC<TaskCardProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (showMenu && menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      if (
+        showMenu &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node)
+      ) {
         setShowMenu(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showMenu]);
 
-  const formatDate = (dateString: string) => {
-    try {
-      const date = parseISO(dateString);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      
-      const taskDate = new Date(date);
-      taskDate.setHours(0, 0, 0, 0);
-      
-      if (taskDate.getTime() === today.getTime()) {
-        return <span className="text-pink-500">Today</span>;
-      }
-      
-      return format(date, 'MMM d, yyyy');
-    } catch (error) {
-      console.error('Error formatting date:', error);
-      return dateString;
+  const startLongPress = () => {
+    if (isUpdating) return;
+
+    longPressTimer.current = setTimeout(() => {
+      setIsLongPressing(true);
+      onDelete(localTask.id);
+    }, LONG_PRESS_THRESHOLD);
+  };
+
+  const cancelLongPress = () => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
     }
+    setIsLongPressing(false);
+  };
+
+  const renderFormattedDate = (dateString: string) => {
+    const formatted = formatDate(dateString);
+    if (formatted === "Today" || formatted === "Tomorrow") {
+      return <span className="text-pink-500">{formatted}</span>;
+    }
+    return formatted;
   };
 
   return (
-    <div 
-      className="group transition-all duration-200"
-    >
+    <div className="group transition-all duration-200">
       <div
         className={`p-4 bg-[#1E1F25] rounded-xl flex items-start gap-3 cursor-pointer ${
-          !localTask.completed ? 'hover:bg-[#25262C]' : ''
+          !localTask.completed ? "hover:bg-[#25262C]" : ""
         } transition-colors duration-200 ${
-          isUpdating ? 'pointer-events-none' : ''
+          isUpdating ? "pointer-events-none" : ""
         }`}
-        onDoubleClick={() => onEdit(localTask)}
+        onDoubleClick={() => !isLongPressing && onEdit(localTask)}
+        onMouseDown={startLongPress}
+        onMouseUp={cancelLongPress}
+        onMouseLeave={cancelLongPress}
+        onTouchStart={startLongPress}
+        onTouchEnd={cancelLongPress}
+        onTouchCancel={cancelLongPress}
       >
         <button
           onClick={handleToggleComplete}
           disabled={isUpdating}
           className={`relative w-5 h-5 rounded-full flex items-center justify-center transition-colors ${
-            localTask.completed ? 'text-pink-500' : 'text-gray-400 hover:text-pink-400'
-          } ${isUpdating ? 'opacity-75' : ''}`}
+            localTask.completed
+              ? "text-pink-500"
+              : "text-gray-400 hover:text-pink-400"
+          } ${isUpdating ? "opacity-75" : ""}`}
         >
           {localTask.completed ? (
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
-              <path d="M16.5 8.5L10.5 14.5L7.5 11.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="currentColor"
+              />
+              <path
+                d="M16.5 8.5L10.5 14.5L7.5 11.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           ) : (
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
             </svg>
           )}
         </button>
 
         <div className="flex-1 min-w-0">
           <div className="space-y-1">
-            <div className={`text-base transition-all duration-200 ${
-              localTask.completed ? "text-gray-500 line-through opacity-50" : "text-white"
-            }`}>
+            <div
+              className={`text-base transition-all duration-200 ${
+                localTask.completed
+                  ? "text-gray-500 line-through opacity-50"
+                  : "text-white"
+              }`}
+            >
               {localTask.title}
             </div>
-            <div className={`text-sm text-gray-500 ${localTask.completed ? "opacity-50" : ""}`}>
-              {formatDate(localTask.date)}
+            <div
+              className={`text-sm text-gray-500 ${
+                localTask.completed ? "opacity-50" : ""
+              }`}
+            >
+              {renderFormattedDate(localTask.date)}
             </div>
           </div>
         </div>
@@ -133,7 +182,7 @@ export const TaskCard: React.FC<TaskCardProps> = ({
               onClick={() => setShowMenu(!showMenu)}
               disabled={isUpdating}
               className={`p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31] ${
-                isUpdating ? 'opacity-75' : ''
+                isUpdating ? "opacity-75" : ""
               }`}
             >
               <FaEllipsisV size={14} />
@@ -173,10 +222,14 @@ export const TaskCard: React.FC<TaskCardProps> = ({
               onClick={() => setIsExpanded(!isExpanded)}
               disabled={isUpdating}
               className={`p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-[#2A2B31] ${
-                isUpdating ? 'opacity-75' : ''
+                isUpdating ? "opacity-75" : ""
               }`}
             >
-              {isExpanded ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
+              {isExpanded ? (
+                <FaChevronUp size={14} />
+              ) : (
+                <FaChevronDown size={14} />
+              )}
             </button>
           )}
         </div>
@@ -190,13 +243,26 @@ export const TaskCard: React.FC<TaskCardProps> = ({
               className="flex items-center gap-3 p-3 bg-[#25262C] rounded-lg"
             >
               <div className="relative w-5 h-5 rounded-full flex items-center justify-center text-gray-400">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
               </div>
-              <div className={`text-sm transition-all duration-200 ${
-                localTask.completed ? "text-gray-500 line-through opacity-50" : "text-gray-300"
-              }`}>
+              <div
+                className={`text-sm transition-all duration-200 ${
+                  localTask.completed
+                    ? "text-gray-500 line-through opacity-50"
+                    : "text-gray-300"
+                }`}
+              >
                 {subtask.title}
               </div>
             </div>

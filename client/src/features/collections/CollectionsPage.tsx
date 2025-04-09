@@ -24,15 +24,22 @@ export const CollectionsPage = () => {
   const { mutate: updateCollection } = useUpdateCollection();
   const { mutate: deleteCollection } = useDeleteCollection();
   const { mutate: createTask } = useCreateTask();
-  const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(null);
-  const [collectionToDelete, setCollectionToDelete] = useState<Collection | null>(null);
+  const [collectionToEdit, setCollectionToEdit] = useState<Collection | null>(
+    null
+  );
+  const [collectionToDelete, setCollectionToDelete] =
+    useState<Collection | null>(null);
   const [showMenu, setShowMenu] = useState(false);
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (showMenu && menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      if (
+        showMenu &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node)
+      ) {
         setShowMenu(false);
       }
     };
@@ -70,20 +77,29 @@ export const CollectionsPage = () => {
     setCollectionToDelete(null);
   };
 
-  const handleCreateTask = async (taskData: { title: string; date: string; collectionId?: number }) => {
+  const handleCreateTask = (taskData: {
+    title: string;
+    date: string;
+    collectionId?: number;
+  }) => {
     if (!taskData.collectionId) return;
-    
-    try {
-      await createTask({
+
+    createTask(
+      {
         title: taskData.title,
         date: taskData.date,
         completed: false,
         collectionId: taskData.collectionId,
-      });
-      setShowCreateTaskModal(false);
-    } catch (error) {
-      console.error("Failed to create task:", error);
-    }
+      },
+      {
+        onSuccess: () => {
+          setShowCreateTaskModal(false); // Close modal after success
+        },
+        onError: (error) => {
+          console.error("Failed to create task:", error);
+        },
+      }
+    );
   };
 
   return (
@@ -161,11 +177,12 @@ export const CollectionsPage = () => {
                 />
               ))}
 
-              {activeFilter === "favorites" && filteredCollections?.length === 0 && (
-                <div className="col-span-full text-center py-12 text-gray-400">
-                  You don't have any favorite collections yet.
-                </div>
-              )}
+              {activeFilter === "favorites" &&
+                filteredCollections?.length === 0 && (
+                  <div className="col-span-full text-center py-12 text-gray-400">
+                    You don't have any favorite collections yet.
+                  </div>
+                )}
 
               {activeFilter === "all" && (
                 <button
